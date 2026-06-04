@@ -3,921 +3,733 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zentrum Tier – Investment Opportunity | Investitionsmöglichkeit</title>
-  <meta name="description" content="€6M+ already invested. Europe's first integrated TCM veterinary medicine brand — backed by 20 years of clinical expertise and a proven product portfolio." />
+  <title>Zentrum Tier – Investment Opportunity</title>
+  <meta name="description" content="€6M+ already invested. Europe's first integrated TCM veterinary medicine brand — 7.4% market CAGR, three scalable revenue streams, proven products." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --teal:       #2AACBA;
-      --teal-dark:  #1A7E8A;
-      --teal-deep:  #0F5560;
-      --lime:       #9DC83C;
-      --lime-light: #C4E060;
-      --lime-pale:  #EAF5C8;
-      --white:      #ffffff;
-      --off-white:  #F5FAF5;
-      --cream:      #F0F8F0;
-      --text-dark:  #0F2A2E;
-      --text-mid:   #3A5A5E;
-      --text-light: #7A9A9E;
-      --border:     #D0E8E8;
-      --section-pad: clamp(72px, 9vw, 130px);
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --teal:#2AACBA;--teal-dark:#1A7E8A;--teal-deep:#0F5560;
+      --lime:#9DC83C;--lime-light:#C4E060;--lime-pale:#EAF5C8;
+      --white:#fff;--off:#F5FAF5;--cream:#EEF7EE;
+      --text:#0F2A2E;--mid:#3A5A5E;--light:#7A9A9E;--border:#C8E0E0;
+      --pad:clamp(72px,9vw,130px);
     }
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;line-height:1.6}
 
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; color: var(--text-dark); background: var(--white); line-height: 1.6; overflow-x: hidden; }
-
-    /* ── LANGUAGE BAR ── */
-    .lang-bar {
-      position: fixed; top: 0; inset-inline: 0; z-index: 1000;
-      background: var(--teal-deep);
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0 clamp(20px,5vw,80px); height: 48px;
-    }
-    .lang-bar .logo-wrap { display: flex; align-items: center; gap: 10px; }
-    .lang-toggle { display: flex; gap: 3px; background: rgba(255,255,255,0.1); border-radius: 6px; padding: 3px; }
-    .lang-btn { padding: 4px 14px; border: none; border-radius: 4px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; cursor: pointer; transition: all .2s; background: transparent; color: rgba(255,255,255,0.55); }
-    .lang-btn.active { background: var(--lime); color: var(--teal-deep); }
+    /* ── LANG BAR ── */
+    .lang-bar{position:fixed;top:0;inset-inline:0;z-index:1000;background:var(--teal-deep);display:flex;justify-content:space-between;align-items:center;padding:0 clamp(16px,5vw,80px);height:46px}
+    .lang-toggle{display:flex;gap:3px;background:rgba(255,255,255,.1);border-radius:6px;padding:3px}
+    .lang-btn{padding:4px 14px;border:none;border-radius:4px;font-size:.76rem;font-weight:700;letter-spacing:.06em;cursor:pointer;transition:all .2s;background:transparent;color:rgba(255,255,255,.55)}
+    .lang-btn.active{background:var(--lime);color:var(--teal-deep)}
 
     /* ── NAV ── */
-    .nav {
-      position: fixed; top: 48px; inset-inline: 0; z-index: 999;
-      background: rgba(15,85,96,0.97); backdrop-filter: blur(14px);
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0 clamp(20px,5vw,80px); height: 62px;
-      border-bottom: 1px solid rgba(157,200,60,0.2);
-    }
-    .nav-links { display: flex; gap: clamp(14px,2.5vw,36px); list-style: none; }
-    .nav-links a { color: rgba(255,255,255,0.72); text-decoration: none; font-size: 0.84rem; font-weight: 500; letter-spacing: .03em; transition: color .2s; }
-    .nav-links a:hover { color: var(--lime-light); }
-    .nav-cta { background: var(--lime); color: var(--teal-deep); padding: 9px 22px; border-radius: 6px; font-size: 0.84rem; font-weight: 700; letter-spacing: .03em; text-decoration: none; transition: background .2s; }
-    .nav-cta:hover { background: var(--lime-light); }
+    .nav{position:fixed;top:46px;inset-inline:0;z-index:999;background:rgba(15,85,96,.97);backdrop-filter:blur(14px);display:flex;justify-content:space-between;align-items:center;padding:0 clamp(16px,5vw,80px);height:60px;border-bottom:1px solid rgba(157,200,60,.2)}
+    .nav-links{display:flex;gap:clamp(12px,2vw,32px);list-style:none}
+    .nav-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:.82rem;font-weight:500;transition:color .2s}
+    .nav-links a:hover{color:var(--lime-light)}
+    .nav-cta{background:var(--lime);color:var(--teal-deep);padding:9px 20px;border-radius:6px;font-size:.82rem;font-weight:700;text-decoration:none;transition:background .2s;white-space:nowrap}
+    .nav-cta:hover{background:var(--lime-light)}
+
+    /* ── BUTTONS ── */
+    .btn-p{background:var(--lime);color:var(--teal-deep);padding:14px 30px;border-radius:8px;font-size:.92rem;font-weight:700;text-decoration:none;transition:all .25s;display:inline-block}
+    .btn-p:hover{background:var(--lime-light);transform:translateY(-2px);box-shadow:0 8px 24px rgba(157,200,60,.35)}
+    .btn-s{border:1px solid rgba(255,255,255,.35);color:var(--white);padding:14px 30px;border-radius:8px;font-size:.92rem;font-weight:500;text-decoration:none;transition:all .25s;display:inline-block}
+    .btn-s:hover{border-color:var(--lime-light);color:var(--lime-light)}
 
     /* ── HERO ── */
-    .hero {
-      min-height: 100vh; padding-top: 110px;
-      background: linear-gradient(145deg, var(--teal-deep) 0%, #0D4A55 45%, #1A7E8A 100%);
-      display: flex; align-items: center; position: relative; overflow: hidden;
-    }
-    .hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(157,200,60,.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    /* decorative circles */
-    .hero::after {
-      content: ''; position: absolute;
-      width: 600px; height: 600px; border-radius: 50%;
-      border: 1px solid rgba(157,200,60,.1);
-      top: 50%; right: -100px; transform: translateY(-50%);
-      pointer-events: none;
-    }
+    .hero{min-height:100vh;padding-top:106px;position:relative;display:flex;align-items:center;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:linear-gradient(145deg,var(--teal-deep) 0%,#0D4A55 50%,#1A7080 100%)}
+    .hero-bg::after{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1600&q=60&fit=crop') center/cover no-repeat;opacity:.12}
+    .hero-orb{position:absolute;border-radius:50%;pointer-events:none}
+    .hero-orb.o1{width:600px;height:600px;right:-120px;top:50%;transform:translateY(-50%);background:radial-gradient(circle,rgba(157,200,60,.08) 0%,transparent 70%);border:1px solid rgba(157,200,60,.12)}
+    .hero-orb.o2{width:900px;height:900px;right:-250px;top:50%;transform:translateY(-50%);border:1px solid rgba(42,172,186,.08)}
+    .hero-inner{position:relative;z-index:1;width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(16px,5vw,80px);display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(157,200,60,.15);border:1px solid rgba(157,200,60,.4);color:var(--lime-light);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 14px;border-radius:100px;margin-bottom:24px}
+    .hero-badge span{width:6px;height:6px;background:var(--lime);border-radius:50%;animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.6vw,3.3rem);font-weight:700;color:var(--white);line-height:1.14;margin-bottom:20px}
+    .hero h1 em{font-style:italic;color:var(--lime-light)}
+    .hero-sub{font-size:clamp(.9rem,1.3vw,1.05rem);color:rgba(255,255,255,.75);line-height:1.78;margin-bottom:36px;max-width:510px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
 
-    .hero-inner {
-      position: relative; z-index: 1; width: 100%; max-width: 1200px;
-      margin: 0 auto; padding: 0 clamp(20px,5vw,80px);
-      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 72px; align-items: center;
-    }
+    /* hero stat cards */
+    .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .sc{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:24px 20px;transition:all .3s;cursor:default}
+    .sc:hover{background:rgba(255,255,255,.11);border-color:rgba(157,200,60,.4);transform:translateY(-2px)}
+    .sc.hl{background:rgba(157,200,60,.12);border-color:rgba(157,200,60,.45)}
+    .sc-num{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--lime-light);display:block;margin-bottom:6px;line-height:1}
+    .sc.hl .sc-num{font-size:2.1rem;color:#d4f57a}
+    .sc-lbl{font-size:.76rem;color:rgba(255,255,255,.6);line-height:1.4}
 
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(157,200,60,.15); border: 1px solid rgba(157,200,60,.4);
-      color: var(--lime-light); font-size: 0.72rem; font-weight: 700;
-      letter-spacing: .1em; text-transform: uppercase;
-      padding: 7px 16px; border-radius: 100px; margin-bottom: 26px;
-    }
-    .hero-badge span { width: 6px; height: 6px; background: var(--lime); border-radius: 50%; animation: pulse 2s infinite; }
-
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 3.8vw, 3.4rem); font-weight: 700;
-      color: var(--white); line-height: 1.15; margin-bottom: 22px;
-    }
-    .hero h1 em { font-style: italic; color: var(--lime-light); }
-    .hero-sub { font-size: clamp(.95rem,1.4vw,1.1rem); color: rgba(255,255,255,.75); line-height: 1.75; margin-bottom: 40px; max-width: 520px; }
-
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-
-    .btn-primary { background: var(--lime); color: var(--teal-deep); padding: 14px 32px; border-radius: 8px; font-size: .93rem; font-weight: 700; text-decoration: none; letter-spacing: .03em; transition: all .25s; display: inline-block; }
-    .btn-primary:hover { background: var(--lime-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(157,200,60,.3); }
-    .btn-secondary { border: 1px solid rgba(255,255,255,.3); color: var(--white); padding: 14px 32px; border-radius: 8px; font-size: .93rem; font-weight: 500; text-decoration: none; transition: all .25s; display: inline-block; }
-    .btn-secondary:hover { border-color: var(--lime-light); color: var(--lime-light); }
-
-    /* hero stats */
-    .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .stat-card { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 26px 22px; transition: all .3s; }
-    .stat-card:hover { background: rgba(255,255,255,.11); border-color: rgba(157,200,60,.4); }
-    .stat-card.highlight { background: rgba(157,200,60,.12); border-color: rgba(157,200,60,.4); }
-    .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--lime-light); line-height: 1; margin-bottom: 7px; display: block; }
-    .stat-card.highlight .stat-num { color: #d4f57a; font-size: 2.2rem; }
-    .stat-label { font-size: .78rem; color: rgba(255,255,255,.6); line-height: 1.4; }
+    /* ── IMPACT TICKER ── */
+    .ticker{background:var(--teal-dark);padding:0 clamp(16px,5vw,80px);overflow:hidden}
+    .ticker-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid rgba(255,255,255,.1)}
+    .tk{padding:40px 32px;border-right:1px solid rgba(255,255,255,.1);border-top:3px solid transparent;transition:border-color .3s;text-align:left}
+    .tk:hover{border-top-color:var(--lime)}
+    .tk-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--lime-light);display:block;margin-bottom:5px}
+    .tk-lbl{font-size:.78rem;color:rgba(255,255,255,.62);line-height:1.5}
 
     /* ── SECTIONS ── */
-    section { padding: var(--section-pad) clamp(20px,5vw,80px); }
-    .container { max-width: 1200px; margin: 0 auto; }
+    section{padding:var(--pad) clamp(16px,5vw,80px)}
+    .container{max-width:1200px;margin:0 auto}
+    .sec-tag{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:12px;display:block}
+    .sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.7vw,2.6rem);font-weight:700;color:var(--teal-deep);line-height:1.2;margin-bottom:16px}
+    .sec-lead{font-size:clamp(.9rem,1.25vw,1.05rem);color:var(--mid);line-height:1.8;max-width:680px}
 
-    .section-label { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: block; }
-    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem,2.8vw,2.7rem); font-weight: 700; color: var(--teal-deep); line-height: 1.2; margin-bottom: 18px; }
-    .section-lead { font-size: clamp(.95rem,1.3vw,1.1rem); color: var(--text-mid); line-height: 1.8; max-width: 680px; }
+    /* ── MARKET CHARTS SECTION ── */
+    .charts-section{background:var(--off)}
+    .charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:56px}
+    .chart-card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:32px;transition:box-shadow .3s}
+    .chart-card:hover{box-shadow:0 12px 40px rgba(42,172,186,.1)}
+    .chart-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--teal-deep);margin-bottom:6px}
+    .chart-card p{font-size:.8rem;color:var(--light);margin-bottom:24px;line-height:1.5}
+    .chart-wrap{width:100%;position:relative}
 
-    /* ── IMPACT BANNER ── */
-    .impact-banner {
-      background: linear-gradient(100deg, var(--teal-deep), var(--teal-dark));
-      padding: 0 clamp(20px,5vw,80px);
-    }
-    .impact-banner-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(4,1fr);
-      border-left: 1px solid rgba(255,255,255,.1);
-    }
-    .impact-item {
-      padding: 44px 36px; border-right: 1px solid rgba(255,255,255,.1);
-      border-top: 3px solid transparent; transition: border-color .3s;
-    }
-    .impact-item:hover { border-top-color: var(--lime); }
-    .impact-item .i-num { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700; color: var(--lime-light); display: block; margin-bottom: 6px; }
-    .impact-item .i-label { font-size: .8rem; color: rgba(255,255,255,.65); line-height: 1.5; }
+    /* bar chart */
+    .bar-chart{display:flex;align-items:flex-end;gap:10px;height:160px;border-bottom:2px solid var(--border);padding-bottom:4px}
+    .bar-col{display:flex;flex-direction:column;align-items:center;flex:1;gap:6px}
+    .bar{width:100%;border-radius:6px 6px 0 0;transition:height 1.2s cubic-bezier(.4,0,.2,1);position:relative;cursor:default}
+    .bar:hover::after{content:attr(data-val);position:absolute;top:-28px;left:50%;transform:translateX(-50%);background:var(--teal-deep);color:#fff;font-size:.68rem;font-weight:700;padding:3px 8px;border-radius:4px;white-space:nowrap}
+    .bar-year{font-size:.7rem;color:var(--light);margin-top:8px;font-weight:600}
+    .bar-val{font-size:.72rem;font-weight:700;color:var(--teal-dark)}
 
-    /* ── ETHICAL CASE ── */
-    .ethical { background: var(--off-white); }
-    .ethical-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; margin-top: 56px; }
-    .ethical-cards { display: flex; flex-direction: column; gap: 18px; }
-    .ethical-card { display: flex; gap: 20px; align-items: flex-start; background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 26px 28px; transition: box-shadow .3s; }
-    .ethical-card:hover { box-shadow: 0 8px 28px rgba(42,172,186,.1); }
-    .ec-icon { font-size: 1.6rem; flex-shrink: 0; width: 48px; height: 48px; background: var(--cream); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
-    .ec-text h4 { font-weight: 700; font-size: .95rem; color: var(--teal-deep); margin-bottom: 5px; }
-    .ec-text p { font-size: .84rem; color: var(--text-mid); line-height: 1.65; }
+    /* line chart SVG */
+    .line-chart-svg{width:100%;overflow:visible}
 
-    /* ── OPPORTUNITY ── */
-    .opportunity { background: var(--white); }
-    .opp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; margin-top: 56px; }
-    .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .metric-box { background: var(--cream); border: 1px solid var(--border); border-radius: 14px; padding: 28px 22px; text-align: center; transition: all .3s; }
-    .metric-box:hover { border-color: var(--teal); box-shadow: 0 6px 24px rgba(42,172,186,.1); }
-    .metric-num { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 700; color: var(--teal-dark); display: block; margin-bottom: 6px; }
-    .metric-desc { font-size: .78rem; color: var(--text-light); line-height: 1.5; }
+    /* legend */
+    .legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+    .leg-item{display:flex;align-items:center;gap:6px;font-size:.74rem;color:var(--mid)}
+    .leg-dot{width:10px;height:10px;border-radius:50%}
 
-    /* ── SOLUTION CARDS ── */
-    .solution-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 56px; }
-    .solution-card { border: 1px solid var(--border); border-radius: 16px; padding: 36px 28px; transition: all .3s; position: relative; overflow: hidden; }
-    .solution-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg,var(--teal),var(--lime)); transform: scaleX(0); transition: transform .3s; transform-origin: left; }
-    .solution-card:hover { box-shadow: 0 12px 40px rgba(42,172,186,.12); transform: translateY(-4px); }
-    .solution-card:hover::before { transform: scaleX(1); }
-    .solution-icon { width: 50px; height: 50px; background: linear-gradient(135deg,var(--teal-deep),var(--teal)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 22px; }
-    .solution-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--teal-deep); margin-bottom: 10px; }
-    .solution-card p { font-size: .88rem; color: var(--text-mid); line-height: 1.7; }
+    /* ── PROJECTIONS TABLE ── */
+    .proj-section{background:var(--white)}
+    .proj-table-wrap{margin-top:48px;overflow-x:auto;border-radius:16px;border:1px solid var(--border)}
+    table{width:100%;border-collapse:collapse;font-size:.84rem}
+    thead{background:var(--teal-deep);color:#fff}
+    thead th{padding:16px 20px;text-align:left;font-weight:600;font-size:.78rem;letter-spacing:.04em}
+    thead th:not(:first-child){text-align:right}
+    tbody tr{border-bottom:1px solid var(--border);transition:background .2s}
+    tbody tr:hover{background:var(--cream)}
+    tbody tr:last-child{border-bottom:none;background:rgba(157,200,60,.06);font-weight:700}
+    td{padding:14px 20px;color:var(--text)}
+    td:not(:first-child){text-align:right;font-family:'Playfair Display',serif;font-size:.92rem}
+    .td-stream{display:flex;align-items:center;gap:10px}
+    .stream-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+    .proj-note{font-size:.76rem;color:var(--light);margin-top:12px;line-height:1.6}
 
-    /* ── TRAINING ── */
-    .training { background: var(--cream); }
+    /* ── ETHICAL SECTION ── */
+    .ethical{background:var(--off);position:relative;overflow:hidden}
+    .ethical::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1548681528-6a5c45b66b42?w=1600&q=50&fit=crop') center/cover no-repeat;opacity:.04}
+    .ethical-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:1;margin-top:48px}
+    .ethical-cards{display:flex;flex-direction:column;gap:16px}
+    .ec{display:flex;gap:18px;align-items:flex-start;background:var(--white);border:1px solid var(--border);border-radius:14px;padding:22px 24px;transition:all .3s}
+    .ec:hover{box-shadow:0 8px 28px rgba(42,172,186,.1);transform:translateX(4px)}
+    .ec-icon{width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+    .ec h4{font-weight:700;font-size:.9rem;color:var(--teal-deep);margin-bottom:4px}
+    .ec p{font-size:.82rem;color:var(--mid);line-height:1.65}
 
-    /* ── PHILOSOPHY ── */
-    .philosophy { background: var(--white); }
-    .phil-trio { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 48px; }
-    .phil-card { background: var(--off-white); border: 1px solid var(--border); border-radius: 16px; padding: 36px 28px; text-align: center; transition: all .3s; }
-    .phil-card:hover { border-color: var(--teal); box-shadow: 0 8px 28px rgba(42,172,186,.1); transform: translateY(-3px); }
-    .phil-icon { font-size: 2.4rem; margin-bottom: 18px; }
-    .phil-card h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--teal-deep); margin-bottom: 6px; }
-    .phil-tradition { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; display: block; }
-    .phil-card p { font-size: .84rem; color: var(--text-mid); line-height: 1.65; }
+    /* ── SOLUTION ── */
+    .solution{background:var(--white)}
+    .sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+    .sol-card{border:1px solid var(--border);border-radius:16px;padding:32px 26px;transition:all .3s;position:relative;overflow:hidden}
+    .sol-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--lime));transform:scaleX(0);transition:transform .3s;transform-origin:left}
+    .sol-card:hover{box-shadow:0 12px 40px rgba(42,172,186,.12);transform:translateY(-4px)}
+    .sol-card:hover::before{transform:scaleX(1)}
+    .sol-icon{width:48px;height:48px;background:linear-gradient(135deg,var(--teal-deep),var(--teal));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:20px}
+    .sol-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--teal-deep);margin-bottom:9px}
+    .sol-card p{font-size:.86rem;color:var(--mid);line-height:1.7}
 
     /* ── PRODUCTS ── */
-    .products { background: linear-gradient(150deg, var(--teal-deep) 0%, #0D4A55 100%); }
-    .products .section-label { color: var(--lime-light); }
-    .products .section-title { color: var(--white); }
-    .products .section-lead { color: rgba(255,255,255,.7); }
-    .products-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 52px; }
-    .product-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; padding: 26px 22px; transition: all .3s; }
-    .product-card:hover { background: rgba(255,255,255,.1); border-color: rgba(157,200,60,.4); transform: translateY(-2px); }
-    .product-tag { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--lime); margin-bottom: 9px; display: block; }
-    .product-card h4 { font-size: .92rem; font-weight: 600; color: var(--white); margin-bottom: 7px; line-height: 1.4; }
-    .product-card p { font-size: .8rem; color: rgba(255,255,255,.5); line-height: 1.6; }
+    .products{background:linear-gradient(150deg,var(--teal-deep) 0%,#0D4A55 100%);position:relative;overflow:hidden}
+    .products::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&q=50&fit=crop') center/cover no-repeat;opacity:.07}
+    .products .sec-tag{color:var(--lime-light)}
+    .products .sec-title{color:var(--white)}
+    .products .sec-lead{color:rgba(255,255,255,.7)}
+    .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;position:relative;z-index:1}
+    .pc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:24px 20px;transition:all .3s}
+    .pc:hover{background:rgba(255,255,255,.1);border-color:rgba(157,200,60,.4);transform:translateY(-3px)}
+    .pc-tag{font-size:.67rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:8px;display:block}
+    .pc h4{font-size:.9rem;font-weight:600;color:var(--white);margin-bottom:6px;line-height:1.4}
+    .pc p{font-size:.79rem;color:rgba(255,255,255,.5);line-height:1.6}
+
+    /* ── DONUT CHART ── */
+    .donut-section{background:var(--off)}
+    .donut-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:48px}
+    .donut-wrap{position:relative;width:260px;margin:0 auto}
+    .donut-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none}
+    .donut-center .big{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--teal-deep);display:block}
+    .donut-center .small{font-size:.72rem;color:var(--light)}
+    .use-items{display:flex;flex-direction:column;gap:14px}
+    .use-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;background:var(--white);border:1px solid var(--border);border-radius:10px;padding:14px 16px;transition:background .2s}
+    .use-row:hover{background:var(--cream)}
+    .use-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+    .use-text h5{font-size:.86rem;font-weight:600;color:var(--teal-deep);margin-bottom:2px}
+    .use-text p{font-size:.75rem;color:var(--light)}
+    .use-pct{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--teal-dark)}
+
+    /* ── TRAINING ── */
+    .training{background:var(--cream);position:relative;overflow:hidden}
+    .training::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1601758124096-519ed8735ff9?w=1600&q=50&fit=crop') center/cover no-repeat;opacity:.05}
+    .tr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;position:relative;z-index:1}
+
+    /* ── PHILOSOPHY ── */
+    .philosophy{background:var(--white)}
+    .phil-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+    .phil-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .phil-c{background:var(--off);border:1px solid var(--border);border-radius:16px;padding:28px 22px;text-align:center;transition:all .3s}
+    .phil-c:hover{border-color:var(--teal);box-shadow:0 8px 28px rgba(42,172,186,.1);transform:translateY(-3px)}
+    .phil-c:last-child{grid-column:span 2}
+    .phil-icon{font-size:2.2rem;margin-bottom:14px}
+    .phil-c h4{font-family:'Playfair Display',serif;font-size:1rem;color:var(--teal-deep);margin-bottom:4px}
+    .phil-tag{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;display:block}
+    .phil-c p{font-size:.82rem;color:var(--mid);line-height:1.65}
 
     /* ── PIPELINE ── */
-    .pipeline { background: var(--off-white); }
-    .pipeline-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; margin-top: 60px; position: relative; }
-    .pipeline-steps::before { content: ''; position: absolute; top: 31px; left: calc(12.5% + 31px); right: calc(12.5% + 31px); height: 2px; background: linear-gradient(90deg,var(--teal),var(--lime)); }
-    .pipeline-step { text-align: center; padding: 0 12px; }
-    .step-circle { width: 62px; height: 62px; border-radius: 50%; background: var(--teal-deep); color: var(--white); font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 22px; position: relative; z-index: 1; border: 3px solid var(--lime); }
-    .pipeline-step h4 { font-weight: 600; font-size: .88rem; color: var(--teal-deep); margin-bottom: 7px; }
-    .pipeline-step p { font-size: .78rem; color: var(--text-light); line-height: 1.6; }
+    .pipeline{background:var(--off)}
+    .pipe-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;position:relative}
+    .pipe-steps::before{content:'';position:absolute;top:30px;left:calc(12.5% + 30px);right:calc(12.5% + 30px);height:2px;background:linear-gradient(90deg,var(--teal),var(--lime))}
+    .ps{text-align:center;padding:0 10px}
+    .ps-circle{width:60px;height:60px;border-radius:50%;background:var(--teal-deep);color:var(--white);font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;position:relative;z-index:1;border:3px solid var(--lime);transition:transform .3s}
+    .ps:hover .ps-circle{transform:scale(1.1)}
+    .ps h4{font-weight:600;font-size:.86rem;color:var(--teal-deep);margin-bottom:6px}
+    .ps p{font-size:.77rem;color:var(--light);line-height:1.6}
 
     /* ── TEAM ── */
-    .team-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 72px; align-items: start; margin-top: 56px; }
-    .team-photo-block { background: linear-gradient(155deg,var(--teal-deep),var(--teal-dark)); border-radius: 20px; padding: 44px 36px; text-align: center; color: var(--white); }
-    .team-avatar { width: 96px; height: 96px; border-radius: 50%; background: rgba(157,200,60,.2); border: 3px solid var(--lime); margin: 0 auto 22px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--lime-light); }
-    .team-name { font-family: 'Playfair Display', serif; font-size: 1.25rem; margin-bottom: 4px; }
-    .team-title { font-size: .8rem; color: rgba(255,255,255,.6); margin-bottom: 20px; }
-    .credential { background: rgba(255,255,255,.08); border-radius: 6px; padding: 8px 12px; font-size: .76rem; color: rgba(255,255,255,.75); text-align: left; margin-bottom: 8px; }
-    .team-bio p { font-size: .98rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 18px; }
-    .locations { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
-    .location-box { border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
-    .loc-country { font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); margin-bottom: 7px; display: block; }
-    .location-box address { font-style: normal; font-size: .83rem; color: var(--text-mid); line-height: 1.6; }
+    .team{background:var(--white)}
+    .team-grid{display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:start;margin-top:48px}
+    .team-card{background:linear-gradient(155deg,var(--teal-deep),var(--teal-dark));border-radius:20px;padding:40px 32px;text-align:center;color:var(--white);position:relative;overflow:hidden}
+    .team-card::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=50&fit=crop') center/cover no-repeat;opacity:.08}
+    .team-avatar{width:90px;height:90px;border-radius:50%;background:rgba(157,200,60,.2);border:3px solid var(--lime);margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--lime-light);position:relative;z-index:1}
+    .team-name{font-family:'Playfair Display',serif;font-size:1.2rem;position:relative;z-index:1}
+    .team-role{font-size:.78rem;color:rgba(255,255,255,.6);margin-bottom:18px;position:relative;z-index:1}
+    .cred{background:rgba(255,255,255,.08);border-radius:6px;padding:7px 11px;font-size:.74rem;color:rgba(255,255,255,.75);text-align:left;margin-bottom:7px;position:relative;z-index:1}
+    .team-bio p{font-size:.96rem;color:var(--mid);line-height:1.8;margin-bottom:16px}
+    .locs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+    .loc{border:1px solid var(--border);border-radius:10px;padding:16px}
+    .loc-flag{font-size:.67rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:6px;display:block}
+    .loc address{font-style:normal;font-size:.81rem;color:var(--mid);line-height:1.6}
 
-    /* ── INVESTMENT ── */
-    .investment { background: linear-gradient(145deg,var(--teal-deep),#0A3840); }
-    .investment .section-label { color: var(--lime-light); }
-    .investment .section-title { color: var(--white); }
-    .investment .section-lead { color: rgba(255,255,255,.72); max-width: 100%; }
-    .invest-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 56px; }
-    .use-item { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; transition: background .2s; }
-    .use-item:hover { background: rgba(255,255,255,.09); }
-    .use-icon { font-size: 1.2rem; width: 42px; height: 42px; background: rgba(157,200,60,.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
-    .use-text h5 { font-size: .88rem; font-weight: 600; color: var(--white); margin-bottom: 3px; }
-    .use-text p { font-size: .76rem; color: rgba(255,255,255,.45); }
-    .use-pct { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--lime-light); }
-    .term-card { background: rgba(255,255,255,.05); border: 1px solid rgba(157,200,60,.2); border-radius: 12px; padding: 26px; margin-bottom: 18px; }
-    .term-label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--lime); margin-bottom: 9px; display: block; }
-    .term-value { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--white); margin-bottom: 5px; }
-    .term-note { font-size: .78rem; color: rgba(255,255,255,.45); line-height: 1.5; }
+    /* ── INVESTMENT CTA ── */
+    .invest-cta{background:linear-gradient(145deg,var(--teal-deep),#0A3840);position:relative;overflow:hidden}
+    .invest-cta::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1600&q=50&fit=crop') center/cover no-repeat;opacity:.06}
+    .invest-cta .sec-tag{color:var(--lime-light)}
+    .invest-cta .sec-title{color:var(--white)}
+    .invest-cta .sec-lead{color:rgba(255,255,255,.72);max-width:100%}
+    .inv-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;position:relative;z-index:1}
+    .term-c{background:rgba(255,255,255,.05);border:1px solid rgba(157,200,60,.2);border-radius:12px;padding:24px;margin-bottom:16px}
+    .term-lbl{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:8px;display:block}
+    .term-val{font-family:'Playfair Display',serif;font-size:1.65rem;color:var(--white);margin-bottom:4px}
+    .term-note{font-size:.76rem;color:rgba(255,255,255,.45);line-height:1.5}
 
     /* ── CONTACT ── */
-    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
-    .contact-form { background: var(--cream); border-radius: 20px; padding: 44px; }
-    .contact-form h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--teal-deep); margin-bottom: 6px; }
-    .form-sub { font-size: .86rem; color: var(--text-light); margin-bottom: 28px; }
-    .form-group { margin-bottom: 18px; }
-    .form-group label { display: block; font-size: .8rem; font-weight: 600; color: var(--text-dark); margin-bottom: 5px; }
-    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 11px 14px; border: 1px solid var(--border); border-radius: 8px; font-size: .88rem; font-family: inherit; color: var(--text-dark); background: var(--white); transition: border-color .2s; outline: none; }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--teal); }
-    .form-group textarea { resize: vertical; min-height: 90px; }
-    .form-submit { width: 100%; background: var(--teal-deep); color: var(--white); border: none; padding: 15px; border-radius: 8px; font-size: .93rem; font-weight: 700; cursor: pointer; font-family: inherit; letter-spacing: .03em; transition: background .2s; margin-top: 6px; }
-    .form-submit:hover { background: var(--teal-dark); }
-    .contact-detail { display: flex; gap: 14px; margin-bottom: 22px; align-items: flex-start; }
-    .cd-icon { width: 38px; height: 38px; background: var(--cream); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
-    .cd-text strong { display: block; font-size: .8rem; font-weight: 700; color: var(--text-dark); margin-bottom: 2px; }
-    .cd-text span { font-size: .86rem; color: var(--text-mid); }
+    .contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+    .cf{background:var(--cream);border-radius:20px;padding:40px}
+    .cf h3{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--teal-deep);margin-bottom:5px}
+    .cf-sub{font-size:.84rem;color:var(--light);margin-bottom:24px}
+    .fg{margin-bottom:16px}
+    .fg label{display:block;font-size:.78rem;font-weight:600;color:var(--text);margin-bottom:4px}
+    .fg input,.fg select,.fg textarea{width:100%;padding:10px 13px;border:1px solid var(--border);border-radius:8px;font-size:.87rem;font-family:inherit;color:var(--text);background:var(--white);transition:border-color .2s;outline:none}
+    .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--teal)}
+    .fg textarea{resize:vertical;min-height:85px}
+    .f-submit{width:100%;background:var(--teal-deep);color:var(--white);border:none;padding:14px;border-radius:8px;font-size:.92rem;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s;margin-top:4px}
+    .f-submit:hover{background:var(--teal-dark)}
+    .cd{display:flex;gap:12px;margin-bottom:18px;align-items:flex-start}
+    .cd-icon{width:36px;height:36px;background:var(--cream);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+    .cd strong{display:block;font-size:.78rem;font-weight:700;color:var(--text);margin-bottom:1px}
+    .cd span{font-size:.84rem;color:var(--mid)}
 
     /* ── FOOTER ── */
-    footer { background: var(--teal-deep); padding: 44px clamp(20px,5vw,80px); text-align: center; border-top: 1px solid rgba(157,200,60,.2); }
-    footer p { font-size: .78rem; color: rgba(255,255,255,.4); margin-top: 10px; }
+    footer{background:var(--teal-deep);padding:40px clamp(16px,5vw,80px);text-align:center;border-top:1px solid rgba(157,200,60,.2)}
+    footer p{font-size:.76rem;color:rgba(255,255,255,.38);margin-top:8px}
 
-    /* ── LANG SWITCHING ── */
-    [data-lang] { display: none; }
-    .lang-en [data-lang="en"] { display: block; }
-    .lang-de [data-lang="de"] { display: block; }
-    .lang-en [data-lang="en"].inline { display: inline; }
-    .lang-de [data-lang="de"].inline { display: inline; }
-    .lang-en .hero-actions[data-lang="en"],
-    .lang-de .hero-actions[data-lang="de"] { display: flex; }
+    /* ── LANG SWITCHES ── */
+    [data-lang]{display:none}
+    .lang-en [data-lang="en"]{display:block}
+    .lang-de [data-lang="de"]{display:block}
+    .lang-en [data-lang="en"].i{display:inline}
+    .lang-de [data-lang="de"].i{display:inline}
+    .lang-en .hero-actions[data-lang="en"],.lang-de .hero-actions[data-lang="de"]{display:flex}
 
     /* ── REVEAL ── */
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-    .reveal-delay-1 { transition-delay: .1s; }
-    .reveal-delay-2 { transition-delay: .2s; }
-    .reveal-delay-3 { transition-delay: .3s; }
+    .rv{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
+    .rv.vis{opacity:1;transform:none}
+    .rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 960px) {
-      .hero-inner, .opp-grid, .ethical-grid, .team-grid, .invest-layout, .contact-inner { grid-template-columns: 1fr; gap: 44px; }
-      .solution-grid, .products-grid, .phil-trio { grid-template-columns: 1fr 1fr; }
-      .pipeline-steps { grid-template-columns: 1fr 1fr; }
-      .pipeline-steps::before { display: none; }
-      .impact-banner-inner { grid-template-columns: 1fr 1fr; }
-      .nav-links { display: none; }
+    @media(max-width:960px){
+      .hero-inner,.ethical-grid,.sol-grid,.donut-layout,.phil-grid,.team-grid,.inv-layout,.contact-inner{grid-template-columns:1fr;gap:40px}
+      .charts-grid,.prod-grid,.tr-grid{grid-template-columns:1fr 1fr}
+      .ticker-inner{grid-template-columns:1fr 1fr}
+      .nav-links{display:none}
     }
-    @media (max-width: 580px) {
-      .solution-grid, .products-grid, .phil-trio, .pipeline-steps, .hero-stats, .metrics-grid, .locations, .impact-banner-inner { grid-template-columns: 1fr; }
+    @media(max-width:580px){
+      .charts-grid,.prod-grid,.tr-grid,.pipe-steps,.hero-stats,.locs,.ticker-inner,.phil-cards{grid-template-columns:1fr}
+      .pipe-steps::before{display:none}
+      .phil-c:last-child{grid-column:span 1}
     }
   </style>
 </head>
 <body class="lang-en">
 
-<!-- ── LANGUAGE BAR ── -->
+<!-- LANG BAR -->
 <div class="lang-bar">
-  <div class="logo-wrap">
-    <!-- Logo SVG reconstructed from brand -->
-    <svg width="130" height="34" viewBox="0 0 130 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Zentrum Tier">
-      <!-- orbital rings -->
-      <ellipse cx="18" cy="17" rx="16" ry="7" stroke="#9DC83C" stroke-width="1.8" fill="none" transform="rotate(-30 18 17)" opacity="0.9"/>
-      <ellipse cx="18" cy="17" rx="16" ry="7" stroke="#2AACBA" stroke-width="1.8" fill="none" transform="rotate(30 18 17)" opacity="0.9"/>
-      <ellipse cx="18" cy="17" rx="16" ry="7" stroke="#C4E060" stroke-width="1.4" fill="none" opacity="0.5"/>
-      <!-- centre dot -->
-      <circle cx="18" cy="17" r="2.5" fill="#9DC83C"/>
-      <!-- wordmark -->
-      <text x="40" y="22" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#2AACBA" letter-spacing="0.3">zentrum</text>
-      <text x="99" y="22" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#9DC83C" letter-spacing="0.3">tier</text>
-    </svg>
-  </div>
+  <svg width="126" height="32" viewBox="0 0 126 32" fill="none">
+    <ellipse cx="16" cy="16" rx="14" ry="6" stroke="#9DC83C" stroke-width="1.7" fill="none" transform="rotate(-30 16 16)" opacity=".9"/>
+    <ellipse cx="16" cy="16" rx="14" ry="6" stroke="#2AACBA" stroke-width="1.7" fill="none" transform="rotate(30 16 16)" opacity=".9"/>
+    <ellipse cx="16" cy="16" rx="14" ry="6" stroke="#C4E060" stroke-width="1.2" fill="none" opacity=".45"/>
+    <circle cx="16" cy="16" r="2.4" fill="#9DC83C"/>
+    <text x="36" y="21" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" fill="#2AACBA" letter-spacing=".3">zentrum</text>
+    <text x="94" y="21" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" fill="#9DC83C" letter-spacing=".3">tier</text>
+  </svg>
   <div class="lang-toggle">
     <button class="lang-btn active" onclick="setLang('en')">EN</button>
     <button class="lang-btn" onclick="setLang('de')">DE</button>
   </div>
 </div>
 
-<!-- ── NAV ── -->
+<!-- NAV -->
 <nav class="nav">
   <ul class="nav-links">
-    <li><a href="#ethical" data-lang="en" class="inline">Why Now</a><a href="#ethical" data-lang="de" class="inline">Warum Jetzt</a></li>
-    <li><a href="#opportunity" data-lang="en" class="inline">Market</a><a href="#opportunity" data-lang="de" class="inline">Markt</a></li>
-    <li><a href="#training" data-lang="en" class="inline">Training</a><a href="#training" data-lang="de" class="inline">Ausbildung</a></li>
-    <li><a href="#products" data-lang="en" class="inline">Products</a><a href="#products" data-lang="de" class="inline">Produkte</a></li>
-    <li><a href="#team" data-lang="en" class="inline">Team</a><a href="#team" data-lang="de" class="inline">Team</a></li>
-    <li><a href="#investment" data-lang="en" class="inline">Investment</a><a href="#investment" data-lang="de" class="inline">Investment</a></li>
+    <li><a href="#market" data-lang="en" class="i">Market</a><a href="#market" data-lang="de" class="i">Markt</a></li>
+    <li><a href="#projections" data-lang="en" class="i">Projections</a><a href="#projections" data-lang="de" class="i">Projektionen</a></li>
+    <li><a href="#products" data-lang="en" class="i">Products</a><a href="#products" data-lang="de" class="i">Produkte</a></li>
+    <li><a href="#team" data-lang="en" class="i">Team</a><a href="#team" data-lang="de" class="i">Team</a></li>
+    <li><a href="#investment" data-lang="en" class="i">Investment</a><a href="#investment" data-lang="de" class="i">Investment</a></li>
   </ul>
   <a href="#contact" class="nav-cta">
-    <span data-lang="en" class="inline">Request Deck</span>
-    <span data-lang="de" class="inline">Unterlagen anfordern</span>
+    <span data-lang="en" class="i">Request Deck</span>
+    <span data-lang="de" class="i">Unterlagen anfordern</span>
   </a>
 </nav>
 
-<!-- ── HERO ── -->
+<!-- HERO -->
 <section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-orb o1"></div>
+  <div class="hero-orb o2"></div>
   <div class="hero-inner">
-    <div class="hero-content">
+    <div>
       <div data-lang="en">
-        <div class="hero-badge"><span></span> Institutional Investment Opportunity</div>
+        <div class="hero-badge"><span></span>Institutional Investment Opportunity</div>
         <h1>The Future of Animal Health is <em>Natural, Proven</em> and Ready to Scale</h1>
-        <p class="hero-sub">Zentrum Tier has already invested over €6 million in building Europe's most advanced integrative veterinary centre. Now we are opening the next chapter: a proprietary TCM veterinary brand reaching millions of pet owners across Europe.</p>
-        <div class="hero-actions">
-          <a href="#investment" class="btn-primary">View Investment Terms</a>
-          <a href="#ethical" class="btn-secondary">Why This Matters</a>
-        </div>
+        <p class="hero-sub">Zentrum Tier has already invested over €6 million building Europe's most advanced integrative veterinary centre. Three scalable revenue streams. Nine proven products. A €2.1B market with no established leader.</p>
+        <div class="hero-actions"><a href="#projections" class="btn-p">See Growth Projections</a><a href="#market" class="btn-s">Explore the Market</a></div>
       </div>
       <div data-lang="de">
-        <div class="hero-badge"><span></span> Institutionelle Investitionsmöglichkeit</div>
+        <div class="hero-badge"><span></span>Institutionelle Investitionsmöglichkeit</div>
         <h1>Die Zukunft der Tiergesundheit ist <em>natürlich, bewährt</em> und skalierungsbereit</h1>
-        <p class="hero-sub">Zentrum Tier hat bereits über 6 Millionen Euro in den Aufbau Europas fortschrittlichsten integrativen Veterinärzentrums investiert. Jetzt öffnen wir das nächste Kapitel: eine proprietäre TCM-Veterinärmarke für Millionen Tierbesitzer in Europa.</p>
-        <div class="hero-actions">
-          <a href="#investment" class="btn-primary">Investitionsbedingungen ansehen</a>
-          <a href="#ethical" class="btn-secondary">Warum das wichtig ist</a>
-        </div>
+        <p class="hero-sub">Zentrum Tier hat bereits über 6 Mio. € in den Aufbau Europas fortschrittlichsten integrativen Veterinärzentrums investiert. Drei skalierbare Umsatzströme. Neun bewährte Produkte. Ein €2,1-Mrd.-Markt ohne etablierten Marktführer.</p>
+        <div class="hero-actions"><a href="#projections" class="btn-p">Wachstumsprojektionen ansehen</a><a href="#market" class="btn-s">Markt erkunden</a></div>
       </div>
     </div>
-
     <div class="hero-stats">
-      <div class="stat-card highlight reveal">
-        <span class="stat-num">€6M+</span>
-        <span class="stat-label" data-lang="en">Already invested in research, infrastructure and clinical development</span>
-        <span class="stat-label" data-lang="de">Bereits investiert in Forschung, Infrastruktur und klinische Entwicklung</span>
-      </div>
-      <div class="stat-card reveal reveal-delay-1">
-        <span class="stat-num">20+</span>
-        <span class="stat-label" data-lang="en">Years of clinical expertise — results proven in daily practice</span>
-        <span class="stat-label" data-lang="de">Jahre klinische Expertise, täglich in der Praxis bewährt</span>
-      </div>
-      <div class="stat-card reveal reveal-delay-2">
-        <span class="stat-num">9</span>
-        <span class="stat-label" data-lang="en">Proprietary TCM products developed, tested and ready to scale</span>
-        <span class="stat-label" data-lang="de">Proprietäre TCM-Produkte entwickelt, getestet und skalierungsbereit</span>
-      </div>
-      <div class="stat-card reveal reveal-delay-3">
-        <span class="stat-num">€2.1B</span>
-        <span class="stat-label" data-lang="en">European alternative veterinary medicine market by 2030</span>
-        <span class="stat-label" data-lang="de">Europäischer Markt für alternative Veterinärmedizin bis 2030</span>
-      </div>
+      <div class="sc hl rv"><span class="sc-num" data-count="6">0</span><span class="sc-lbl" data-lang="en">Million € already invested by the founder in infrastructure, R&D and clinical development</span><span class="sc-lbl" data-lang="de">Mio. € bereits von der Gründerin in Infrastruktur, F&E und klinische Entwicklung investiert</span></div>
+      <div class="sc rv d1"><span class="sc-num" data-count="20">0</span><span class="sc-lbl" data-lang="en">Years of clinical expertise — results proven in daily practice</span><span class="sc-lbl" data-lang="de">Jahre klinische Expertise, täglich in der Praxis bewährt</span></div>
+      <div class="sc rv d2"><span class="sc-num" data-count="9">0</span><span class="sc-lbl" data-lang="en">Proprietary TCM products developed, tested and ready to scale</span><span class="sc-lbl" data-lang="de">Eigene TCM-Produkte entwickelt, getestet und skalierungsbereit</span></div>
+      <div class="sc rv d3"><span class="sc-num">€2.1B</span><span class="sc-lbl" data-lang="en">Target European market by 2030 — growing at 7.4% annually</span><span class="sc-lbl" data-lang="de">Zieleuro­päischer Markt bis 2030 — wächst jährlich um 7,4 %</span></div>
     </div>
   </div>
 </section>
 
-<!-- ── IMPACT BANNER ── -->
-<div class="impact-banner">
-  <div class="impact-banner-inner">
-    <div class="impact-item reveal">
-      <span class="i-num">€6M+</span>
-      <span class="i-label" data-lang="en">Invested by the founder — committed capital demonstrating real conviction</span>
-      <span class="i-label" data-lang="de">Von der Gründerin investiert — echtes Commitment, kein Konzept</span>
-    </div>
-    <div class="impact-item reveal reveal-delay-1">
-      <span class="i-num">7.4%</span>
-      <span class="i-label" data-lang="en">Annual market growth rate for alternative veterinary medicine in Europe</span>
-      <span class="i-label" data-lang="de">Jährliches Marktwachstum alternative Veterinärmedizin in Europa</span>
-    </div>
-    <div class="impact-item reveal reveal-delay-2">
-      <span class="i-num">2</span>
-      <span class="i-label" data-lang="en">Active clinical centres in Austria and Germany with established patient base</span>
-      <span class="i-label" data-lang="de">Aktive klinische Standorte in Österreich und Deutschland</span>
-    </div>
-    <div class="impact-item reveal reveal-delay-3">
-      <span class="i-num">0</span>
-      <span class="i-label" data-lang="en">Established European TCM veterinary brands at scale — the space is open</span>
-      <span class="i-label" data-lang="de">Etablierte europäische TCM-Veterinärmarken — der Markt ist offen</span>
-    </div>
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <div class="tk rv"><span class="tk-num" data-count="6">0</span><span class="tk-lbl" data-lang="en">Million € founder-invested — real capital that de-risks the co-investment</span><span class="tk-lbl" data-lang="de">Mio. € von der Gründerin investiert — echtes Kapital, das Co-Investment entrisikiert</span></div>
+    <div class="tk rv d1"><span class="tk-num">7.4%</span><span class="tk-lbl" data-lang="en">Annual market growth rate for alternative veterinary medicine in Europe (source: Grand View Research)</span><span class="tk-lbl" data-lang="de">Jährliches Marktwachstum alternative Veterinärmedizin in Europa</span></div>
+    <div class="tk rv d2"><span class="tk-num">+25%</span><span class="tk-lbl" data-lang="en">European pet ownership growth in 5 years — structural demand driver</span><span class="tk-lbl" data-lang="de">Wachstum der Heimtierhaltung in Europa in 5 Jahren — struktureller Nachfragetreiber</span></div>
+    <div class="tk rv d3"><span class="tk-num">0</span><span class="tk-lbl" data-lang="en">Established European TCM veterinary brands at scale — the space is entirely open</span><span class="tk-lbl" data-lang="de">Etablierte europäische TCM-Veterinärmarken — der Markt ist vollständig offen</span></div>
   </div>
 </div>
 
-<!-- ── ETHICAL & ECONOMIC CASE ── -->
+<!-- MARKET CHARTS -->
+<section class="charts-section" id="market">
+  <div class="container">
+    <div class="rv">
+      <span class="sec-tag" data-lang="en">Market Data</span>
+      <span class="sec-tag" data-lang="de">Marktdaten</span>
+      <h2 class="sec-title" data-lang="en">A high-growth market with no European category leader</h2>
+      <h2 class="sec-title" data-lang="de">Ein wachstumsstarker Markt ohne europäischen Kategorieführer</h2>
+      <p class="sec-lead" data-lang="en">The European alternative veterinary medicine market is growing faster than conventional pharma, driven by pet humanisation, antibiotic resistance concerns and rising consumer willingness to pay for natural treatments.</p>
+      <p class="sec-lead" data-lang="de">Der europäische Markt für alternative Veterinärmedizin wächst schneller als die konventionelle Pharmaindustrie, getrieben von Tiervermenschlichung, Antibiotikaresistenzbedenken und wachsender Zahlungsbereitschaft.</p>
+    </div>
+    <div class="charts-grid">
+
+      <!-- Bar chart: market size -->
+      <div class="chart-card rv d1">
+        <h3 data-lang="en">EU Alternative Vet Medicine Market (€B)</h3>
+        <h3 data-lang="de">EU Markt alternative Veterinärmedizin (Mrd. €)</h3>
+        <p data-lang="en">Projected market growth 2022–2030 at 7.4% CAGR</p>
+        <p data-lang="de">Prognostiziertes Marktwachstum 2022–2030 bei 7,4 % CAGR</p>
+        <div class="bar-chart" id="barChart">
+          <div class="bar-col"><div class="bar" style="background:linear-gradient(180deg,var(--teal),var(--teal-dark));height:0" data-target="52" data-val="€1.09B"></div><span class="bar-year">2022</span></div>
+          <div class="bar-col"><div class="bar" style="background:linear-gradient(180deg,var(--teal),var(--teal-dark));height:0" data-target="59" data-val="€1.17B"></div><span class="bar-year">2023</span></div>
+          <div class="bar-col"><div class="bar" style="background:linear-gradient(180deg,var(--teal),var(--teal-dark));height:0" data-target="64" data-val="€1.26B"></div><span class="bar-year">2024</span></div>
+          <div class="bar-col"><div class="bar" style="background:linear-gradient(180deg,#1e9aaa,var(--teal));height:0" data-target="70" data-val="€1.35B"></div><span class="bar-year">2025</span></div>
+          <div class="bar-col"><div class="bar" style="background:linear-gradient(180deg,#3ab86a,var(--teal));height:0" data-target="78" data-val="€1.45B"></div><span class="bar-year">2026</span></div>
+          <div class="bar-col"><div class="bar" style="background:linear-gradient(180deg,var(--lime),#2aacba);height:0" data-target="86" data-val="€1.56B"></div><span class="bar-year">2027</span></div>
+          <div class="bar-col"><div class="bar" style="background:linear-gradient(180deg,var(--lime),#3ab86a);height:0" data-target="93" data-val="€1.67B"></div><span class="bar-year">2028</span></div>
+          <div class="bar-col"><div class="bar" style="background:linear-gradient(180deg,var(--lime),var(--lime-light));height:0" data-target="100" data-val="€1.80B"></div><span class="bar-year">2029</span></div>
+          <div class="bar-col"><div class="bar" style="background:linear-gradient(180deg,var(--lime-light),var(--lime));height:0" data-target="110" data-val="€2.10B"></div><span class="bar-year">2030</span></div>
+        </div>
+      </div>
+
+      <!-- Line chart: Zentrum Tier revenue streams -->
+      <div class="chart-card rv d2">
+        <h3 data-lang="en">Zentrum Tier — 3 Revenue Streams Projection (€M)</h3>
+        <h3 data-lang="de">Zentrum Tier — 3 Umsatzströme Projektion (Mio. €)</h3>
+        <p data-lang="en">Conservative scenario: capturing 0.5% of the European market by Year 5</p>
+        <p data-lang="de">Konservatives Szenario: 0,5 % Marktanteil in Europa bis Jahr 5</p>
+        <div class="chart-wrap">
+          <svg class="line-chart-svg" id="lineChart" viewBox="0 0 340 160" preserveAspectRatio="xMidYMid meet">
+            <!-- grid lines -->
+            <line x1="40" y1="10" x2="40" y2="140" stroke="#e0e8e8" stroke-width="1"/>
+            <line x1="40" y1="140" x2="330" y2="140" stroke="#e0e8e8" stroke-width="1"/>
+            <line x1="40" y1="107" x2="330" y2="107" stroke="#e0e8e8" stroke-width=".7" stroke-dasharray="4,3"/>
+            <line x1="40" y1="74" x2="330" y2="74" stroke="#e0e8e8" stroke-width=".7" stroke-dasharray="4,3"/>
+            <line x1="40" y1="41" x2="330" y2="41" stroke="#e0e8e8" stroke-width=".7" stroke-dasharray="4,3"/>
+            <!-- y labels -->
+            <text x="34" y="144" fill="#9ab" font-size="8" text-anchor="end">0</text>
+            <text x="34" y="111" fill="#9ab" font-size="8" text-anchor="end">3M</text>
+            <text x="34" y="78" fill="#9ab" font-size="8" text-anchor="end">6M</text>
+            <text x="34" y="45" fill="#9ab" font-size="8" text-anchor="end">9M</text>
+            <!-- x labels -->
+            <text x="40" y="154" fill="#9ab" font-size="8" text-anchor="middle">Y1</text>
+            <text x="107" y="154" fill="#9ab" font-size="8" text-anchor="middle">Y2</text>
+            <text x="174" y="154" fill="#9ab" font-size="8" text-anchor="middle">Y3</text>
+            <text x="241" y="154" fill="#9ab" font-size="8" text-anchor="middle">Y4</text>
+            <text x="308" y="154" fill="#9ab" font-size="8" text-anchor="middle">Y5</text>
+            <!-- Products line: 0.3 → 1.2 → 3.5 → 6.5 → 9.5M -->
+            <path id="lp1" d="M40,137 L107,127 L174,101 L241,69 L308,36" fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="400" stroke-dashoffset="400"/>
+            <!-- Education line: 0.3 → 0.5 → 0.8 → 1.1 → 1.5M -->
+            <path id="lp2" d="M40,137 L107,134 L174,131 L241,127 L308,122" fill="none" stroke="var(--lime)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="400" stroke-dashoffset="400"/>
+            <!-- Research/licensing: 0 → 0.2 → 0.8 → 1.5 → 2.5M -->
+            <path id="lp3" d="M40,140 L107,138 L174,131 L241,122 L308,107" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="400" stroke-dashoffset="400"/>
+            <!-- dots -->
+            <circle cx="308" cy="36" r="4" fill="var(--teal)"/>
+            <circle cx="308" cy="122" r="4" fill="var(--lime)"/>
+            <circle cx="308" cy="107" r="4" fill="#f59e0b"/>
+          </svg>
+        </div>
+        <div class="legend">
+          <div class="leg-item"><div class="leg-dot" style="background:var(--teal)"></div><span data-lang="en">TCM Product Brand</span><span data-lang="de">TCM-Produktmarke</span></div>
+          <div class="leg-item"><div class="leg-dot" style="background:var(--lime)"></div><span data-lang="en">Education Platform</span><span data-lang="de">Ausbildungsplattform</span></div>
+          <div class="leg-item"><div class="leg-dot" style="background:#f59e0b"></div><span data-lang="en">Research &amp; Licensing</span><span data-lang="de">Forschung &amp; Lizenzierung</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTIONS TABLE -->
+<section class="proj-section" id="projections">
+  <div class="container">
+    <div class="rv">
+      <span class="sec-tag" data-lang="en">Revenue Projections by Stream</span>
+      <span class="sec-tag" data-lang="de">Umsatzprojektionen nach Geschäftsbereich</span>
+      <h2 class="sec-title" data-lang="en">Three independent growth engines — one unified brand</h2>
+      <h2 class="sec-title" data-lang="de">Drei unabhängige Wachstumsmotoren — eine vereinte Marke</h2>
+      <p class="sec-lead" data-lang="en">Each revenue stream is independently scalable. Products reach European distribution. Education expands digitally. Research generates licensing and partnership income. The combination creates a resilient, multi-channel business.</p>
+      <p class="sec-lead" data-lang="de">Jeder Umsatzstrom ist unabhängig skalierbar. Produkte erreichen den europäischen Vertrieb. Ausbildung expandiert digital. Forschung generiert Lizenzierungs- und Partnerschaftseinkommen.</p>
+    </div>
+    <div class="proj-table-wrap rv d1">
+      <table>
+        <thead>
+          <tr>
+            <th data-lang="en">Revenue Stream</th><th data-lang="de">Umsatzstrom</th>
+            <th>Year 1</th><th>Year 2</th><th>Year 3</th><th>Year 4</th><th>Year 5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="td-stream"><div class="stream-dot" style="background:var(--teal)"></div><span data-lang="en">TCM Product Brand</span><span data-lang="de">TCM-Produktmarke</span></div></td>
+            <td>€300K</td><td>€1.2M</td><td>€3.5M</td><td>€6.5M</td><td>€9.5M</td>
+          </tr>
+          <tr>
+            <td><div class="td-stream"><div class="stream-dot" style="background:var(--lime)"></div><span data-lang="en">Education Platform</span><span data-lang="de">Ausbildungsplattform</span></div></td>
+            <td>€300K</td><td>€450K</td><td>€700K</td><td>€1.0M</td><td>€1.5M</td>
+          </tr>
+          <tr>
+            <td><div class="td-stream"><div class="stream-dot" style="background:#f59e0b"></div><span data-lang="en">Research &amp; Licensing</span><span data-lang="de">Forschung &amp; Lizenzierung</span></div></td>
+            <td>—</td><td>€200K</td><td>€800K</td><td>€1.5M</td><td>€2.5M</td>
+          </tr>
+          <tr>
+            <td><div class="td-stream"><div class="stream-dot" style="background:var(--teal-deep)"></div><b data-lang="en">Total Revenue</b><b data-lang="de">Gesamtumsatz</b></div></td>
+            <td><b>€600K</b></td><td><b>€1.85M</b></td><td><b>€5.0M</b></td><td><b>€9.0M</b></td><td><b>€13.5M</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="proj-note rv d2" data-lang="en">Conservative scenario assuming 0.5% market penetration in DACH by Year 5 (addressable market €2.1B by 2030). These are indicative projections, not guarantees. Full financial model available in the investment memorandum.</p>
+    <p class="proj-note rv d2" data-lang="de">Konservatives Szenario bei 0,5 % Marktdurchdringung im DACH-Raum bis Jahr 5 (adressierbarer Markt €2,1 Mrd. bis 2030). Indikative Projektionen. Vollständiges Finanzmodell im Investment-Memorandum.</p>
+  </div>
+</section>
+
+<!-- ETHICAL -->
 <section class="ethical" id="ethical">
   <div class="container">
+    <div class="rv" style="position:relative;z-index:1">
+      <span class="sec-tag" data-lang="en">Why This Investment Matters</span>
+      <span class="sec-tag" data-lang="de">Warum diese Investition wichtig ist</span>
+      <h2 class="sec-title" data-lang="en">Good for animals. Good for the planet. Exceptional returns.</h2>
+      <h2 class="sec-title" data-lang="de">Gut für Tiere. Gut für den Planeten. Außergewöhnliche Renditen.</h2>
+    </div>
     <div class="ethical-grid">
-      <div class="reveal">
-        <span class="section-label" data-lang="en">The Case for This Investment</span>
-        <span class="section-label" data-lang="de">Die Investitionsthese</span>
-        <h2 class="section-title" data-lang="en">Good for animals. Good for the planet. Exceptional for investors.</h2>
-        <h2 class="section-title" data-lang="de">Gut für Tiere. Gut für den Planeten. Außergewöhnlich für Investoren.</h2>
-        <p class="section-lead" data-lang="en">The convergence of growing pet humanisation, antibiotic resistance concerns, and rising demand for evidence-based natural treatments creates a market inflection point that rarely appears twice. Zentrum Tier is positioned exactly at that intersection — with the science, the products and the reputation already built.</p>
-        <p class="section-lead" data-lang="de">Das Zusammentreffen von wachsender Vermenschlichung von Tieren, Bedenken zu Antibiotikaresistenzen und steigender Nachfrage nach naturheilkundlichen Behandlungen schafft einen Marktwendepunkt, der selten zweimal auftritt. Zentrum Tier steht genau an dieser Schnittstelle — mit der Wissenschaft, den Produkten und dem Ruf, die bereits aufgebaut wurden.</p>
+      <div class="rv d1">
+        <p class="sec-lead" data-lang="en">Institutional investors today face a rare combination: a market in structural growth, a mission that aligns with ESG mandates, and a founding team that has already committed €6M of their own capital. The risk profile of this investment is substantially de-risked by the proven clinical operation, existing products and active distribution network.</p>
+        <p class="sec-lead" data-lang="de">Institutionelle Investoren finden hier eine seltene Kombination: einen Markt im strukturellen Wachstum, eine Mission, die ESG-Anforderungen entspricht, und ein Gründerteam, das bereits 6 Mio. € eigenes Kapital eingesetzt hat. Das Risikoprofil wird durch den bewährten klinischen Betrieb, bestehende Produkte und ein aktives Vertriebsnetzwerk erheblich reduziert.</p>
+        <br>
+        <p class="sec-lead" data-lang="en">This is not a bet on a trend. It is co-investing alongside a proven operator who has already done the hard work — at the moment when scale becomes possible.</p>
+        <p class="sec-lead" data-lang="de">Dies ist keine Wette auf einen Trend. Es ist ein Co-Investment neben einem bewährten Betreiber, der die schwere Arbeit bereits getan hat — in dem Moment, in dem Skalierung möglich wird.</p>
       </div>
-      <div class="ethical-cards reveal reveal-delay-1">
-        <div class="ethical-card">
-          <div class="ec-icon">🐾</div>
-          <div class="ec-text">
-            <h4 data-lang="en">Animal Welfare as a Core Value</h4>
-            <h4 data-lang="de">Tierwohl als Kernwert</h4>
-            <p data-lang="en">Every product and therapy is designed to improve quality of life and reduce suffering — without the side effects of conventional pharmaceuticals. Investors participate in a mission that genuinely matters.</p>
-            <p data-lang="de">Jedes Produkt und jede Therapie ist darauf ausgelegt, die Lebensqualität zu verbessern und Leiden zu reduzieren — ohne die Nebenwirkungen konventioneller Pharmazeutika.</p>
-          </div>
-        </div>
-        <div class="ethical-card">
-          <div class="ec-icon">🌱</div>
-          <div class="ec-text">
-            <h4 data-lang="en">Sustainable, Natural Formulations</h4>
-            <h4 data-lang="de">Nachhaltige, natürliche Formulierungen</h4>
-            <p data-lang="en">TCM-based products rely on botanical and natural active ingredients — aligned with the ESG priorities of institutional investors and the expectations of a growing consumer segment.</p>
-            <p data-lang="de">TCM-basierte Produkte basieren auf botanischen und natürlichen Wirkstoffen — im Einklang mit ESG-Prioritäten institutioneller Investoren und den Erwartungen eines wachsenden Verbrauchersegments.</p>
-          </div>
-        </div>
-        <div class="ethical-card">
-          <div class="ec-icon">📈</div>
-          <div class="ec-text">
-            <h4 data-lang="en">Structural Market Tailwinds</h4>
-            <h4 data-lang="de">Strukturelle Marktrückenwinde</h4>
-            <p data-lang="en">Pet ownership across Europe grew 25% in five years. Spending per pet is rising. Owners demand better options. The structural drivers of this market are durable, not cyclical.</p>
-            <p data-lang="de">Die Heimtierhaltung in Europa wuchs in fünf Jahren um 25 %. Die Ausgaben pro Tier steigen. Die strukturellen Treiber dieses Marktes sind dauerhaft, nicht zyklisch.</p>
-          </div>
-        </div>
-        <div class="ethical-card">
-          <div class="ec-icon">🔬</div>
-          <div class="ec-text">
-            <h4 data-lang="en">Science-Backed, Not Trend-Driven</h4>
-            <h4 data-lang="de">Wissenschaftlich fundiert, nicht trendgetrieben</h4>
-            <p data-lang="en">Zentrum Tier's methods are grounded in integrative medicine, combining Western diagnostics with validated Eastern healing systems. This is credibility that competitors cannot manufacture overnight.</p>
-            <p data-lang="de">Die Methoden von Zentrum Tier sind in integrativer Medizin verankert und verbinden westliche Diagnostik mit validierten östlichen Heilsystemen — eine Glaubwürdigkeit, die Wettbewerber nicht über Nacht aufbauen können.</p>
-          </div>
-        </div>
+      <div class="ethical-cards rv d2">
+        <div class="ec"><div class="ec-icon" style="background:#e8f7f0">🐾</div><div><h4 data-lang="en">Animal Welfare at the Core</h4><h4 data-lang="de">Tierwohl als Kernwert</h4><p data-lang="en">Every product improves quality of life and reduces suffering — without the side effects of conventional pharmaceuticals. Investors participate in a mission with genuine impact.</p><p data-lang="de">Jedes Produkt verbessert die Lebensqualität und reduziert Leiden — ohne Nebenwirkungen konventioneller Pharmazeutika.</p></div></div>
+        <div class="ec"><div class="ec-icon" style="background:#f0faf0">🌱</div><div><h4 data-lang="en">ESG-Aligned Formulations</h4><h4 data-lang="de">ESG-konforme Formulierungen</h4><p data-lang="en">Natural, botanical-based active ingredients — fully aligned with the ESG priorities of institutional portfolios and the expectations of European consumers.</p><p data-lang="de">Natürliche, botanisch basierte Wirkstoffe — vollständig im Einklang mit ESG-Prioritäten institutioneller Portfolios.</p></div></div>
+        <div class="ec"><div class="ec-icon" style="background:#fffbe8">📈</div><div><h4 data-lang="en">Structural, Not Cyclical Growth</h4><h4 data-lang="de">Strukturelles, kein zyklisches Wachstum</h4><p data-lang="en">Pet ownership +25% in 5 years. Spend per pet rising. Antibiotic resistance driving demand for alternatives. These are durable secular trends, not passing fashions.</p><p data-lang="de">Heimtierhaltung +25 % in 5 Jahren. Ausgaben pro Tier steigen. Antibiotikaresistenz treibt Nachfrage nach Alternativen. Dauerhafte, säkulare Trends.</p></div></div>
+        <div class="ec"><div class="ec-icon" style="background:#e8f0fa">🔬</div><div><h4 data-lang="en">Science-Backed, Not Trend-Driven</h4><h4 data-lang="de">Wissenschaftlich fundiert</h4><p data-lang="en">Twenty years of clinical data and a €6M R&D investment create a moat that new entrants cannot replicate quickly. Credibility is the scarcest resource in this category.</p><p data-lang="de">20 Jahre klinische Daten und 6 Mio. € F&E schaffen einen Burggraben, den neue Marktteilnehmer nicht schnell replizieren können.</p></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── MARKET OPPORTUNITY ── -->
-<section class="opportunity" id="opportunity">
+<!-- SOLUTION -->
+<section class="solution" id="solution">
   <div class="container">
-    <div class="opp-grid">
-      <div class="reveal">
-        <span class="section-label" data-lang="en">Market Opportunity</span>
-        <span class="section-label" data-lang="de">Marktchance</span>
-        <h2 class="section-title" data-lang="en">A category that doesn't yet have a European leader</h2>
-        <h2 class="section-title" data-lang="de">Eine Kategorie, die noch keinen europäischen Marktführer hat</h2>
-        <p class="section-lead" data-lang="en">The global alternative veterinary medicine market is growing at 7.4% annually and is projected to reach €2.1 billion by 2030. Within Europe, no single brand has established authority in TCM-based veterinary products. Zentrum Tier — with its clinical heritage, trained network of practitioners and nine proven products — is uniquely positioned to claim that space.</p>
-        <p class="section-lead" data-lang="de">Der globale Markt für alternative Veterinärmedizin wächst jährlich um 7,4 % und soll bis 2030 auf 2,1 Milliarden Euro anwachsen. In Europa hat noch keine einzelne Marke Autorität bei TCM-basierten Tierprodukten etabliert. Zentrum Tier ist mit seinem klinischen Erbe, seinem Netzwerk ausgebildeter Praktiker und neun bewährten Produkten einzigartig positioniert.</p>
-      </div>
-      <div class="metrics-grid reveal reveal-delay-1">
-        <div class="metric-box">
-          <span class="metric-num">7.4%</span>
-          <span class="metric-desc" data-lang="en">CAGR of European alternative veterinary medicine market through 2030</span>
-          <span class="metric-desc" data-lang="de">Jährliches Wachstum des europäischen Marktes bis 2030</span>
-        </div>
-        <div class="metric-box">
-          <span class="metric-num">€2.1B</span>
-          <span class="metric-desc" data-lang="en">Projected European market size for alternative veterinary products by 2030</span>
-          <span class="metric-desc" data-lang="de">Prognostizierte Marktgröße alternative Veterinärprodukte in Europa bis 2030</span>
-        </div>
-        <div class="metric-box">
-          <span class="metric-num">+25%</span>
-          <span class="metric-desc" data-lang="en">Growth in European pet ownership in the last five years</span>
-          <span class="metric-desc" data-lang="de">Wachstum der Heimtierhaltung in Europa in den letzten fünf Jahren</span>
-        </div>
-        <div class="metric-box">
-          <span class="metric-num">68%</span>
-          <span class="metric-desc" data-lang="en">European pet owners willing to pay a premium for natural veterinary treatments</span>
-          <span class="metric-desc" data-lang="de">Europäische Tierbesitzer bereit, für natürliche Behandlungen mehr zu zahlen</span>
-        </div>
-      </div>
+    <div class="rv">
+      <span class="sec-tag" data-lang="en">Competitive Advantages</span>
+      <span class="sec-tag" data-lang="de">Wettbewerbsvorteile</span>
+      <h2 class="sec-title" data-lang="en">Three advantages that cannot be bought overnight</h2>
+      <h2 class="sec-title" data-lang="de">Drei Vorteile, die sich nicht über Nacht kaufen lassen</h2>
+    </div>
+    <div class="sol-grid">
+      <div class="sol-card rv"><div class="sol-icon">🔬</div><h3 data-lang="en">20 Years of Clinical Evidence</h3><h3 data-lang="de">20 Jahre klinische Evidenz</h3><p data-lang="en">Two decades of treating cats, dogs and horses generate clinical data and formulation insight no new entrant can replicate. The €6M+ already invested is a barrier, not just a story.</p><p data-lang="de">Zwei Jahrzehnte Behandlung erzeugen klinische Daten, die kein neuer Teilnehmer replizieren kann. Die 6+ Mio. € sind eine Eintrittsbarriere.</p></div>
+      <div class="sol-card rv d1"><div class="sol-icon">🌿</div><h3 data-lang="en">Nine Products Proven in Practice</h3><h3 data-lang="de">Neun in der Praxis bewährte Produkte</h3><p data-lang="en">From joint ointments to wound tinctures and ear drops — every product was developed in clinical use. Proof of concept is documented in thousands of patient cases.</p><p data-lang="de">Von Gelenksalben bis Ohrentropfen — jedes Produkt klinisch entwickelt. Proof of Concept in Tausenden von Patientenfällen dokumentiert.</p></div>
+      <div class="sol-card rv d2"><div class="sol-icon">🎓</div><h3 data-lang="en">A Built-In Distribution Network</h3><h3 data-lang="de">Ein eingebautes Vertriebsnetzwerk</h3><p data-lang="en">Seven training programmes produce certified practitioners across Europe — each a potential prescriber. This professional distribution channel cannot be purchased; it has been cultivated over decades.</p><p data-lang="de">Sieben Ausbildungsprogramme produzieren zertifizierte Praktiker in ganz Europa — jeder ein potenzieller Verschreiber. Dieser Kanal wurde über Jahrzehnte aufgebaut.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ── SOLUTION ── -->
-<section id="solution" style="background: var(--off-white);">
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="container" style="position:relative;z-index:1">
+    <div class="rv">
+      <span class="sec-tag">TCM Product Portfolio</span>
+      <h2 class="sec-title" data-lang="en">Nine products. Ready for European scale.</h2>
+      <h2 class="sec-title" data-lang="de">Neun Produkte. Bereit für europäische Skalierung.</h2>
+      <p class="sec-lead" data-lang="en">The product development phase is complete. Investment funds production scale, EU certification and distribution — not R&D from scratch.</p>
+      <p class="sec-lead" data-lang="de">Die Produktentwicklungsphase ist abgeschlossen. Investitionen finanzieren Produktionsskalierung, EU-Zertifizierung und Vertrieb — keine Entwicklung von null.</p>
+    </div>
+    <div class="prod-grid">
+      <div class="pc rv"><span class="pc-tag" data-lang="en">Musculoskeletal</span><span class="pc-tag" data-lang="de">Bewegungsapparat</span><h4>Loges Salbe</h4><p data-lang="en">Muscle &amp; joint ointment — relieves pain, releases tension</p><p data-lang="de">Muskel- &amp; Gelenkssalbe — lindert Schmerzen, löst Verspannungen</p></div>
+      <div class="pc rv d1"><span class="pc-tag" data-lang="en">Dermatology</span><span class="pc-tag" data-lang="de">Dermatologie</span><h4>Hautfreund</h4><p data-lang="en">Skin care &amp; healing balm — botanical regeneration</p><p data-lang="de">Pflege- und Heilsalbe — botanische Regeneration</p></div>
+      <div class="pc rv d2"><span class="pc-tag" data-lang="en">Joint Health</span><span class="pc-tag" data-lang="de">Gelenkgesundheit</span><h4>Premium Arthrose Öl</h4><p data-lang="en">Arthritis oil — reduces pain, promotes mobility</p><p data-lang="de">Arthrose-Öl — reduziert Schmerzen, fördert Mobilität</p></div>
+      <div class="pc rv"><span class="pc-tag" data-lang="en">Performance</span><span class="pc-tag" data-lang="de">Leistung</span><h4>Muskelgold Massage Öl</h4><p data-lang="en">Premium muscle massage oil — as valuable as gold for muscle tissue</p><p data-lang="de">Premium-Muskelmassageöl — so wertvoll wie Gold</p></div>
+      <div class="pc rv d1"><span class="pc-tag" data-lang="en">Wound Care</span><span class="pc-tag" data-lang="de">Wundversorgung</span><h4>Wundtinktur Nr. 2 &amp; 3</h4><p data-lang="en">Two-formula wound system for different healing stages</p><p data-lang="de">Zwei-Rezeptur-System für verschiedene Heilungsphasen</p></div>
+      <div class="pc rv d2"><span class="pc-tag" data-lang="en">Seasonal Care</span><span class="pc-tag" data-lang="de">Saisonpflege</span><h4>Pfotensalbe Sommer &amp; Winter</h4><p data-lang="en">Dual-season paw balms — summer cooling and winter protection</p><p data-lang="de">Zweisaisonale Pfotenpflege</p></div>
+      <div class="pc rv"><span class="pc-tag" data-lang="en">ENT</span><span class="pc-tag" data-lang="de">HNO</span><h4>Ohrentropfen Hunde &amp; Katzen</h4><p data-lang="en">Ear drops for acute and chronic inflammation — natural formula</p><p data-lang="de">Ohrentropfen bei akuter und chronischer Entzündung</p></div>
+      <div class="pc rv d1"><span class="pc-tag" data-lang="en">Nutrition</span><span class="pc-tag" data-lang="de">Ernährung</span><h4 data-lang="en">Individual Nutrition Plans</h4><h4 data-lang="de">Individuelle Ernährungspläne</h4><p data-lang="en">Personalised BARF + Chinese dietary medicine plans</p><p data-lang="de">Personalisierte BARF + Chinesische Ernährungslehre</p></div>
+      <div class="pc rv d2" style="border-color:rgba(157,200,60,.4);background:rgba(157,200,60,.07)"><span class="pc-tag" style="color:var(--lime-light)" data-lang="en">Research Pipeline</span><span class="pc-tag" style="color:var(--lime-light)" data-lang="de">Forschungspipeline</span><h4 data-lang="en">Next Generation Formulations</h4><h4 data-lang="de">Nächste Generation</h4><p data-lang="en">Investment funds the next wave: new species, new formulations, EU certification</p><p data-lang="de">Investitionen finanzieren neue Arten, Formulierungen, EU-Zertifizierung</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DONUT / USE OF CAPITAL -->
+<section class="donut-section" id="capital">
   <div class="container">
-    <div class="reveal">
-      <span class="section-label" data-lang="en">Why Zentrum Tier Wins</span>
-      <span class="section-label" data-lang="de">Warum Zentrum Tier gewinnt</span>
-      <h2 class="section-title" data-lang="en">Three competitive advantages that cannot be replicated quickly</h2>
-      <h2 class="section-title" data-lang="de">Drei Wettbewerbsvorteile, die sich nicht schnell replizieren lassen</h2>
+    <div class="rv">
+      <span class="sec-tag" data-lang="en">Use of Capital</span>
+      <span class="sec-tag" data-lang="de">Verwendung des Kapitals</span>
+      <h2 class="sec-title" data-lang="en">Every euro deployed against a specific growth objective</h2>
+      <h2 class="sec-title" data-lang="de">Jeder Euro einem spezifischen Wachstumsziel zugeordnet</h2>
     </div>
-    <div class="solution-grid">
-      <div class="solution-card reveal">
-        <div class="solution-icon">🔬</div>
-        <h3 data-lang="en">20 Years of Clinical Evidence</h3>
-        <h3 data-lang="de">20 Jahre klinische Evidenz</h3>
-        <p data-lang="en">Two decades of treating cats, dogs and horses with integrative methods generates clinical data and formulation insight that no new entrant can replicate from scratch. The €6M+ already invested represents a barrier, not just a backstory.</p>
-        <p data-lang="de">Zwei Jahrzehnte Behandlung mit integrativen Methoden erzeugen klinische Daten und Formulierungserkenntnisse, die kein neuer Marktteilnehmer von Grund auf replizieren kann. Die bereits investierten 6+ Mio. € sind eine Eintrittsbarriere, nicht nur eine Geschichte.</p>
+    <div class="donut-layout">
+      <div class="rv d1">
+        <div class="donut-wrap">
+          <svg viewBox="0 0 200 200" width="260" height="260" id="donutSvg">
+            <circle cx="100" cy="100" r="75" fill="none" stroke="#e0eeee" stroke-width="28"/>
+            <!-- 35% research -->
+            <circle cx="100" cy="100" r="75" fill="none" stroke="var(--teal)" stroke-width="28" stroke-dasharray="0 471" stroke-dashoffset="118" id="d1" style="transition:stroke-dasharray 1.4s ease"/>
+            <!-- 30% production -->
+            <circle cx="100" cy="100" r="75" fill="none" stroke="var(--teal-dark)" stroke-width="28" stroke-dasharray="0 471" stroke-dashoffset="118" id="d2" style="transition:stroke-dasharray 1.4s .15s ease"/>
+            <!-- 25% brand -->
+            <circle cx="100" cy="100" r="75" fill="none" stroke="var(--lime)" stroke-width="28" stroke-dasharray="0 471" stroke-dashoffset="118" id="d3" style="transition:stroke-dasharray 1.4s .3s ease"/>
+            <!-- 10% education -->
+            <circle cx="100" cy="100" r="75" fill="none" stroke="var(--lime-light)" stroke-width="28" stroke-dasharray="0 471" stroke-dashoffset="118" id="d4" style="transition:stroke-dasharray 1.4s .45s ease"/>
+          </svg>
+          <div class="donut-center"><span class="big" data-lang="en">4 Areas</span><span class="big" data-lang="de">4 Bereiche</span><span class="small" data-lang="en">of investment</span><span class="small" data-lang="de">der Investition</span></div>
+        </div>
+        <div class="legend" style="justify-content:center;margin-top:20px">
+          <div class="leg-item"><div class="leg-dot" style="background:var(--teal)"></div><span data-lang="en">Research 35%</span><span data-lang="de">Forschung 35%</span></div>
+          <div class="leg-item"><div class="leg-dot" style="background:var(--teal-dark)"></div><span data-lang="en">Production 30%</span><span data-lang="de">Produktion 30%</span></div>
+          <div class="leg-item"><div class="leg-dot" style="background:var(--lime)"></div><span data-lang="en">Brand 25%</span><span data-lang="de">Marke 25%</span></div>
+          <div class="leg-item"><div class="leg-dot" style="background:var(--lime-light)"></div><span data-lang="en">Education 10%</span><span data-lang="de">Ausbildung 10%</span></div>
+        </div>
       </div>
-      <div class="solution-card reveal reveal-delay-1">
-        <div class="solution-icon">🌿</div>
-        <h3 data-lang="en">Nine Products Proven in Practice</h3>
-        <h3 data-lang="de">Neun in der Praxis bewährte Produkte</h3>
-        <p data-lang="en">From joint ointments to wound tinctures and ear drops, every product in the portfolio was developed in clinical use. Proof of concept is not pending — it is documented in thousands of patient cases.</p>
-        <p data-lang="de">Von Gelenksalben bis Wundtinkturen und Ohrentropfen: Jedes Produkt im Portfolio wurde im klinischen Einsatz entwickelt. Der Proof of Concept steht nicht aus, er ist in Tausenden von Patientenfällen dokumentiert.</p>
-      </div>
-      <div class="solution-card reveal reveal-delay-2">
-        <div class="solution-icon">🎓</div>
-        <h3 data-lang="en">A Built-In Distribution Network</h3>
-        <h3 data-lang="de">Ein eingebautes Vertriebsnetzwerk</h3>
-        <p data-lang="en">Seven active training programmes produce a growing cohort of certified practitioners across Europe — each one a potential prescriber and ambassador. This professional network gives Zentrum Tier a distribution advantage that money alone cannot buy.</p>
-        <p data-lang="de">Sieben aktive Ausbildungsprogramme produzieren einen wachsenden Kreis zertifizierter Praktiker in ganz Europa — jeder ein potenzieller Verschreiber. Dieses professionelle Netzwerk ist ein Vertriebsvorteil, den Geld allein nicht kaufen kann.</p>
+      <div class="use-items rv d2">
+        <div class="use-row"><div class="use-icon" style="background:#e8f5f8">🔬</div><div class="use-text"><h5 data-lang="en">Clinical Research Programme</h5><h5 data-lang="de">Klinisches Forschungsprogramm</h5><p data-lang="en">Formal studies, EU regulatory documentation</p><p data-lang="de">Formelle Studien, EU-Regulierungsdokumentation</p></div><div class="use-pct">35%</div></div>
+        <div class="use-row"><div class="use-icon" style="background:#e8f0f5">🏭</div><div class="use-text"><h5 data-lang="en">Production Infrastructure</h5><h5 data-lang="de">Produktionsinfrastruktur</h5><p data-lang="en">Scale manufacturing, quality certification</p><p data-lang="de">Produktion skalieren, Qualitätszertifizierung</p></div><div class="use-pct">30%</div></div>
+        <div class="use-row"><div class="use-icon" style="background:#f0f8e8">🌍</div><div class="use-text"><h5 data-lang="en">Brand &amp; European Distribution</h5><h5 data-lang="de">Marke &amp; Europäischer Vertrieb</h5><p data-lang="en">Market entry, brand development, sales network</p><p data-lang="de">Markteintritt, Markenentwicklung, Vertriebsnetz</p></div><div class="use-pct">25%</div></div>
+        <div class="use-row"><div class="use-icon" style="background:#f5f8e8">🎓</div><div class="use-text"><h5 data-lang="en">Education Expansion</h5><h5 data-lang="de">Ausbildungsexpansion</h5><p data-lang="en">Digital formats, new markets, new programmes</p><p data-lang="de">Digitale Formate, neue Märkte, neue Programme</p></div><div class="use-pct">10%</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── TRAINING ── -->
+<!-- TRAINING -->
 <section class="training" id="training">
-  <div class="container">
-    <div class="reveal">
-      <span class="section-label" data-lang="en">Education Platform</span>
-      <span class="section-label" data-lang="de">Ausbildungsplattform</span>
-      <h2 class="section-title" data-lang="en">Training the practitioners who will prescribe the brand</h2>
-      <h2 class="section-title" data-lang="de">Die Praktiker ausbilden, die die Marke verschreiben werden</h2>
-      <p class="section-lead" data-lang="en">The education platform is simultaneously a revenue stream, a quality standard and a distribution channel. Therapists trained at Zentrum Tier carry its methodology — and its products — into practices across Austria, Germany and beyond.</p>
-      <p class="section-lead" data-lang="de">Die Ausbildungsplattform ist gleichzeitig Einnahmequelle, Qualitätsstandard und Vertriebskanal. In Zentrum Tier ausgebildete Therapeuten tragen seine Methodik und seine Produkte in Praxen in Österreich, Deutschland und darüber hinaus.</p>
+  <div class="container" style="position:relative;z-index:1">
+    <div class="rv">
+      <span class="sec-tag" data-lang="en">Education Platform</span>
+      <span class="sec-tag" data-lang="de">Ausbildungsplattform</span>
+      <h2 class="sec-title" data-lang="en">Training the practitioners who will prescribe the brand</h2>
+      <h2 class="sec-title" data-lang="de">Die Praktiker ausbilden, die die Marke verschreiben werden</h2>
     </div>
-    <div class="solution-grid">
-      <div class="solution-card reveal">
-        <div class="solution-icon">🐕🐈🐴</div>
-        <h3 data-lang="en">TCVM Specialist Certification</h3>
-        <h3 data-lang="de">TCVM Fachausbildung</h3>
-        <p data-lang="en">The most comprehensive Traditional Chinese Veterinary Medicine programme in the DACH region — covering dog, cat and horse across seven intensive weekend modules.</p>
-        <p data-lang="de">Das umfassendste TCVM-Programm im DACH-Raum, sieben intensive Wochenendmodule für Hund, Katze und Pferd.</p>
-      </div>
-      <div class="solution-card reveal reveal-delay-1">
-        <div class="solution-icon">⚡</div>
-        <h3 data-lang="en">TCVM Animal Energetics</h3>
-        <h3 data-lang="de">TCVM Tierenergetiker</h3>
-        <p data-lang="en">Holistic animal energetics based on Chinese medicine criteria — for practitioners treating energetic imbalances in dogs, cats and horses.</p>
-        <p data-lang="de">Ganzheitliche Tierenergetik nach den Kriterien der Chinesischen Medizin für Hund, Katze und Pferd.</p>
-      </div>
-      <div class="solution-card reveal reveal-delay-2">
-        <div class="solution-icon">🌀</div>
-        <h3 data-lang="en">Craniosacral Balance — Horse</h3>
-        <h3 data-lang="de">Cranio-Sacrale Balance am Pferd</h3>
-        <p data-lang="en">Specialised manual therapy certification for equine practitioners, with hands-on clinical sessions at the Austrian centre.</p>
-        <p data-lang="de">Spezialisierte manuelle Therapiezertifizierung für Pferdepraktiker mit Praxissitzungen am österreichischen Standort.</p>
-      </div>
-      <div class="solution-card reveal">
-        <div class="solution-icon">✋</div>
-        <h3 data-lang="en">Acupressure &amp; Meridian Massage</h3>
-        <h3 data-lang="de">Akupressur &amp; Meridianmassage</h3>
-        <p data-lang="en">Summer intensive programmes for horse and dog, combining TCVM meridian theory with hands-on massage technique.</p>
-        <p data-lang="de">Sommer-Intensivprogramme für Pferd und Hund: TCVM-Meridiantheorie trifft auf praktische Massagetechnik.</p>
-      </div>
-      <div class="solution-card reveal reveal-delay-1">
-        <div class="solution-icon">💆</div>
-        <h3 data-lang="en">Animal Masseur &amp; Movement Trainer</h3>
-        <h3 data-lang="de">Tiermasseur &amp; Bewegungstrainer</h3>
-        <p data-lang="en">Professional certification for horse and dog movement therapists — one of the fastest-growing demand segments in European pet care.</p>
-        <p data-lang="de">Professionelle Zertifizierung für Pferde- und Hunde-Bewegungstherapeuten — eines der am schnellsten wachsenden Segmente im europäischen Heimtiermarkt.</p>
-      </div>
-      <div class="solution-card reveal reveal-delay-2" style="border-style: dashed; background: transparent;">
-        <div class="solution-icon" style="background: rgba(157,200,60,.12);">➕</div>
-        <h3 data-lang="en" style="color: var(--text-mid);">Expanding Curriculum</h3>
-        <h3 data-lang="de" style="color: var(--text-mid);">Wachsendes Curriculum</h3>
-        <p data-lang="en">Investment will fund new programme development, digital learning formats and expansion across Europe and into new animal species.</p>
-        <p data-lang="de">Investitionen finanzieren neue Programme, digitale Lernformate und die Expansion in ganz Europa.</p>
-      </div>
+    <div class="tr-grid">
+      <div class="sol-card rv" style="background:var(--white)"><div class="sol-icon">🐕🐈🐴</div><h3 data-lang="en">TCVM Specialist Certification</h3><h3 data-lang="de">TCVM Fachausbildung</h3><p data-lang="en">The most comprehensive Traditional Chinese Veterinary Medicine programme in DACH — dog, cat and horse across seven weekend modules.</p><p data-lang="de">Das umfassendste TCVM-Programm im DACH-Raum — Hund, Katze und Pferd.</p></div>
+      <div class="sol-card rv d1" style="background:var(--white)"><div class="sol-icon">⚡</div><h3 data-lang="en">TCVM Animal Energetics</h3><h3 data-lang="de">TCVM Tierenergetiker</h3><p data-lang="en">Holistic animal energetics based on Chinese medicine criteria — treating energetic imbalances in dogs, cats and horses.</p><p data-lang="de">Ganzheitliche Tierenergetik nach den Kriterien der Chinesischen Medizin.</p></div>
+      <div class="sol-card rv d2" style="background:var(--white)"><div class="sol-icon">🌀</div><h3 data-lang="en">Craniosacral Balance — Horse</h3><h3 data-lang="de">Cranio-Sacrale Balance am Pferd</h3><p data-lang="en">Specialised manual therapy certification for equine practitioners with hands-on clinical sessions.</p><p data-lang="de">Spezialisierte manuelle Therapiezertifizierung für Pferdepraktiker.</p></div>
+      <div class="sol-card rv" style="background:var(--white)"><div class="sol-icon">✋</div><h3 data-lang="en">Acupressure &amp; Meridian Massage</h3><h3 data-lang="de">Akupressur &amp; Meridianmassage</h3><p data-lang="en">Summer intensive programmes for horse and dog — TCVM meridian theory meets hands-on massage.</p><p data-lang="de">Sommer-Intensivprogramme für Pferd und Hund.</p></div>
+      <div class="sol-card rv d1" style="background:var(--white)"><div class="sol-icon">💆</div><h3 data-lang="en">Animal Masseur &amp; Movement Trainer</h3><h3 data-lang="de">Tiermasseur &amp; Bewegungstrainer</h3><p data-lang="en">Professional certification for horse and dog movement therapists — fastest-growing demand in European pet care.</p><p data-lang="de">Professionelle Zertifizierung für Bewegungstherapeuten — schnellstes Wachstum im europäischen Heimtiermarkt.</p></div>
+      <div class="sol-card rv d2" style="background:transparent;border-style:dashed"><div class="sol-icon" style="background:rgba(157,200,60,.12)">➕</div><h3 style="color:var(--mid)" data-lang="en">Expanding Curriculum</h3><h3 style="color:var(--mid)" data-lang="de">Wachsendes Curriculum</h3><p data-lang="en">Investment funds new programmes, digital formats and expansion into new European markets and animal species.</p><p data-lang="de">Investitionen finanzieren neue Programme, digitale Formate und Expansion in neue Märkte.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ── PHILOSOPHY ── -->
+<!-- PHILOSOPHY -->
 <section class="philosophy" id="philosophy">
   <div class="container">
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center;">
-      <div class="reveal">
-        <span class="section-label" data-lang="en">Our Philosophy</span>
-        <span class="section-label" data-lang="de">Unsere Philosophie</span>
-        <h2 class="section-title" data-lang="en">Three millennia of wisdom. One uncompromising scientific standard.</h2>
-        <h2 class="section-title" data-lang="de">Drei Jahrtausende Weisheit. Ein kompromissloser wissenschaftlicher Standard.</h2>
-        <p class="section-lead" data-lang="en">Our goal is to give every animal the highest possible quality of life, free from illness, well into advanced age. We believe integrative medicine is the most powerful tool available to achieve this — and that the world is only beginning to understand how right that belief is.</p>
-        <p class="section-lead" data-lang="de">Unser Ziel ist es, jedem Tier die höchstmögliche Lebensqualität bis ins fortgeschrittene Alter zu ermöglichen. Wir glauben, dass integrative Medizin das wirkungsvollste verfügbare Werkzeug ist — und dass die Welt gerade erst beginnt zu verstehen, wie recht diese Überzeugung ist.</p>
+    <div class="phil-grid">
+      <div class="rv">
+        <span class="sec-tag" data-lang="en">Our Philosophy</span>
+        <span class="sec-tag" data-lang="de">Unsere Philosophie</span>
+        <h2 class="sec-title" data-lang="en">Three millennia of wisdom. One uncompromising scientific standard.</h2>
+        <h2 class="sec-title" data-lang="de">Drei Jahrtausende Weisheit. Ein kompromissloser wissenschaftlicher Standard.</h2>
+        <p class="sec-lead" data-lang="en">Our goal is to give every animal the highest possible quality of life, free from illness, well into advanced age. We believe integrative medicine is the most powerful tool available — and that the market is only beginning to recognise this.</p>
+        <p class="sec-lead" data-lang="de">Unser Ziel: jedem Tier die höchstmögliche Lebensqualität bis ins fortgeschrittene Alter ermöglichen. Integrative Medizin ist das wirkungsvollste verfügbare Werkzeug — und der Markt beginnt gerade erst, dies zu erkennen.</p>
         <br>
-        <p class="section-lead" data-lang="en">Natural medicine, when applied incorrectly, can harm. When applied with the rigour of modern diagnostics and the depth of traditional knowledge, it transforms outcomes. That combination is what Zentrum Tier has spent twenty years and over €6 million building.</p>
-        <p class="section-lead" data-lang="de">Naturheilkunde, falsch angewendet, kann schaden. Angewendet mit der Strenge moderner Diagnostik und der Tiefe traditionellen Wissens, verändert sie Ergebnisse grundlegend. Diese Kombination hat Zentrum Tier zwanzig Jahre und über 6 Millionen Euro aufzubauen verbracht.</p>
+        <p class="sec-lead" data-lang="en">Natural medicine, applied with the rigour of modern diagnostics and the depth of traditional knowledge, transforms outcomes. That combination is what Zentrum Tier has spent twenty years and over €6 million building.</p>
+        <p class="sec-lead" data-lang="de">Naturheilkunde, angewendet mit der Strenge moderner Diagnostik und der Tiefe traditionellen Wissens, verändert Ergebnisse grundlegend. Diese Kombination hat Zentrum Tier 20 Jahre und über 6 Mio. € gekostet.</p>
       </div>
-      <div class="phil-trio reveal reveal-delay-1" style="display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:0;">
-        <div class="phil-card">
-          <div class="phil-icon">⚗️</div>
-          <h4>Samuel Hahnemann</h4>
-          <span class="phil-tradition" data-lang="en">Classical Homeopathy</span>
-          <span class="phil-tradition" data-lang="de">Klassische Homöopathie</span>
-          <p data-lang="en">Like cures like. Precise, individual, and gentle — the foundation of our homeopathic approach.</p>
-          <p data-lang="de">Ähnliches heilt Ähnliches. Präzise, individuell und sanft.</p>
-        </div>
-        <div class="phil-card">
-          <div class="phil-icon">☯️</div>
-          <h4>Sun Simiao</h4>
-          <span class="phil-tradition" data-lang="en">Chinese Medicine</span>
-          <span class="phil-tradition" data-lang="de">Chinesische Medizin</span>
-          <p data-lang="en">Treating the root, not the symptom. Five thousand years of systematic observation of living systems.</p>
-          <p data-lang="de">Die Wurzel behandeln, nicht das Symptom. Fünftausend Jahre systematischer Beobachtung lebender Systeme.</p>
-        </div>
-        <div class="phil-card" style="grid-column: span 2;">
-          <div class="phil-icon">🌿</div>
-          <h4>Paracelsus</h4>
-          <span class="phil-tradition" data-lang="en">Western Herbalism &amp; Natural Healing</span>
-          <span class="phil-tradition" data-lang="de">Westliche Kräutermedizin &amp; Naturheilkunde</span>
-          <p data-lang="en">The dose makes the medicine. Western botanical tradition integrated with modern pharmacological understanding — the bridge between nature and clinical practice.</p>
-          <p data-lang="de">Die Dosis macht das Gift. Westliche botanische Tradition verbunden mit moderner pharmakologischer Erkenntnis.</p>
-        </div>
+      <div class="phil-cards rv d1">
+        <div class="phil-c"><div class="phil-icon">⚗️</div><h4>Samuel Hahnemann</h4><span class="phil-tag" data-lang="en">Classical Homeopathy</span><span class="phil-tag" data-lang="de">Klassische Homöopathie</span><p data-lang="en">Like cures like. Precise, individual, gentle — the foundation of our homeopathic approach.</p><p data-lang="de">Ähnliches heilt Ähnliches. Präzise, individuell, sanft.</p></div>
+        <div class="phil-c"><div class="phil-icon">☯️</div><h4>Sun Simiao</h4><span class="phil-tag" data-lang="en">Chinese Medicine</span><span class="phil-tag" data-lang="de">Chinesische Medizin</span><p data-lang="en">Treat the root, not the symptom. Five thousand years of systematic observation.</p><p data-lang="de">Die Wurzel behandeln. Fünftausend Jahre systematischer Beobachtung.</p></div>
+        <div class="phil-c"><div class="phil-icon">🌿</div><h4>Paracelsus</h4><span class="phil-tag" data-lang="en">Western Herbalism</span><span class="phil-tag" data-lang="de">Westliche Kräutermedizin</span><p data-lang="en">The dose makes the medicine. Western botanical tradition integrated with modern pharmacological understanding.</p><p data-lang="de">Die Dosis macht das Gift. Westliche botanische Tradition und moderne Pharmakologie vereint.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── PRODUCTS ── -->
-<section class="products" id="products">
-  <div class="container">
-    <div class="reveal">
-      <span class="section-label">TCM Product Portfolio</span>
-      <h2 class="section-title" data-lang="en">Nine products. Clinically developed. Ready for European scale.</h2>
-      <h2 class="section-title" data-lang="de">Neun Produkte. Klinisch entwickelt. Bereit für europäische Skalierung.</h2>
-      <p class="section-lead" data-lang="en">Each product was developed and refined through years of daily clinical use. The investment challenge is no longer product development — it is production scale, certification and distribution. The hard work is done.</p>
-      <p class="section-lead" data-lang="de">Jedes Produkt wurde durch jahrelangen klinischen Einsatz entwickelt und verfeinert. Die Investitionsaufgabe ist nicht mehr Produktentwicklung, sondern Produktionsskalierung, Zertifizierung und Vertrieb. Die schwere Arbeit ist getan.</p>
-    </div>
-    <div class="products-grid">
-      <div class="product-card reveal">
-        <span class="product-tag" data-lang="en">Musculoskeletal</span>
-        <span class="product-tag" data-lang="de">Bewegungsapparat</span>
-        <h4>Loges Salbe</h4>
-        <p data-lang="en">Muscle &amp; joint ointment — relieves pain, releases tension</p>
-        <p data-lang="de">Muskel- &amp; Gelenkssalbe — lindert Schmerzen, löst Verspannungen</p>
-      </div>
-      <div class="product-card reveal reveal-delay-1">
-        <span class="product-tag" data-lang="en">Dermatology</span>
-        <span class="product-tag" data-lang="de">Dermatologie</span>
-        <h4>Hautfreund</h4>
-        <p data-lang="en">Skin care &amp; healing balm — concentrated botanical regeneration</p>
-        <p data-lang="de">Pflege- und Heilsalbe — konzentrierte botanische Regeneration</p>
-      </div>
-      <div class="product-card reveal reveal-delay-2">
-        <span class="product-tag" data-lang="en">Joint Health</span>
-        <span class="product-tag" data-lang="de">Gelenkgesundheit</span>
-        <h4>Premium Arthrose Öl</h4>
-        <p data-lang="en">Arthritis oil — reduces pain, promotes mobility</p>
-        <p data-lang="de">Arthrose-Öl — reduziert Schmerzen, fördert Mobilität</p>
-      </div>
-      <div class="product-card reveal">
-        <span class="product-tag" data-lang="en">Performance</span>
-        <span class="product-tag" data-lang="de">Leistung</span>
-        <h4>Muskelgold Massage Öl</h4>
-        <p data-lang="en">Premium muscle massage oil — as valuable as gold for muscle tissue</p>
-        <p data-lang="de">Hochwertiges Muskelmassageöl — so wertvoll wie Gold für die Muskulatur</p>
-      </div>
-      <div class="product-card reveal reveal-delay-1">
-        <span class="product-tag" data-lang="en">Wound Care</span>
-        <span class="product-tag" data-lang="de">Wundversorgung</span>
-        <h4>Wundtinktur Nr. 2 &amp; Nr. 3</h4>
-        <p data-lang="en">Two-formula wound system for different stages of healing</p>
-        <p data-lang="de">Zwei-Rezeptur-System für verschiedene Heilungsphasen</p>
-      </div>
-      <div class="product-card reveal reveal-delay-2">
-        <span class="product-tag" data-lang="en">Seasonal Care</span>
-        <span class="product-tag" data-lang="de">Saisonpflege</span>
-        <h4>Pfotensalbe Sommer &amp; Winter</h4>
-        <p data-lang="en">Dual-season paw balms — summer cooling and winter protection</p>
-        <p data-lang="de">Zweisaisonale Pfotenpflege — Sommerkühlung und Winterschutz</p>
-      </div>
-      <div class="product-card reveal">
-        <span class="product-tag" data-lang="en">ENT</span>
-        <span class="product-tag" data-lang="de">HNO</span>
-        <h4>Ohrentropfen Hunde &amp; Katzen</h4>
-        <p data-lang="en">Ear drops for acute and chronic ear inflammation — natural formula</p>
-        <p data-lang="de">Ohrentropfen bei akuter und chronischer Ohrenentzündung</p>
-      </div>
-      <div class="product-card reveal reveal-delay-1">
-        <span class="product-tag" data-lang="en">Nutrition</span>
-        <span class="product-tag" data-lang="de">Ernährung</span>
-        <h4 data-lang="en">Individual Nutrition Plans</h4>
-        <h4 data-lang="de">Individuelle Ernährungspläne</h4>
-        <p data-lang="en">Personalised BARF-based plans with optional Chinese dietary medicine module</p>
-        <p data-lang="de">Personalisierte BARF-Pläne mit optionalem Modul Chinesische Ernährungslehre</p>
-      </div>
-      <div class="product-card reveal reveal-delay-2" style="border-color:rgba(157,200,60,.35); background:rgba(157,200,60,.06);">
-        <span class="product-tag" style="color:var(--lime-light);" data-lang="en">Research Pipeline</span>
-        <span class="product-tag" style="color:var(--lime-light);" data-lang="de">Forschungspipeline</span>
-        <h4 data-lang="en">Next Generation Formulations</h4>
-        <h4 data-lang="de">Nächste Generation Formulierungen</h4>
-        <p data-lang="en">Investment funds the next wave of research-backed TCM veterinary formulations for EU certification and European distribution</p>
-        <p data-lang="de">Investitionen finanzieren die nächste Welle forschungsgestützter TCM-Formulierungen für EU-Zertifizierung und europäischen Vertrieb</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── ROADMAP ── -->
+<!-- PIPELINE -->
 <section class="pipeline" id="roadmap">
   <div class="container">
-    <div class="reveal">
-      <span class="section-label" data-lang="en">Expansion Roadmap</span>
-      <span class="section-label" data-lang="de">Expansions-Roadmap</span>
-      <h2 class="section-title" data-lang="en">From proven clinical centre to recognised European brand</h2>
-      <h2 class="section-title" data-lang="de">Vom bewährten klinischen Zentrum zur anerkannten europäischen Marke</h2>
+    <div class="rv">
+      <span class="sec-tag" data-lang="en">Expansion Roadmap</span>
+      <span class="sec-tag" data-lang="de">Expansions-Roadmap</span>
+      <h2 class="sec-title" data-lang="en">From proven clinical centre to recognised European brand</h2>
+      <h2 class="sec-title" data-lang="de">Vom bewährten klinischen Zentrum zur anerkannten europäischen Marke</h2>
     </div>
-    <div class="pipeline-steps">
-      <div class="pipeline-step reveal">
-        <div class="step-circle">1</div>
-        <h4 data-lang="en">Research Formalisation</h4>
-        <h4 data-lang="de">Forschungsformalisierung</h4>
-        <p data-lang="en">Formal clinical studies and EU veterinary pharmaceutical documentation for the existing product portfolio</p>
-        <p data-lang="de">Formelle klinische Studien und EU-veterinärpharmazeutische Dokumentation für das bestehende Produktportfolio</p>
-      </div>
-      <div class="pipeline-step reveal reveal-delay-1">
-        <div class="step-circle">2</div>
-        <h4 data-lang="en">Production Scale-Up</h4>
-        <h4 data-lang="de">Produktionsskalierung</h4>
-        <p data-lang="en">Scale manufacturing, obtain EU certifications and register the brand across DACH markets</p>
-        <p data-lang="de">Produktion skalieren, EU-Zertifizierungen erhalten und Marke in DACH-Märkten registrieren</p>
-      </div>
-      <div class="pipeline-step reveal reveal-delay-2">
-        <div class="step-circle">3</div>
-        <h4 data-lang="en">Distribution Build-Out</h4>
-        <h4 data-lang="de">Vertriebsaufbau</h4>
-        <p data-lang="en">Activate the practitioner network, veterinary clinics and direct-to-consumer e-commerce across Austria and Germany</p>
-        <p data-lang="de">Praktikernetzwerk, Tierkliniken und Direct-to-Consumer-E-Commerce in Österreich und Deutschland aktivieren</p>
-      </div>
-      <div class="pipeline-step reveal reveal-delay-3">
-        <div class="step-circle">4</div>
-        <h4 data-lang="en">European Expansion</h4>
-        <h4 data-lang="de">Europäische Expansion</h4>
-        <p data-lang="en">Enter new European markets and establish Zentrum Tier as the authoritative TCM veterinary brand in Europe</p>
-        <p data-lang="de">Neue europäische Märkte erschließen und Zentrum Tier als maßgebliche TCM-Veterinärmarke in Europa etablieren</p>
-      </div>
+    <div class="pipe-steps">
+      <div class="ps rv"><div class="ps-circle">1</div><h4 data-lang="en">Research Formalisation</h4><h4 data-lang="de">Forschungsformalisierung</h4><p data-lang="en">Formal clinical studies and EU veterinary pharmaceutical documentation for the existing portfolio</p><p data-lang="de">Formelle klinische Studien und EU-Dokumentation für das bestehende Portfolio</p></div>
+      <div class="ps rv d1"><div class="ps-circle">2</div><h4 data-lang="en">Production Scale-Up</h4><h4 data-lang="de">Produktionsskalierung</h4><p data-lang="en">Scale manufacturing, obtain EU certifications, register the brand across DACH markets</p><p data-lang="de">Produktion skalieren, EU-Zertifizierungen, Markenregistrierung in DACH</p></div>
+      <div class="ps rv d2"><div class="ps-circle">3</div><h4 data-lang="en">Distribution Build-Out</h4><h4 data-lang="de">Vertriebsaufbau</h4><p data-lang="en">Activate the practitioner network, veterinary clinics and direct-to-consumer e-commerce</p><p data-lang="de">Praktikernetzwerk, Tierkliniken und D2C-E-Commerce aktivieren</p></div>
+      <div class="ps rv d3"><div class="ps-circle">4</div><h4 data-lang="en">European Expansion</h4><h4 data-lang="de">Europäische Expansion</h4><p data-lang="en">Enter new European markets and establish Zentrum Tier as the authoritative TCM veterinary brand in Europe</p><p data-lang="de">Neue europäische Märkte erschließen und Zentrum Tier als führende TCM-Veterinärmarke etablieren</p></div>
     </div>
   </div>
 </section>
 
-<!-- ── TEAM ── -->
-<section id="team">
+<!-- TEAM -->
+<section class="team" id="team">
   <div class="container">
-    <div class="reveal">
-      <span class="section-label" data-lang="en">Leadership</span>
-      <span class="section-label" data-lang="de">Führung</span>
-      <h2 class="section-title" data-lang="en">Two decades of commitment — backed by €6M of personal investment</h2>
-      <h2 class="section-title" data-lang="de">Zwei Jahrzehnte Engagement — gestützt auf 6 Mio. € persönlicher Investition</h2>
+    <div class="rv">
+      <span class="sec-tag" data-lang="en">Leadership</span>
+      <span class="sec-tag" data-lang="de">Führung</span>
+      <h2 class="sec-title" data-lang="en">Two decades of commitment — backed by €6M of personal investment</h2>
+      <h2 class="sec-title" data-lang="de">Zwei Jahrzehnte Engagement — gestützt auf 6 Mio. € persönlicher Investition</h2>
     </div>
     <div class="team-grid">
-      <div class="team-photo-block reveal">
-        <div class="team-avatar">IH</div>
-        <div class="team-name">Dr. Isolde Heim</div>
-        <div class="team-title" data-lang="en">Founder &amp; Chief Veterinary Officer</div>
-        <div class="team-title" data-lang="de">Gründerin &amp; Leitende Tierärztin</div>
-        <div class="credential">MMag. Dr.med.vet.</div>
-        <div class="credential" data-lang="en">Traditional Chinese Veterinary Medicine</div>
-        <div class="credential" data-lang="de">Traditionelle Chinesische Tiermedizin</div>
-        <div class="credential" data-lang="en">Classical Homeopathy</div>
-        <div class="credential" data-lang="de">Klassische Homöopathie</div>
-        <div class="credential" data-lang="en">Manual Therapies &amp; Natural Healing</div>
-        <div class="credential" data-lang="de">Manuelle Therapien &amp; Naturheilkunde</div>
-        <div class="credential" data-lang="en">International Education Programme Director</div>
-        <div class="credential" data-lang="de">Direktorin Internationaler Ausbildungsprogramme</div>
+      <div class="team-card rv">
+        <div class="team-avatar" style="position:relative;z-index:1">IH</div>
+        <div class="team-name" style="position:relative;z-index:1">Dr. Isolde Heim</div>
+        <div class="team-role" data-lang="en">Founder &amp; Chief Veterinary Officer</div>
+        <div class="team-role" data-lang="de">Gründerin &amp; Leitende Tierärztin</div>
+        <div class="cred">MMag. Dr.med.vet.</div>
+        <div class="cred" data-lang="en">Traditional Chinese Veterinary Medicine</div>
+        <div class="cred" data-lang="de">Traditionelle Chinesische Tiermedizin</div>
+        <div class="cred" data-lang="en">Classical Homeopathy</div>
+        <div class="cred" data-lang="de">Klassische Homöopathie</div>
+        <div class="cred" data-lang="en">Manual Therapies &amp; Natural Healing</div>
+        <div class="cred" data-lang="de">Manuelle Therapien &amp; Naturheilkunde</div>
+        <div class="cred" data-lang="en">International Education Programme Director</div>
+        <div class="cred" data-lang="de">Direktorin Internationaler Ausbildungsprogramme</div>
       </div>
-      <div class="team-bio reveal reveal-delay-1">
-        <p data-lang="en">Dr. Isolde Heim is the founder, clinical director and driving force behind Zentrum Tier. Holding a double master's degree and doctorate in veterinary medicine, she has dedicated more than twenty years and over €6 million of her own capital to building the most advanced integrative veterinary practice in the German-speaking world.</p>
-        <p data-lang="de">Dr. Isolde Heim ist Gründerin, klinische Direktorin und treibende Kraft hinter Zentrum Tier. Mit einem doppelten Masterabschluss und einem Doktortitel in Veterinärmedizin hat sie über zwanzig Jahre und mehr als 6 Millionen Euro ihres eigenen Kapitals dem Aufbau der fortschrittlichsten integrativen Veterinärpraxis im deutschsprachigen Raum gewidmet.</p>
-        <p data-lang="en">Her training programmes attract veterinarians and therapists from across Europe, creating both a professional credibility network and a built-in distribution channel for Zentrum Tier products. She combines the rigour of Western veterinary diagnostics with deep mastery of Traditional Chinese Medicine, classical homeopathy and the Paracelsian herbal tradition.</p>
-        <p data-lang="de">Ihre Ausbildungsprogramme ziehen Tierärzte und Therapeuten aus ganz Europa an und schaffen sowohl ein professionelles Glaubwürdigkeitsnetzwerk als auch einen eingebauten Vertriebskanal für Zentrum Tier Produkte. Sie verbindet die Strenge westlicher Veterinärdiagnostik mit tiefer Beherrschung der Traditionellen Chinesischen Medizin, der klassischen Homöopathie und der paracelsischen Kräutertradition.</p>
-        <div class="locations">
-          <div class="location-box">
-            <span class="loc-country">🇦🇹 Austria</span>
-            <address>Georgenberg 70<br>A-5431 Kuchl bei Salzburg<br>+43 664 232 70 45</address>
-          </div>
-          <div class="location-box">
-            <span class="loc-country">🇩🇪 Germany</span>
-            <address>Frühlingsstr. 26<br>D-83620 Feldkirchen-Westerham<br>+49 174 618 31 93</address>
-          </div>
+      <div class="rv d1">
+        <div class="team-bio">
+          <p data-lang="en">Dr. Isolde Heim is the founder, clinical director and driving force behind Zentrum Tier. With a double master's degree and doctorate in veterinary medicine, she has dedicated more than twenty years and over €6 million of her own capital to building the most advanced integrative veterinary practice in the German-speaking world.</p>
+          <p data-lang="de">Dr. Isolde Heim ist Gründerin, klinische Direktorin und treibende Kraft hinter Zentrum Tier. Mit einem doppelten Masterabschluss und einem Doktortitel in Veterinärmedizin hat sie über zwanzig Jahre und mehr als 6 Millionen Euro eigenes Kapital in den Aufbau der fortschrittlichsten integrativen Veterinärpraxis im deutschsprachigen Raum investiert.</p>
+          <p data-lang="en">Her training programmes attract veterinarians and therapists from across Europe, creating both a professional credibility network and a distribution channel. She combines Western veterinary diagnostics with deep mastery of Traditional Chinese Medicine, classical homeopathy and the Paracelsian herbal tradition.</p>
+          <p data-lang="de">Ihre Ausbildungsprogramme ziehen Tierärzte und Therapeuten aus ganz Europa an und schaffen ein professionelles Netzwerk und einen Vertriebskanal. Sie verbindet westliche Diagnostik mit tiefer Beherrschung der Traditionellen Chinesischen Medizin, der klassischen Homöopathie und der paracelsischen Kräutertradition.</p>
+        </div>
+        <div class="locs">
+          <div class="loc"><span class="loc-flag">🇦🇹 Austria</span><address>Georgenberg 70<br>A-5431 Kuchl bei Salzburg<br>+43 664 232 70 45</address></div>
+          <div class="loc"><span class="loc-flag">🇩🇪 Germany</span><address>Frühlingsstr. 26<br>D-83620 Feldkirchen-Westerham<br>+49 174 618 31 93</address></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── INVESTMENT ── -->
-<section class="investment" id="investment">
-  <div class="container">
-    <div class="reveal">
-      <span class="section-label">Investment</span>
-      <h2 class="section-title" data-lang="en">Join the next chapter of a €6M+ story already proven</h2>
-      <h2 class="section-title" data-lang="de">Das nächste Kapitel einer bereits bewährten Geschichte von 6+ Mio. € mitgestalten</h2>
-      <p class="section-lead" data-lang="en">Zentrum Tier is not a startup seeking to validate an idea. It is an established institution seeking co-investors to accelerate a transformation that is already underway. The clinical proof exists. The products exist. The network exists. What investment unlocks is speed and scale.</p>
-      <p class="section-lead" data-lang="de">Zentrum Tier ist kein Startup, das eine Idee validieren möchte. Es ist eine etablierte Institution, die Co-Investoren sucht, um eine bereits laufende Transformation zu beschleunigen. Der klinische Beweis existiert. Die Produkte existieren. Das Netzwerk existiert. Was Investitionen freischalten, ist Geschwindigkeit und Skalierung.</p>
+<!-- INVESTMENT CTA -->
+<section class="invest-cta" id="investment">
+  <div class="container" style="position:relative;z-index:1">
+    <div class="rv">
+      <span class="sec-tag">Investment</span>
+      <h2 class="sec-title" data-lang="en">Join the next chapter of a €6M+ story already proven</h2>
+      <h2 class="sec-title" data-lang="de">Das nächste Kapitel einer bereits bewährten Geschichte von 6+ Mio. € mitgestalten</h2>
+      <p class="sec-lead" data-lang="en">Zentrum Tier is not a startup validating an idea. It is an established institution seeking co-investors to accelerate a transformation already underway. The clinical proof exists. The products exist. The network exists. Investment unlocks speed and scale.</p>
+      <p class="sec-lead" data-lang="de">Zentrum Tier ist kein Startup, das eine Idee validiert. Es ist eine etablierte Institution, die Co-Investoren sucht, um eine bereits laufende Transformation zu beschleunigen. Klinischer Beweis, Produkte und Netzwerk existieren bereits. Investitionen schalten Geschwindigkeit und Skalierung frei.</p>
     </div>
-    <div class="invest-layout">
-      <div class="reveal">
-        <h3 style="color:var(--white); font-family:'Playfair Display',serif; margin-bottom:22px; font-size:1.25rem;">
-          <span data-lang="en">Use of Capital</span>
-          <span data-lang="de">Verwendung des Kapitals</span>
-        </h3>
-        <div class="use-item">
-          <div class="use-icon">🔬</div>
-          <div class="use-text">
-            <h5 data-lang="en">Clinical Research Programme</h5>
-            <h5 data-lang="de">Klinisches Forschungsprogramm</h5>
-            <p data-lang="en">Formal studies, EU regulatory documentation</p>
-            <p data-lang="de">Formelle Studien, EU-regulatorische Dokumentation</p>
-          </div>
-          <div class="use-pct">35%</div>
-        </div>
-        <div class="use-item">
-          <div class="use-icon">🏭</div>
-          <div class="use-text">
-            <h5 data-lang="en">Production Infrastructure</h5>
-            <h5 data-lang="de">Produktionsinfrastruktur</h5>
-            <p data-lang="en">Scale manufacturing, quality certification</p>
-            <p data-lang="de">Produktion skalieren, Qualitätszertifizierung</p>
-          </div>
-          <div class="use-pct">30%</div>
-        </div>
-        <div class="use-item">
-          <div class="use-icon">🌍</div>
-          <div class="use-text">
-            <h5 data-lang="en">Brand &amp; Distribution</h5>
-            <h5 data-lang="de">Marke &amp; Vertrieb</h5>
-            <p data-lang="en">European market entry, brand, sales network</p>
-            <p data-lang="de">Europäischer Markteintritt, Marke, Vertriebsnetz</p>
-          </div>
-          <div class="use-pct">25%</div>
-        </div>
-        <div class="use-item">
-          <div class="use-icon">🎓</div>
-          <div class="use-text">
-            <h5 data-lang="en">Education Expansion</h5>
-            <h5 data-lang="de">Ausbildungsexpansion</h5>
-            <p data-lang="en">Digital formats, new markets, new programmes</p>
-            <p data-lang="de">Digitale Formate, neue Märkte, neue Programme</p>
-          </div>
-          <div class="use-pct">10%</div>
-        </div>
+    <div class="inv-layout">
+      <div class="rv d1">
+        <div class="term-c"><span class="term-lbl" data-lang="en">Capital Already Deployed</span><span class="term-lbl" data-lang="de">Bereits eingesetztes Kapital</span><div class="term-val">€6,000,000+</div><div class="term-note" data-lang="en">Invested by the founder over 20 years in clinical infrastructure, product development and education platform. This committed capital substantially de-risks the co-investment.</div><div class="term-note" data-lang="de">Von der Gründerin über 20 Jahre in klinische Infrastruktur, Produktentwicklung und Ausbildungsplattform investiert. Dieses Kapital reduziert das Risiko des Co-Investments erheblich.</div></div>
+        <div class="term-c"><span class="term-lbl" data-lang="en">Target Market Size by 2030</span><span class="term-lbl" data-lang="de">Zielmarktgröße bis 2030</span><div class="term-val">€2.1 Billion</div><div class="term-note" data-lang="en">European alternative veterinary medicine market at 7.4% CAGR. Capturing 0.5% market share implies €10.5M in annual revenue.</div><div class="term-note" data-lang="de">Europäischer Markt für alternative Veterinärmedizin bei 7,4 % CAGR. 0,5 % Marktanteil entspricht 10,5 Mio. € Jahresumsatz.</div></div>
+        <div class="term-c"><span class="term-lbl" data-lang="en">Investment Structure</span><span class="term-lbl" data-lang="de">Investitionsstruktur</span><div class="term-val" data-lang="en">Equity / Strategic</div><div class="term-val" data-lang="de">Eigenkapital / Strategisch</div><div class="term-note" data-lang="en">Open to equity participation, research partnership or brand licensing depending on investor profile. Full memorandum on request.</div><div class="term-note" data-lang="de">Offen für Eigenkapital, Forschungspartnerschaft oder Markenlizenz. Vollständiges Memorandum auf Anfrage.</div></div>
       </div>
-
-      <div class="reveal reveal-delay-1">
-        <div class="term-card">
-          <span class="term-label" data-lang="en">Capital Already Deployed</span>
-          <span class="term-label" data-lang="de">Bereits eingesetztes Kapital</span>
-          <div class="term-value">€6,000,000+</div>
-          <div class="term-note" data-lang="en">Invested by the founder over 20 years — in clinical infrastructure, product development and education platform. This is committed capital that de-risks the venture.</div>
-          <div class="term-note" data-lang="de">Von der Gründerin über 20 Jahre investiert — in klinische Infrastruktur, Produktentwicklung und Ausbildungsplattform. Dieses Kapital reduziert das Risiko der Transaktion erheblich.</div>
+      <div class="rv d2" style="display:flex;flex-direction:column;justify-content:center;gap:20px">
+        <div style="background:rgba(255,255,255,.07);border:1px solid rgba(157,200,60,.25);border-radius:16px;padding:32px">
+          <div style="font-family:'Playfair Display',serif;font-size:1.05rem;color:rgba(255,255,255,.8);line-height:1.7;margin-bottom:24px" data-lang="en">"Natural medicine, applied with the rigour of modern diagnostics and the depth of traditional knowledge, transforms outcomes. We have spent twenty years proving this. Now we are ready to share it with Europe."</div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.05rem;color:rgba(255,255,255,.8);line-height:1.7;margin-bottom:24px" data-lang="de">„Naturheilkunde, angewendet mit der Strenge moderner Diagnostik und der Tiefe traditionellen Wissens, verändert Ergebnisse grundlegend. Wir haben zwanzig Jahre damit verbracht, dies zu beweisen. Jetzt sind wir bereit, es mit Europa zu teilen."</div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="width:40px;height:40px;border-radius:50%;background:rgba(157,200,60,.25);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:.95rem;color:var(--lime-light);flex-shrink:0">IH</div>
+            <div><div style="font-size:.85rem;font-weight:600;color:var(--white)">Dr. Isolde Heim</div><div style="font-size:.74rem;color:rgba(255,255,255,.55)" data-lang="en">Founder, Zentrum Tier</div><div style="font-size:.74rem;color:rgba(255,255,255,.55)" data-lang="de">Gründerin, Zentrum Tier</div></div>
+          </div>
         </div>
-        <div class="term-card">
-          <span class="term-label" data-lang="en">Additional Capital Sought</span>
-          <span class="term-label" data-lang="de">Gesuchtes Zusatzkapital</span>
-          <div class="term-value" data-lang="en">Available on Request</div>
-          <div class="term-value" data-lang="de">Auf Anfrage</div>
-          <div class="term-note" data-lang="en">Full investment memorandum with financial projections provided to qualified institutional investors upon request.</div>
-          <div class="term-note" data-lang="de">Vollständiges Investment-Memorandum mit Finanzprojektionen für qualifizierte institutionelle Investoren auf Anfrage.</div>
-        </div>
-        <div class="term-card">
-          <span class="term-label" data-lang="en">Investment Structure</span>
-          <span class="term-label" data-lang="de">Investitionsstruktur</span>
-          <div class="term-value" data-lang="en">Equity / Strategic</div>
-          <div class="term-value" data-lang="de">Eigenkapital / Strategisch</div>
-          <div class="term-note" data-lang="en">Open to equity participation, research partnership or brand licensing structures depending on investor profile.</div>
-          <div class="term-note" data-lang="de">Offen für Eigenkapitalbeteiligung, Forschungspartnerschaft oder Markenlizenzstrukturen je nach Investorenprofil.</div>
-        </div>
-        <a href="#contact" class="btn-primary" style="display:block; text-align:center; margin-top:6px;">
-          <span data-lang="en">Request Investment Memorandum</span>
-          <span data-lang="de">Investment-Memorandum anfordern</span>
+        <a href="#contact" class="btn-p" style="text-align:center">
+          <span data-lang="en" class="i">Request Investment Memorandum</span>
+          <span data-lang="de" class="i">Investment-Memorandum anfordern</span>
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── CONTACT ── -->
+<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <div class="contact-inner">
-      <div class="contact-form reveal">
+      <div class="cf rv">
         <h3 data-lang="en">Request the Investment Deck</h3>
         <h3 data-lang="de">Investment-Unterlagen anfordern</h3>
-        <p class="form-sub" data-lang="en">We respond to qualified institutional enquiries within 48 hours.</p>
-        <p class="form-sub" data-lang="de">Wir antworten auf qualifizierte institutionelle Anfragen innerhalb von 48 Stunden.</p>
+        <p class="cf-sub" data-lang="en">We respond to qualified institutional enquiries within 48 hours.</p>
+        <p class="cf-sub" data-lang="de">Wir antworten auf qualifizierte institutionelle Anfragen innerhalb von 48 Stunden.</p>
         <form onsubmit="handleSubmit(event)">
-          <div class="form-group">
-            <label data-lang="en">Full Name</label>
-            <label data-lang="de">Vollständiger Name</label>
-            <input type="text" required placeholder="Dr. Max Mustermann" />
-          </div>
-          <div class="form-group">
-            <label data-lang="en">Organisation</label>
-            <label data-lang="de">Organisation</label>
-            <input type="text" required placeholder="Fund / Institution" />
-          </div>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" required placeholder="investor@example.com" />
-          </div>
-          <div class="form-group">
-            <label data-lang="en">Investor Type</label>
-            <label data-lang="de">Investorentyp</label>
+          <div class="fg"><label data-lang="en">Full Name</label><label data-lang="de">Vollständiger Name</label><input type="text" required placeholder="Dr. Max Mustermann"/></div>
+          <div class="fg"><label data-lang="en">Organisation</label><label data-lang="de">Organisation</label><input type="text" required placeholder="Fund / Institution"/></div>
+          <div class="fg"><label>Email</label><input type="email" required placeholder="investor@example.com"/></div>
+          <div class="fg">
+            <label data-lang="en">Investor Type</label><label data-lang="de">Investorentyp</label>
             <select>
               <option>Private Equity</option>
               <option>Family Office</option>
@@ -928,86 +740,147 @@
               <option data-lang="de">Sonstiges Institutionelles</option>
             </select>
           </div>
-          <div class="form-group">
-            <label data-lang="en">Message (optional)</label>
-            <label data-lang="de">Nachricht (optional)</label>
-            <textarea placeholder="..."></textarea>
-          </div>
-          <button type="submit" class="form-submit">
-            <span data-lang="en">Send Request</span>
-            <span data-lang="de">Anfrage senden</span>
-          </button>
+          <div class="fg"><label data-lang="en">Message (optional)</label><label data-lang="de">Nachricht (optional)</label><textarea placeholder="..."></textarea></div>
+          <button type="submit" class="f-submit"><span data-lang="en" class="i">Send Request</span><span data-lang="de" class="i">Anfrage senden</span></button>
         </form>
       </div>
-
-      <div class="reveal reveal-delay-1">
-        <span class="section-label" data-lang="en">Direct Contact</span>
-        <span class="section-label" data-lang="de">Direktkontakt</span>
-        <h2 class="section-title" data-lang="en">Talk directly with the founder</h2>
-        <h2 class="section-title" data-lang="de">Direkt mit der Gründerin sprechen</h2>
-        <p class="section-lead" data-lang="en">Dr. Heim is personally available for investor conversations. We value direct dialogue and make time for serious institutional partners.</p>
-        <p class="section-lead" data-lang="de">Dr. Heim steht persönlich für Investorengespräche zur Verfügung. Wir schätzen den direkten Dialog und nehmen uns Zeit für ernsthafte institutionelle Partner.</p>
+      <div class="rv d1">
+        <span class="sec-tag" data-lang="en">Direct Contact</span>
+        <span class="sec-tag" data-lang="de">Direktkontakt</span>
+        <h2 class="sec-title" data-lang="en">Talk directly with the founder</h2>
+        <h2 class="sec-title" data-lang="de">Direkt mit der Gründerin sprechen</h2>
+        <p class="sec-lead" data-lang="en">Dr. Heim is personally available for investor conversations. We value direct dialogue and make time for serious institutional partners.</p>
+        <p class="sec-lead" data-lang="de">Dr. Heim steht persönlich für Investorengespräche zur Verfügung. Wir schätzen den direkten Dialog und nehmen uns Zeit für ernsthafte institutionelle Partner.</p>
         <br>
-        <div class="contact-detail">
-          <div class="cd-icon">✉️</div>
-          <div class="cd-text"><strong>Email</strong><span>office@zentrumtier.at</span></div>
-        </div>
-        <div class="contact-detail">
-          <div class="cd-icon">📞</div>
-          <div class="cd-text">
-            <strong data-lang="en">Austria</strong><strong data-lang="de">Österreich</strong>
-            <span>+43 664 232 70 45</span>
-          </div>
-        </div>
-        <div class="contact-detail">
-          <div class="cd-icon">📞</div>
-          <div class="cd-text"><strong>Germany / Deutschland</strong><span>+49 174 618 31 93</span></div>
-        </div>
-        <div class="contact-detail">
-          <div class="cd-icon">🌐</div>
-          <div class="cd-text"><strong>Web</strong><span>www.zentrumtier.at — www.zentrumtier.de</span></div>
-        </div>
+        <div class="cd"><div class="cd-icon">✉️</div><div><strong>Email</strong><span>office@zentrumtier.at</span></div></div>
+        <div class="cd"><div class="cd-icon">📞</div><div><strong data-lang="en">Austria</strong><strong data-lang="de">Österreich</strong><span>+43 664 232 70 45</span></div></div>
+        <div class="cd"><div class="cd-icon">📞</div><div><strong>Germany / Deutschland</strong><span>+49 174 618 31 93</span></div></div>
+        <div class="cd"><div class="cd-icon">🌐</div><div><strong>Web</strong><span>www.zentrumtier.at — www.zentrumtier.de</span></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
+<!-- FOOTER -->
 <footer>
-  <svg width="130" height="34" viewBox="0 0 130 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="18" cy="17" rx="16" ry="7" stroke="#9DC83C" stroke-width="1.8" fill="none" transform="rotate(-30 18 17)" opacity="0.7"/>
-    <ellipse cx="18" cy="17" rx="16" ry="7" stroke="#2AACBA" stroke-width="1.8" fill="none" transform="rotate(30 18 17)" opacity="0.7"/>
-    <ellipse cx="18" cy="17" rx="16" ry="7" stroke="#C4E060" stroke-width="1.2" fill="none" opacity="0.35"/>
-    <circle cx="18" cy="17" r="2.5" fill="#9DC83C"/>
-    <text x="40" y="22" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#2AACBA" letter-spacing="0.3">zentrum</text>
-    <text x="99" y="22" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#9DC83C" letter-spacing="0.3">tier</text>
+  <svg width="126" height="32" viewBox="0 0 126 32" fill="none">
+    <ellipse cx="16" cy="16" rx="14" ry="6" stroke="#9DC83C" stroke-width="1.7" fill="none" transform="rotate(-30 16 16)" opacity=".65"/>
+    <ellipse cx="16" cy="16" rx="14" ry="6" stroke="#2AACBA" stroke-width="1.7" fill="none" transform="rotate(30 16 16)" opacity=".65"/>
+    <ellipse cx="16" cy="16" rx="14" ry="6" stroke="#C4E060" stroke-width="1.2" fill="none" opacity=".3"/>
+    <circle cx="16" cy="16" r="2.4" fill="#9DC83C"/>
+    <text x="36" y="21" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" fill="#2AACBA" letter-spacing=".3">zentrum</text>
+    <text x="94" y="21" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" fill="#9DC83C" letter-spacing=".3">tier</text>
   </svg>
   <p>© 2025 Zentrum Tier — MMag. Dr.med.vet. Isolde Heim — Kuchl bei Salzburg, Austria</p>
-  <p>
-    <span data-lang="en">Presented to qualified institutional investors only. Not a public offer.</span>
-    <span data-lang="de">Ausschließlich für qualifizierte institutionelle Investoren. Kein öffentliches Angebot.</span>
-  </p>
+  <p data-lang="en">Presented to qualified institutional investors only. Projections are indicative, not guaranteed. Not a public offer.</p>
+  <p data-lang="de">Ausschließlich für qualifizierte institutionelle Investoren. Projektionen sind indikativ, keine Garantie. Kein öffentliches Angebot.</p>
 </footer>
 
 <script>
-  function setLang(lang) {
-    document.body.className = 'lang-' + lang;
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === lang.toUpperCase()));
-  }
+// ── LANG
+function setLang(l){
+  document.body.className='lang-'+l;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===l.toUpperCase()));
+}
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+// ── REVEAL
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')});
+},{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    const isEn = document.body.classList.contains('lang-en');
-    btn.textContent = isEn ? 'Sent — we will be in touch shortly.' : 'Gesendet — wir melden uns in Kürze.';
-    btn.style.background = 'var(--teal-dark)';
-    btn.disabled = true;
-  }
+// ── COUNTER ANIMATION
+function animateCounter(el,target,suffix=''){
+  let start=0,duration=1800,step=duration/target;
+  const tick=()=>{
+    start++;
+    el.textContent=(suffix?'€':'')+start+(suffix||'+');
+    if(start<target)setTimeout(tick,step);
+  };
+  tick();
+}
+
+const cro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting&&e.target.dataset.count){
+      const t=parseInt(e.target.dataset.count);
+      animateCounter(e.target,t,e.target.closest('.sc')?'+':'M+');
+      cro.unobserve(e.target);
+    }
+  });
+},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cro.observe(el));
+
+// ── BAR CHART ANIMATION
+const bro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      document.querySelectorAll('#barChart .bar').forEach((b,i)=>{
+        setTimeout(()=>{
+          b.style.height=b.dataset.target+'px';
+        },i*80);
+      });
+      bro.disconnect();
+    }
+  });
+},{threshold:.3});
+const bc=document.getElementById('barChart');
+if(bc)bro.observe(bc);
+
+// ── LINE CHART ANIMATION
+const lro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      ['lp1','lp2','lp3'].forEach((id,i)=>{
+        setTimeout(()=>{
+          const p=document.getElementById(id);
+          if(p){p.style.transition='stroke-dashoffset 1.4s ease';p.style.strokeDashoffset='0';}
+        },i*200);
+      });
+      lro.disconnect();
+    }
+  });
+},{threshold:.3});
+const lc=document.getElementById('lineChart');
+if(lc)lro.observe(lc);
+
+// ── DONUT ANIMATION
+// circumference at r=75: 2*PI*75 = 471.2
+const C=471.2;
+const donutData=[
+  {id:'d1',pct:.35,color:'var(--teal)',offset:0},
+  {id:'d2',pct:.30,color:'var(--teal-dark)',offset:.35},
+  {id:'d3',pct:.25,color:'var(--lime)',offset:.65},
+  {id:'d4',pct:.10,color:'var(--lime-light)',offset:.90},
+];
+const dro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      donutData.forEach(d=>{
+        const el=document.getElementById(d.id);
+        if(!el)return;
+        const arc=d.pct*C;
+        const gap=C-arc;
+        const off=-(d.offset*C)+118; // 118 = start at top
+        el.style.strokeDashoffset=off;
+        setTimeout(()=>{ el.style.strokeDasharray=arc+' '+gap; },50);
+      });
+      dro.disconnect();
+    }
+  });
+},{threshold:.3});
+const ds=document.getElementById('donutSvg');
+if(ds)dro.observe(ds);
+
+// ── FORM
+function handleSubmit(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('.f-submit');
+  const isEn=document.body.classList.contains('lang-en');
+  btn.textContent=isEn?'Sent — we will be in touch shortly.':'Gesendet — wir melden uns in Kürze.';
+  btn.style.background='var(--teal-dark)';
+  btn.disabled=true;
+}
 </script>
 </body>
 </html>
