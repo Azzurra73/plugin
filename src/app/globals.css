@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 0.375rem;
+}
+
+@layer base {
+  * {
+    @apply border-line;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-navy text-cream font-sans antialiased;
+    font-feature-settings: "ss01", "cv01";
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+  ::selection {
+    background: rgba(201, 168, 76, 0.3);
+    color: #fff;
+  }
+  /* Custom scrollbar for the dark theme */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0d1b2a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1d3048;
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4a6080;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-wide2 text-gold;
+  }
+  .eyebrow-chip {
+    @apply eyebrow rounded-sm border border-gold/30 bg-gold/[0.06] px-2.5 py-1;
+  }
+  .container-wide {
+    @apply mx-auto w-full max-w-[1280px] px-6 md:px-10;
+  }
+  .section {
+    @apply py-20 md:py-28;
+  }
+  .section-title {
+    @apply font-display text-3xl font-normal tracking-tight text-cream md:text-4xl;
+  }
+  .lede {
+    @apply text-cream/60 leading-relaxed;
+  }
+  .hairline {
+    @apply border-b border-line;
+  }
+  .link-gold {
+    @apply text-gold-light underline-offset-4 transition-colors hover:text-gold hover:underline;
+  }
+  /* MDX article typography */
+  .prose-framont {
+    @apply text-cream/70 leading-relaxed;
+  }
+  .prose-framont h2 {
+    @apply mt-10 mb-3 font-display text-2xl text-gold;
+  }
+  .prose-framont h3 {
+    @apply mt-8 mb-2 font-display text-xl text-cream;
+  }
+  .prose-framont p {
+    @apply my-4;
+  }
+  .prose-framont ul {
+    @apply my-4 list-disc space-y-2 pl-5 marker:text-gold;
+  }
+  .prose-framont a {
+    @apply link-gold;
+  }
+  .prose-framont strong {
+    @apply font-semibold text-cream;
+  }
+  .prose-framont em {
+    @apply text-cream/50;
+  }
+}

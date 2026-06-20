@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Framont &amp; Partners Management — Platform Preview</title>
+<meta name="description" content="MFSA-authorised AIFM platform for regulated EU investment vehicles — ETI, AMC, Fund Platform, Alternatives and Venture Capital." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#0D1B2A; --navy-mid:#162436; --navy-soft:#1D3048;
+    --gold:#C9A84C; --gold-light:#E8CC7A;
+    --cream:#F5F0E8; --cream-dim:rgba(245,240,232,.55);
+    --slate:#4A6080; --slate-light:#8DA5BC;
+    --success:#52B788;
+    --eti:#2D6A4F; --amc:#C9A84C; --fund:#1B5E6E; --vc:#4A3560; --alt:#8B2E2E;
+    --line:rgba(201,168,76,.25);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:400}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:rgba(201,168,76,.3);color:#fff}
+  .wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
+  .chip{border:1px solid rgba(201,168,76,.3);background:rgba(201,168,76,.06);padding:6px 14px;border-radius:3px}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 2s infinite}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+  .lede{color:var(--cream-dim);max-width:640px}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:.85rem;font-weight:500;letter-spacing:.02em;border-radius:3px;padding:13px 26px;cursor:pointer;border:none;transition:all .2s;font-family:inherit}
+  .btn-primary{background:var(--gold);color:var(--navy)}
+  .btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,168,76,.2)}
+  .btn-outline{background:transparent;color:var(--cream);border:1px solid rgba(201,168,76,.4)}
+  .btn-outline:hover{border-color:var(--gold);background:rgba(201,168,76,.06)}
+  .btn-sm{padding:8px 16px;font-size:.75rem}
+  .btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+
+  /* nav */
+  nav{position:fixed;inset:0 0 auto 0;z-index:40;height:64px;display:flex;align-items:center;background:rgba(13,27,42,.85);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:.3s}
+  nav.scrolled{background:rgba(13,27,42,.97);border-bottom-color:var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+  .brand{font-family:'Playfair Display',serif;font-weight:700;font-size:1.25rem;letter-spacing:.04em;color:var(--gold)}
+  .brand small{font-family:'Inter',sans-serif;font-size:.6rem;font-weight:500;letter-spacing:.15em;color:var(--slate-light);vertical-align:super}
+  .nav-links{display:flex;gap:26px;list-style:none}
+  .nav-links a{font-family:'JetBrains Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(245,240,232,.7);transition:color .2s}
+  .nav-links a:hover{color:var(--gold)}
+  .nav-cta{display:flex;gap:10px}
+  @media(max-width:900px){.nav-links{display:none}}
+
+  /* hero */
+  .hero{position:relative;padding:140px 0 90px;background:radial-gradient(1100px 520px at 72% -8%,rgba(201,168,76,.10),transparent 60%),linear-gradient(160deg,#0D1B2A,#0D1B2A 55%,#162436)}
+  .grid-bg{position:absolute;inset:0;opacity:.04;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:70px 70px;pointer-events:none}
+  .hero h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.08;margin:24px 0;max-width:18ch}
+  .hero h1 em{color:var(--gold);font-style:normal}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-top:60px}
+  .stat{background:var(--navy-mid);padding:20px}
+  .stat b{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--gold);display:block}
+  .stat span{font-size:.78rem;color:var(--cream-dim)}
+  @media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+  section.block{padding:90px 0}
+  .sec-title{font-size:clamp(1.8rem,4vw,2.4rem);margin:12px 0}
+  .reveal{opacity:0;transform:translateY(18px);transition:all .6s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* products */
+  .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+  @media(max-width:900px){.prod-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.prod-grid{grid-template-columns:1fr}}
+  .card{background:rgba(22,36,54,.7);border:1px solid var(--line);border-radius:6px;padding:24px;transition:all .2s;cursor:pointer;display:flex;flex-direction:column;height:100%}
+  .card:hover{transform:translateY(-3px);border-color:rgba(201,168,76,.5);box-shadow:0 16px 40px rgba(0,0,0,.3)}
+  .card .ico{width:42px;height:42px;border-radius:4px;display:grid;place-items:center;font-size:1.2rem;margin-bottom:16px}
+  .card h3{font-size:1.25rem}
+  .card .cat{font-family:'JetBrains Mono',monospace;font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(201,168,76,.8);margin:4px 0 12px}
+  .card p{font-size:.88rem;color:var(--cream-dim);flex:1}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+  .tag{font-family:'JetBrains Mono',monospace;font-size:.58rem;border:1px solid var(--line);color:rgba(245,240,232,.5);padding:2px 7px;border-radius:3px}
+  .card .more{margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold-light)}
+
+  /* flow */
+  .flow-band{background:rgba(22,36,54,.4);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:44px}
+  @media(max-width:800px){.flow{grid-template-columns:1fr 1fr}}
+  .step{background:var(--navy);border:1px solid var(--line);border-radius:6px;padding:18px;position:relative}
+  .step b{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:var(--gold);letter-spacing:.12em}
+  .step p{font-weight:500;margin-top:8px;font-size:.95rem}
+  .step span{font-size:.75rem;color:var(--cream-dim)}
+
+  .ig{display:grid;grid-template-columns:auto 1fr;gap:22px;margin-top:36px;background:rgba(29,48,72,.4);border:1px solid rgba(141,165,188,.3);border-radius:6px;padding:28px}
+  .ig-logo{width:56px;height:56px;border-radius:4px;display:grid;place-items:center;font-family:'Playfair Display',serif;font-weight:700;font-size:1.5rem;color:var(--slate-light);background:rgba(141,165,188,.08);border:1px solid rgba(141,165,188,.3)}
+  .ig-feats{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+  .ig-feat{font-size:.68rem;color:var(--slate-light);background:rgba(141,165,188,.06);border:1px solid rgba(141,165,188,.2);padding:3px 9px;border-radius:3px}
+  @media(max-width:600px){.ig{grid-template-columns:1fr}}
+
+  /* governance */
+  .gov-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+  @media(max-width:900px){.gov-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.gov-grid{grid-template-columns:1fr}}
+  .gov{background:rgba(22,36,54,.6);border:1px solid var(--line);border-radius:6px;padding:24px}
+  .gov .gi{font-size:1.4rem;color:var(--gold)}
+  .gov h3{font-size:1.1rem;margin:14px 0 8px}
+  .gov p{font-size:.85rem;color:var(--cream-dim)}
+
+  /* documents */
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0}
+  .fchip{font-family:'JetBrains Mono',monospace;font-size:.65rem;text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--line);color:var(--cream-dim);background:transparent;padding:7px 13px;border-radius:3px;cursor:pointer;transition:.2s}
+  .fchip.active{border-color:rgba(201,168,76,.5);background:rgba(201,168,76,.08);color:var(--gold)}
+  .doc-list{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:rgba(22,36,54,.5)}
+  .doc{display:flex;align-items:center;gap:16px;padding:16px;border-bottom:1px solid rgba(201,168,76,.12);transition:background .2s}
+  .doc:last-child{border-bottom:none}
+  .doc:hover{background:rgba(201,168,76,.03)}
+  .doc .fico{width:38px;height:38px;flex:none;border:1px solid var(--line);border-radius:4px;display:grid;place-items:center;color:var(--cream-dim);background:rgba(13,27,42,.5)}
+  .doc-meta{flex:1;min-width:0}
+  .doc-meta .t{font-size:.9rem;font-weight:500;display:flex;align-items:center;gap:8px}
+  .doc-meta .s{font-family:'JetBrains Mono',monospace;font-size:.62rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(245,240,232,.4);margin-top:3px}
+  .badge{font-family:'JetBrains Mono',monospace;font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;border:1px solid;padding:3px 8px;border-radius:3px;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+  .badge i{width:6px;height:6px;border-radius:50%;display:inline-block}
+  .b-ok{color:var(--success);border-color:rgba(82,183,136,.4)}.b-ok i{background:var(--success)}
+  .b-draft{color:var(--gold);border-color:rgba(201,168,76,.4)}.b-draft i{background:var(--gold)}
+  .b-soon{color:var(--slate-light);border-color:rgba(141,165,188,.4)}.b-soon i{background:var(--slate-light)}
+  .lock{font-size:.7rem;color:var(--slate-light)}
+
+  /* news */
+  .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+  @media(max-width:900px){.news-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.news-grid{grid-template-columns:1fr}}
+  .news{background:rgba(22,36,54,.7);border:1px solid var(--line);border-radius:6px;padding:22px;transition:.2s}
+  .news:hover{transform:translateY(-3px);border-color:rgba(201,168,76,.5)}
+  .news .top{display:flex;justify-content:space-between;align-items:center}
+  .news .ncat{font-family:'JetBrains Mono',monospace;font-size:.6rem;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);border:1px solid rgba(201,168,76,.3);background:rgba(201,168,76,.06);padding:2px 8px;border-radius:3px}
+  .news .nd{font-family:'JetBrains Mono',monospace;font-size:.62rem;color:rgba(245,240,232,.4)}
+  .news h3{font-size:1.1rem;margin:14px 0 8px;line-height:1.3}
+  .news p{font-size:.84rem;color:var(--cream-dim)}
+
+  /* advisory form */
+  .form-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:24px;margin-top:40px}
+  @media(max-width:800px){.form-grid{grid-template-columns:1fr}}
+  .panel{background:rgba(22,36,54,.6);border:1px solid var(--line);border-radius:6px;padding:28px}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-family:'JetBrains Mono',monospace;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(245,240,232,.55);margin-bottom:7px}
+  .field input,.field textarea,.field select{width:100%;background:rgba(13,27,42,.6);border:1px solid var(--line);border-radius:3px;padding:11px 13px;color:var(--cream);font-family:inherit;font-size:.9rem;transition:.2s}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:rgba(201,168,76,.6);box-shadow:0 0 0 1px rgba(201,168,76,.4)}
+  .field textarea{min-height:110px;resize:vertical}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:520px){.row2{grid-template-columns:1fr}}
+  .contact-line{display:flex;gap:12px;align-items:flex-start;font-size:.88rem;color:var(--cream-dim);margin-bottom:12px}
+  .contact-line b{color:var(--gold)}
+
+  /* modal */
+  .scrim{position:fixed;inset:0;z-index:60;background:rgba(13,27,42,.8);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px}
+  .scrim.open{display:flex}
+  .modal{background:var(--navy-mid);border:1px solid var(--line);border-radius:8px;width:100%;max-width:600px;max-height:90vh;overflow:auto;box-shadow:0 24px 70px rgba(0,0,0,.5)}
+  .modal-head{display:flex;gap:16px;align-items:flex-start;padding:22px;border-bottom:1px solid var(--line);background:rgba(29,48,72,.4)}
+  .modal-head h2{font-size:1.3rem}
+  .modal-head p{font-size:.85rem;color:var(--cream-dim);margin-top:4px}
+  .ig-badge{width:44px;height:44px;flex:none;border-radius:4px;display:grid;place-items:center;font-family:'Playfair Display',serif;font-weight:700;color:var(--slate-light);background:rgba(141,165,188,.08);border:1px solid rgba(141,165,188,.3)}
+  .x{margin-left:auto;background:rgba(255,255,255,.06);border:none;color:var(--cream-dim);width:32px;height:32px;border-radius:4px;cursor:pointer;font-size:1.1rem;flex:none}
+  .x:hover{background:rgba(255,255,255,.12);color:var(--cream)}
+  .modal-body{padding:22px}
+  .check{display:flex;gap:12px;margin-bottom:14px}
+  .check .ck{width:20px;height:20px;flex:none;border-radius:50%;border:1px solid rgba(201,168,76,.4);background:rgba(201,168,76,.08);color:var(--gold);display:grid;place-items:center;font-size:.7rem;margin-top:2px}
+  .check b{font-size:.9rem;font-weight:500}
+  .check span{display:block;font-size:.8rem;color:var(--cream-dim)}
+  .ack{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);background:rgba(13,27,42,.4);border-radius:4px;padding:14px;margin-top:18px;cursor:pointer}
+  .ack input{margin-top:3px;accent-color:var(--gold);width:16px;height:16px;flex:none}
+  .ack span{font-size:.78rem;color:var(--cream-dim)}
+  .modal-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 22px;border-top:1px solid var(--line);background:rgba(29,48,72,.4);flex-wrap:wrap}
+  .modal-foot .note{font-family:'JetBrains Mono',monospace;font-size:.62rem;text-transform:uppercase;letter-spacing:.08em;color:var(--slate-light)}
+
+  .ok-box{border:1px solid rgba(82,183,136,.4);background:rgba(82,183,136,.06);border-radius:6px;padding:30px;text-align:center}
+  .ok-box .oi{font-size:2rem}
+  .ok-box h3{margin:12px 0 6px}
+  .ok-box p{font-size:.88rem;color:var(--cream-dim);max-width:380px;margin:0 auto}
+
+  footer{border-top:1px solid var(--line);background:rgba(22,36,54,.6);padding:50px 0 26px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+  @media(max-width:740px){.foot-grid{grid-template-columns:1fr}}
+  footer h4{font-family:'JetBrains Mono',monospace;font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);font-weight:500;margin-bottom:14px}
+  footer ul{list-style:none}
+  footer li{margin-bottom:10px}
+  footer li a{font-size:.85rem;color:rgba(245,240,232,.65)}
+  footer li a:hover{color:var(--gold)}
+  .foot-legal{border-top:1px solid var(--line);margin-top:36px;padding-top:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.7rem;color:rgba(245,240,232,.4)}
+  .preview-tag{position:fixed;bottom:14px;right:14px;z-index:50;font-family:'JetBrains Mono',monospace;font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:var(--navy);background:var(--gold);padding:6px 12px;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">FRAMONT <small>&amp; PARTNERS</small></a>
+    <ul class="nav-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#flow">Onboarding</a></li>
+      <li><a href="#documents">Documents</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#advisory">Advisory</a></li>
+    </ul>
+    <div class="nav-cta">
+      <button class="btn btn-outline btn-sm" onclick="document.getElementById('advisory').scrollIntoView()">Consulenza</button>
+      <button class="btn btn-primary btn-sm" onclick="openOnboarding()">Investitore</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="top" class="hero">
+  <div class="grid-bg"></div>
+  <div class="wrap" style="position:relative">
+    <span class="eyebrow chip reveal"><span class="dot"></span> MFSA-Authorised AIFM · Malta · AIFMD II</span>
+    <h1 class="reveal">One regulated platform. <em>Modular vehicles</em> for every investor.</h1>
+    <p class="lede reveal" style="font-size:1.05rem">Framont aggregates regulated EU investment vehicles — ETIs, Actively Managed Certificates, ready-made and bespoke funds, alternatives and venture capital — under a single digital platform. Investors onboard through InvestGlass with integrated KYC, e-signature and full lifecycle management.</p>
+    <div class="cta-row reveal">
+      <button class="btn btn-primary" onclick="openOnboarding()">Accedi come Investitore ↗</button>
+      <button class="btn btn-outline" onclick="document.getElementById('advisory').scrollIntoView()">Richiedi Consulenza →</button>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><b>27</b><span>EEA member states passported</span></div>
+      <div class="stat"><b>AIFMD II</b><span>Directive 2024/927/EU</span></div>
+      <div class="stat"><b>30+</b><span>Years of management experience</span></div>
+      <div class="stat"><b>15 days</b><span>From term sheet to live fund</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- PRODUCTS -->
+<section class="block" id="products">
+  <div class="wrap">
+    <span class="eyebrow reveal">◆ The platform · five modules</span>
+    <h2 class="sec-title reveal">Products for every mandate</h2>
+    <p class="lede reveal">Each module is a dedicated landing experience with its own document library and onboarding path — from listed instruments to private markets and venture capital.</p>
+    <div class="prod-grid" id="prodGrid"></div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="block flow-band" id="flow">
+  <div class="wrap">
+    <span class="eyebrow reveal">◆ Investor journey</span>
+    <h2 class="sec-title reveal">From access to portfolio</h2>
+    <p class="lede reveal">A single gateway. Investors never see the regulatory complexity underneath — only their portfolio and the products available to them.</p>
+    <div class="flow">
+      <div class="step reveal"><b>01</b><p>InvestGlass Portal</p><span>Digital access, guided onboarding</span></div>
+      <div class="step reveal"><b>02</b><p>KYC / AML</p><span>Identity, risk profile, suitability</span></div>
+      <div class="step reveal"><b>03</b><p>Product Selection</p><span>Framont modular catalogue</span></div>
+      <div class="step reveal"><b>04</b><p>Subscription</p><span>E-signature, documents, settlement</span></div>
+      <div class="step reveal"><b>05</b><p>Reporting</p><span>Portfolio, performance, compliance</span></div>
+    </div>
+    <div class="ig reveal">
+      <div class="ig-logo">IG</div>
+      <div>
+        <h3 style="font-size:1.25rem">InvestGlass — the unified onboarding gateway</h3>
+        <p style="font-size:.9rem;color:var(--cream-dim);margin-top:6px">A Swiss, AI-native platform combining CRM, digital onboarding, automated KYC/AML, e-signature, MiFID II suitability and a client portal. Framont uses it as the single front door to every product, with Swiss data residency and an open API ecosystem.</p>
+        <div class="ig-feats">
+          <span class="ig-feat">Digital Onboarding</span><span class="ig-feat">KYC / AML</span><span class="ig-feat">e-Signature</span><span class="ig-feat">MiFID II Suitability</span><span class="ig-feat">Client Portal</span><span class="ig-feat">Portfolio Management</span><span class="ig-feat">GDPR · Swiss DC</span>
+        </div>
+        <button class="btn btn-outline btn-sm" style="margin-top:18px" onclick="openOnboarding()">See onboarding flow →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTS -->
+<section class="block" id="documents">
+  <div class="wrap">
+    <span class="eyebrow reveal">▤ Document library</span>
+    <h2 class="sec-title reveal">Every document, one place</h2>
+    <p class="lede reveal">Browse documentation across all five product modules. Filter by product. Gated items require a quick verification. Capital is at risk — read the relevant KID before investing.</p>
+    <div class="filters" id="docFilters"></div>
+    <div class="doc-list" id="docList"></div>
+    <p style="font-size:.75rem;color:rgba(245,240,232,.4);margin-top:14px">Documents shown are placeholders. All official documentation for regulated instruments is provided exclusively by Framont &amp; Partners Management Ltd. Marketing communication only; capital is at risk.</p>
+  </div>
+</section>
+
+<!-- GOVERNANCE -->
+<section class="block flow-band">
+  <div class="wrap">
+    <span class="eyebrow reveal">◆ Governance &amp; compliance</span>
+    <h2 class="sec-title reveal">The regulatory backbone you can trust</h2>
+    <div class="gov-grid">
+      <div class="gov reveal"><div class="gi">▣</div><h3>MFSA-Authorised AIFM</h3><p>Regulated by the Malta Financial Services Authority under AIFMD II, with a Category 2 Investment Services Licence and an EU passport across 27 states.</p></div>
+      <div class="gov reveal"><div class="gi">◈</div><h3>Institutional Governance</h3><p>Independent Investment Committee, Risk Manager and Compliance Officer oversee every vehicle, with depositary and audit built in.</p></div>
+      <div class="gov reveal"><div class="gi">⬡</div><h3>Data Sovereignty</h3><p>Investor data is handled on InvestGlass infrastructure in Switzerland — GDPR-aligned, with no data leaving controlled jurisdictions.</p></div>
+      <div class="gov reveal"><div class="gi">⬢</div><h3>Open Integrations</h3><p>An open API ecosystem connects custody, transfer agents, NAV providers and reporting into a single investor experience.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="block" id="news">
+  <div class="wrap">
+    <span class="eyebrow reveal">▦ News &amp; insights</span>
+    <h2 class="sec-title reveal">Perspectives across the platform</h2>
+    <div class="news-grid" id="newsGrid"></div>
+  </div>
+</section>
+
+<!-- ADVISORY -->
+<section class="block flow-band" id="advisory">
+  <div class="wrap">
+    <span class="eyebrow reveal">◆ Advisory</span>
+    <h2 class="sec-title reveal">Request a consultation</h2>
+    <p class="lede reveal">Tell us about your objectives — investing in a Framont vehicle, structuring an AMC or ETI, or launching your own regulated fund. Our team responds within 72 hours.</p>
+    <div class="form-grid">
+      <div class="panel reveal">
+        <form id="advForm" onsubmit="return submitForm(event)">
+          <div class="row2">
+            <div class="field"><label>Full name *</label><input name="name" required placeholder="Your name" /></div>
+            <div class="field"><label>Email *</label><input name="email" type="email" required placeholder="you@company.com" /></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label>Company</label><input name="company" placeholder="Optional" /></div>
+            <div class="field"><label>Product of interest</label>
+              <select name="product">
+                <option value="">Select a product</option>
+                <option>ETI — Exchange Traded Instruments</option>
+                <option>AMC — Actively Managed Certificates</option>
+                <option>Fund Platform</option>
+                <option>Alternative Funds</option>
+                <option>Venture Capital</option>
+                <option>Launch my own fund</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label>How can we help? *</label><textarea name="message" required placeholder="Tell us about your objectives, mandate or the structure you have in mind."></textarea></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap">
+            <span style="font-size:.7rem;color:rgba(245,240,232,.4);max-width:280px">By submitting you agree to be contacted by Framont &amp; Partners. No spam.</span>
+            <button class="btn btn-primary" type="submit">Send request ✉</button>
+          </div>
+        </form>
+      </div>
+      <div>
+        <div class="panel reveal" style="margin-bottom:18px">
+          <span class="eyebrow">▦ Book directly</span>
+          <h3 style="font-size:1.1rem;margin:12px 0 6px">Schedule a 30-minute call</h3>
+          <p style="font-size:.85rem;color:var(--cream-dim)">Prefer to pick a time now? Book a structuring call with the Framont team.</p>
+          <a class="btn btn-outline btn-sm" style="margin-top:14px;width:100%" href="https://calendly.com/" target="_blank" rel="noopener">▦ Open Calendly</a>
+        </div>
+        <div class="panel reveal">
+          <span class="eyebrow">Direct contact</span>
+          <div style="margin-top:16px">
+            <div class="contact-line"><b>☎</b> +356 20105592</div>
+            <div class="contact-line"><b>✉</b> info@framontmanagement.com</div>
+            <div class="contact-line"><b>⌖</b> Dragonara Business Centre, 5th Floor, Dragonara Road, San Ġiljan STJ 3141, Malta</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand">FRAMONT <small>&amp; PARTNERS</small></div>
+        <p style="font-size:.85rem;color:var(--cream-dim);margin-top:14px;max-width:34ch">Authorised by the Malta Financial Services Authority (MFSA) as an Alternative Investment Fund Manager under AIFMD II (Directive 2024/927/EU).</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#products">ETI · Exchange Traded Instruments</a></li>
+          <li><a href="#products">AMC · Actively Managed Certificates</a></li>
+          <li><a href="#products">Fund Platform</a></li>
+          <li><a href="#products">Alternative Funds</a></li>
+          <li><a href="#products">Venture Capital</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="#documents">Document Library</a></li>
+          <li><a href="#" onclick="openOnboarding();return false">Investor Onboarding</a></li>
+          <li><a href="#advisory">Advisory &amp; Consultation</a></li>
+          <li><a href="#news">News &amp; Insights</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Framont &amp; Partners Management Ltd · Category 2 Investment Services Licence · MFSA, Malta</span>
+      <span>Marketing communication only. Not investment advice. Capital is at risk.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ONBOARDING MODAL -->
+<div class="scrim" id="onbScrim">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="ig-badge" style="font-size:1.2rem">IG</div>
+      <div>
+        <h2>Investor onboarding via InvestGlass</h2>
+        <p>Onboarding, KYC/AML, MiFID II suitability and e-signature are handled securely on the InvestGlass portal. Review the pre-check below before continuing.</p>
+      </div>
+      <button class="x" onclick="closeOnboarding()">✕</button>
+    </div>
+    <div class="modal-body">
+      <span class="eyebrow" style="margin-bottom:14px;display:inline-block">Pre-onboarding checklist</span>
+      <div id="checklist"></div>
+      <label class="ack">
+        <input type="checkbox" id="ackBox" onchange="document.getElementById('onbGo').disabled=!this.checked" />
+        <span>I understand that Framont products are regulated investment vehicles, that capital is at risk, and that onboarding is completed on the third-party InvestGlass platform under its own terms and privacy policy.</span>
+      </label>
+    </div>
+    <div class="modal-foot">
+      <span class="note">⛨ Swiss data sovereignty · GDPR</span>
+      <button class="btn btn-primary" id="onbGo" disabled onclick="window.open('https://www.investglass.com/','_blank');closeOnboarding()">Continue to InvestGlass ↗</button>
+    </div>
+  </div>
+</div>
+
+<!-- DOCUMENT GATE MODAL -->
+<div class="scrim" id="gateScrim">
+  <div class="modal" style="max-width:440px">
+    <div class="modal-head">
+      <div class="ig-badge" style="border-color:rgba(201,168,76,.4);background:rgba(201,168,76,.08);color:var(--gold)">🔒</div>
+      <div>
+        <h2>Gated document</h2>
+        <p id="gateDesc">Enter your details to access this document.</p>
+      </div>
+      <button class="x" onclick="closeGate()">✕</button>
+    </div>
+    <div class="modal-body">
+      <form id="gateForm" onsubmit="return grantAccess(event)">
+        <div class="field"><label>Full name</label><input name="name" placeholder="Your name" /></div>
+        <div class="field"><label>Email address *</label><input name="email" type="email" required placeholder="you@company.com" /></div>
+        <button class="btn btn-primary" type="submit" style="width:100%">Access document ⬇</button>
+        <p style="text-align:center;font-size:.7rem;color:rgba(245,240,232,.4);margin-top:12px">By continuing you agree to be contacted by Framont about your request. No spam.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="preview-tag">Preview · static demo</div>
+
+<script>
+/* ---------- DATA ---------- */
+const ACCENT={eti:'#2D6A4F',amc:'#C9A84C',fund:'#1B5E6E',vc:'#4A3560',alt:'#8B2E2E'};
+const PRODUCTS=[
+  {a:'eti',code:'ETI',icon:'📈',name:'Exchange Traded Instruments',cat:'Listed Instruments',tag:'Listed, EU-passported strategies tradable like a share.',subs:['ETI Sistematici','ETI Tokenizzati/DLT','ETI Tematici']},
+  {a:'amc',code:'AMC',icon:'🏦',name:'Actively Managed Certificates',cat:'Wealth Strategies',tag:'Bankable, ISIN-listed wrappers for an actively managed strategy.',subs:['AMC Standard','AMC Multi-asset','Fund-Linked Notes']},
+  {a:'fund',code:'FUND',icon:'🏗️',name:'Fund Platform',cat:'Ready-made & Bespoke Funds',tag:'Launch a regulated, EU-passported fund in as little as 15 days.',subs:['Fondo Pronto','Fondo Dedicato','Reporting & Compliance']},
+  {a:'alt',code:'ALT',icon:'🏢',name:'Alternative Funds',cat:'Private Markets',tag:'Private equity, real assets and absolute-return strategies.',subs:['Private Equity/Credit','Real Assets','Absolute Return']},
+  {a:'vc',code:'VC',icon:'🚀',name:'Venture Capital Funds',cat:'Venture & Innovation',tag:'Turn your network and thesis into a regulated venture vehicle.',subs:['Early Stage','Growth/Thematic','Co-Investment SPV']},
+];
+const DOCS=[
+  {p:'ETI',a:'eti',t:'ETI Term Sheet',ty:'Term Sheet',st:'ok',sz:'412 KB',g:true},
+  {p:'ETI',a:'eti',t:'Key Information Document (KID)',ty:'KIID',st:'ok',sz:'287 KB',g:true},
+  {p:'ETI',a:'eti',t:'Strategy Factsheet',ty:'Factsheet',st:'ok',sz:'640 KB',g:false},
+  {p:'ETI',a:'eti',t:'Information Memorandum',ty:'IM',st:'draft',g:true},
+  {p:'AMC',a:'amc',t:'AMC Term Sheet',ty:'Term Sheet',st:'ok',sz:'356 KB',g:true},
+  {p:'AMC',a:'amc',t:'AMC Factsheet',ty:'Factsheet',st:'ok',sz:'520 KB',g:false},
+  {p:'AMC',a:'amc',t:'Subscription Form',ty:'Subscription',st:'ok',sz:'198 KB',g:true},
+  {p:'AMC',a:'amc',t:'Risk Report',ty:'Risk Report',st:'soon',g:true},
+  {p:'Fund Platform',a:'fund',t:'Fund Lab White Paper',ty:'IM',st:'ok',sz:'1.2 MB',g:false},
+  {p:'Fund Platform',a:'fund',t:'Sub-Fund Term Sheet',ty:'Term Sheet',st:'ok',sz:'390 KB',g:true},
+  {p:'Fund Platform',a:'fund',t:'LP / Partnership Agreement',ty:'LP Agreement',st:'draft',g:true},
+  {p:'Alternatives',a:'alt',t:'Information Memorandum',ty:'IM',st:'ok',sz:'880 KB',g:true},
+  {p:'Alternatives',a:'alt',t:'LP Agreement',ty:'LP Agreement',st:'ok',sz:'540 KB',g:true},
+  {p:'Alternatives',a:'alt',t:'Strategy Factsheet',ty:'Factsheet',st:'soon',g:false},
+  {p:'Venture Capital',a:'vc',t:'Fund Term Sheet',ty:'Term Sheet',st:'ok',sz:'365 KB',g:true},
+  {p:'Venture Capital',a:'vc',t:'Information Memorandum',ty:'IM',st:'ok',sz:'910 KB',g:true},
+  {p:'Venture Capital',a:'vc',t:'Factsheet',ty:'Factsheet',st:'soon',g:false},
+];
+const NEWS=[
+  {c:'Fund Platform',d:'28 May 2026',t:'Navigating AIFMD II: What the New Directive Means for EU Fund Promoters',e:'AIFMD II reshapes delegation, liquidity management and reporting. What it changes for promoters launching on an authorised platform.'},
+  {c:'ETI',d:'04 Jun 2026',t:'Heraklit Strategy ETI: Where Physics Meets Markets',e:'A systematic, exchange-traded instrument applying an extended Fokker–Planck equation to detect market regime transitions.'},
+  {c:'Fund Platform',d:'12 May 2026',t:'Fund or Company? Why Serious Capital Chooses a Fund',e:'For anyone managing third-party money professionally, the comparison between a regulated fund and a company is structurally unambiguous.'},
+  {c:'Venture Capital',d:'22 Apr 2026',t:'Your Community Is Your LP Base: Venture Funds for Platform Builders',e:'With a €10,000 minimum ticket, a regulated venture sub-fund turns an ecosystem into a structured, EU-passported capital vehicle.'},
+];
+const BADGE={ok:['b-ok','Available'],draft:['b-draft','Draft'],soon:['b-soon','Coming Soon']};
+
+/* ---------- RENDER ---------- */
+function el(html){const t=document.createElement('template');t.innerHTML=html.trim();return t.content.firstChild;}
+
+document.getElementById('prodGrid').append(...PRODUCTS.map(p=>el(`
+  <div class="card" style="border-left:3px solid ${ACCENT[p.a]}" onclick="document.getElementById('documents').scrollIntoView()">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <span class="ico" style="background:${ACCENT[p.a]}22;border:1px solid ${ACCENT[p.a]}55">${p.icon}</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.1em;color:rgba(245,240,232,.4)">${p.code}</span>
+    </div>
+    <h3>${p.name}</h3>
+    <div class="cat">${p.cat}</div>
+    <p>${p.tag}</p>
+    <div class="tags">${p.subs.map(s=>`<span class="tag">${s}</span>`).join('')}</div>
+    <div class="more">Explore ${p.code} ↗</div>
+  </div>`)));
+
+const products=['All',...new Set(DOCS.map(d=>d.p))];
+let docFilter='All';
+const filtersEl=document.getElementById('docFilters');
+function renderFilters(){filtersEl.innerHTML='';products.forEach(p=>{const b=el(`<button class="fchip ${p===docFilter?'active':''}">${p}</button>`);b.onclick=()=>{docFilter=p;renderFilters();renderDocs()};filtersEl.append(b)})}
+function renderDocs(){
+  const list=document.getElementById('docList');list.innerHTML='';
+  const items=DOCS.filter(d=>docFilter==='All'||d.p===docFilter);
+  items.forEach(d=>{
+    const [cls,label]=BADGE[d.st];
+    const soon=d.st==='soon';
+    const btn=soon?`<button class="btn btn-outline btn-sm" disabled>Soon</button>`
+      :(d.g&&!hasAccess())?`<button class="btn btn-outline btn-sm" onclick='requestDoc(${JSON.stringify(JSON.stringify(d))})'>🔒 Request</button>`
+      :`<button class="btn btn-outline btn-sm" onclick="alert('Download starting (placeholder PDF).')">⬇ Download</button>`;
+    list.append(el(`
+      <div class="doc">
+        <div class="fico">▤</div>
+        <div class="doc-meta">
+          <div class="t">${d.t} ${d.g?'<span class="lock">🔒</span>':''}</div>
+          <div class="s">${d.ty}${d.sz?' · '+d.sz:''} · ${d.p}</div>
+        </div>
+        <span class="badge ${cls}"><i></i>${label}</span>
+        ${btn}
+      </div>`));
+  });
+}
+renderFilters();renderDocs();
+
+document.getElementById('newsGrid').append(...NEWS.map(n=>el(`
+  <div class="news">
+    <div class="top"><span class="ncat">${n.c}</span><span class="nd">${n.d}</span></div>
+    <h3>${n.t}</h3>
+    <p>${n.e}</p>
+    <div class="more" style="margin-top:16px">Read more ↗</div>
+  </div>`)));
+
+const CHECK=[
+  ['Eligibility','You qualify as a professional or elective-professional investor, or are advised by one.'],
+  ['Identity & KYC documents','Valid passport or ID, proof of address (< 3 months), and tax identification details.'],
+  ['Source of funds','Documentation evidencing the origin of the funds to be invested.'],
+  ['Suitability profile','Be ready to complete the MiFID II suitability and appropriateness questionnaire.'],
+  ['Instrument documentation','Read the relevant KID/KIID, IM or prospectus before subscribing. Capital is at risk.'],
+];
+document.getElementById('checklist').append(...CHECK.map(c=>el(`
+  <div class="check"><div class="ck">✓</div><div><b>${c[0]}</b><span>${c[1]}</span></div></div>`)));
+
+/* ---------- INTERACTIONS ---------- */
+function openOnboarding(){document.getElementById('onbScrim').classList.add('open');}
+function closeOnboarding(){document.getElementById('onbScrim').classList.remove('open');}
+let gateDoc=null;
+function hasAccess(){return sessionStorage.getItem('framont_access')==='1';}
+function requestDoc(json){gateDoc=JSON.parse(JSON.parse(json));document.getElementById('gateDesc').textContent='Enter your details to access "'+gateDoc.t+'". Required for documentation of regulated instruments.';document.getElementById('gateScrim').classList.add('open');}
+function closeGate(){document.getElementById('gateScrim').classList.remove('open');}
+function grantAccess(e){e.preventDefault();sessionStorage.setItem('framont_access','1');closeGate();renderDocs();alert('Access granted for this session. "'+gateDoc.t+'" download starting (placeholder).');return false;}
+function submitForm(e){
+  e.preventDefault();
+  const f=e.target;
+  f.innerHTML='<div class="ok-box"><div class="oi">✓</div><h3>Request received</h3><p>Thank you. Our team will be in touch within 72 hours to schedule your consultation. For urgent matters, call +356 20105592.</p></div>';
+  return false;
+}
+[...document.querySelectorAll('.scrim')].forEach(s=>s.addEventListener('click',e=>{if(e.target===s)s.classList.remove('open')}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.scrim.open').forEach(s=>s.classList.remove('open'))});
+
+/* nav + reveal */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>12));
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(r=>io.observe(r));
+</script>
+</body>
+</html>
