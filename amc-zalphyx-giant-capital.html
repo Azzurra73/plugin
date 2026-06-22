@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zalphyx Giant Capital — AMC · Private Mortgage Lending</title>
+  <meta name="description" content="Actively Managed Certificate (CLN ISIN CH1518693374). Hard-currency private credit secured by first-rank Dominican mortgages at ≤50% LTV. Fixed 6.0% p.a. net yield, 600 bps gross spread, 2.0x interest coverage. For qualified investors only." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       FRAMONT ACCESS — PRODUCT-TYPE VISUAL SYSTEM
+       Each product family shares the same structural grammar
+       (Playfair Display + Inter, hero/ticker/sections/CTA) but
+       carries its own chromatic signature so each type is
+       univocally recognisable inside the platform:
+         · FUNDS → teal + lime
+         · ETI   → slate navy (#293045)
+         · AMC   → ink navy + gold  ← THIS FILE
+       ============================================================ */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      /* AMC signature palette */
+      --ink:#0A1124;--ink-2:#0E1A33;--ink-3:#15294A;--ink-soft:#1C3457;
+      --gold:#C9A24B;--gold-light:#E6C879;--gold-deep:#A37E2E;--gold-pale:#F3E6C5;
+      --steel:#5E7B9E;--steel-light:#8AA6C4;
+      --white:#fff;--off:#F7F4ED;--cream:#FBF7EE;--paper:#FCFAF4;
+      --text:#15203A;--mid:#4C5A75;--light:#8A95AC;--border:#E6DECC;
+      --pad:clamp(72px,9vw,130px);
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;line-height:1.6}
+
+    /* ── TOP SYSTEM BAR (product-type marker lives here) ── */
+    .sys-bar{position:fixed;top:0;inset-inline:0;z-index:1000;background:var(--ink);display:flex;justify-content:space-between;align-items:center;padding:0 clamp(16px,5vw,80px);height:46px;border-bottom:1px solid rgba(201,162,75,.22)}
+    .sys-left{display:flex;align-items:center;gap:14px}
+    .sys-access{font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+    .ptype{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,var(--gold-deep),var(--gold));color:var(--ink);font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:4px 11px;border-radius:5px;box-shadow:0 0 0 1px rgba(230,200,121,.5)}
+    .ptype svg{display:block}
+    .lang-toggle{display:flex;gap:3px;background:rgba(255,255,255,.08);border-radius:6px;padding:3px}
+    .lang-btn{padding:4px 14px;border:none;border-radius:4px;font-size:.74rem;font-weight:700;letter-spacing:.06em;cursor:pointer;transition:all .2s;background:transparent;color:rgba(255,255,255,.5)}
+    .lang-btn.active{background:var(--gold);color:var(--ink)}
+
+    /* ── NAV ── */
+    .nav{position:fixed;top:46px;inset-inline:0;z-index:999;background:rgba(10,17,36,.94);backdrop-filter:blur(14px);display:flex;justify-content:space-between;align-items:center;padding:0 clamp(16px,5vw,80px);height:62px;border-bottom:1px solid rgba(201,162,75,.16)}
+    .nav-links{display:flex;gap:clamp(12px,1.9vw,30px);list-style:none}
+    .nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.82rem;font-weight:500;transition:color .2s}
+    .nav-links a:hover{color:var(--gold-light)}
+    .nav-cta{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:var(--ink);padding:9px 20px;border-radius:6px;font-size:.82rem;font-weight:700;text-decoration:none;transition:all .2s;white-space:nowrap}
+    .nav-cta:hover{filter:brightness(1.08);transform:translateY(-1px)}
+
+    /* ── BUTTONS ── */
+    .btn-p{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--ink);padding:14px 30px;border-radius:8px;font-size:.92rem;font-weight:700;text-decoration:none;transition:all .25s;display:inline-block;border:none;cursor:pointer;font-family:inherit}
+    .btn-p:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(201,162,75,.35)}
+    .btn-s{border:1px solid rgba(255,255,255,.32);color:var(--white);padding:14px 30px;border-radius:8px;font-size:.92rem;font-weight:500;text-decoration:none;transition:all .25s;display:inline-block}
+    .btn-s:hover{border-color:var(--gold-light);color:var(--gold-light)}
+
+    /* ── HERO ── */
+    .hero{min-height:100vh;padding-top:108px;position:relative;display:flex;align-items:center;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:radial-gradient(120% 120% at 80% 10%,#16294a 0%,var(--ink-2) 45%,var(--ink) 100%)}
+    .hero-bg::after{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1600&q=60&fit=crop') center/cover no-repeat;opacity:.10;mix-blend-mode:luminosity}
+    .hero-grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(201,162,75,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(201,162,75,.05) 1px,transparent 1px);background-size:54px 54px;mask-image:radial-gradient(ellipse 70% 80% at 70% 30%,#000 0%,transparent 75%)}
+    .hero-orb{position:absolute;border-radius:50%;pointer-events:none}
+    .hero-orb.o1{width:560px;height:560px;right:-100px;top:46%;transform:translateY(-50%);background:radial-gradient(circle,rgba(201,162,75,.10) 0%,transparent 70%);border:1px solid rgba(201,162,75,.14)}
+    .hero-orb.o2{width:880px;height:880px;right:-240px;top:46%;transform:translateY(-50%);border:1px solid rgba(94,123,158,.12)}
+    .hero-inner{position:relative;z-index:1;width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(16px,5vw,80px);display:grid;grid-template-columns:1.12fr .88fr;gap:60px;align-items:center}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,162,75,.12);border:1px solid rgba(201,162,75,.4);color:var(--gold-light);font-size:.69rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 14px;border-radius:100px;margin-bottom:22px}
+    .hero-badge span{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3.25rem);font-weight:700;color:var(--white);line-height:1.14;margin-bottom:20px}
+    .hero h1 em{font-style:italic;color:var(--gold-light)}
+    .hero-sub{font-size:clamp(.9rem,1.3vw,1.05rem);color:rgba(255,255,255,.74);line-height:1.78;margin-bottom:34px;max-width:520px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .sc{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:24px 20px;transition:all .3s;cursor:default;position:relative;overflow:hidden}
+    .sc::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transform-origin:top;transition:transform .4s}
+    .sc:hover{background:rgba(255,255,255,.09);border-color:rgba(201,162,75,.4);transform:translateY(-2px)}
+    .sc:hover::after{transform:scaleY(1)}
+    .sc.hl{background:rgba(201,162,75,.12);border-color:rgba(201,162,75,.45)}
+    .sc-num{font-family:'Playfair Display',serif;font-size:1.95rem;font-weight:700;color:var(--gold-light);display:block;margin-bottom:6px;line-height:1}
+    .sc.hl .sc-num{font-size:2.15rem;color:#f0d488}
+    .sc-lbl{font-size:.75rem;color:rgba(255,255,255,.6);line-height:1.4}
+
+    /* ── TICKER ── */
+    .ticker{background:var(--ink-3);padding:0 clamp(16px,5vw,80px);overflow:hidden}
+    .ticker-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid rgba(255,255,255,.08)}
+    .tk{padding:38px 30px;border-right:1px solid rgba(255,255,255,.08);border-top:3px solid transparent;transition:border-color .3s}
+    .tk:hover{border-top-color:var(--gold)}
+    .tk-num{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:700;color:var(--gold-light);display:block;margin-bottom:5px}
+    .tk-lbl{font-size:.77rem;color:rgba(255,255,255,.6);line-height:1.5}
+
+    /* ── SECTIONS ── */
+    section{padding:var(--pad) clamp(16px,5vw,80px)}
+    .container{max-width:1200px;margin:0 auto}
+    .sec-tag{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:12px;display:block}
+    .sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.7vw,2.55rem);font-weight:700;color:var(--ink-2);line-height:1.2;margin-bottom:16px}
+    .sec-lead{font-size:clamp(.9rem,1.25vw,1.05rem);color:var(--mid);line-height:1.8;max-width:700px}
+
+    /* ── INTERACTIVE CALCULATOR ── */
+    .calc{background:var(--off)}
+    .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:52px;align-items:stretch}
+    .calc-panel{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:38px;box-shadow:0 14px 44px rgba(10,17,36,.05)}
+    .calc-panel h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--ink-2);margin-bottom:6px}
+    .calc-panel .hint{font-size:.8rem;color:var(--light);margin-bottom:26px}
+    .slider-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+    .slider-row label{font-size:.82rem;font-weight:600;color:var(--text)}
+    .slider-val{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold-deep)}
+    input[type=range]{-webkit-appearance:none;width:100%;height:6px;border-radius:5px;background:linear-gradient(90deg,var(--gold) var(--fill,30%),#e7e0d0 var(--fill,30%));outline:none;margin:6px 0 28px}
+    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--ink-2);border:3px solid var(--gold);cursor:pointer;transition:transform .15s;box-shadow:0 2px 8px rgba(10,17,36,.25)}
+    input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
+    input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--ink-2);border:3px solid var(--gold);cursor:pointer}
+    .calc-out{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+    .calc-box{background:var(--ink-2);border-radius:14px;padding:22px 20px;position:relative;overflow:hidden}
+    .calc-box.span{grid-column:span 2;background:linear-gradient(135deg,var(--ink-2),var(--ink-3))}
+    .calc-box .cb-lbl{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
+    .calc-box .cb-val{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:#fff;line-height:1}
+    .calc-box.span .cb-val{font-size:2.3rem;color:var(--gold-light)}
+    .calc-box .cb-note{font-size:.7rem;color:rgba(255,255,255,.5);margin-top:6px}
+
+    /* collateral gauge */
+    .gauge-wrap{text-align:center;margin:6px 0 22px}
+    .gauge-svg{width:100%;max-width:300px}
+    .gauge-status{display:inline-flex;align-items:center;gap:9px;padding:10px 20px;border-radius:100px;font-size:.86rem;font-weight:700;transition:all .3s;margin-top:6px}
+    .gauge-status.safe{background:rgba(54,148,98,.12);color:#2f8a5b;border:1px solid rgba(54,148,98,.3)}
+    .gauge-status.warn{background:rgba(201,162,75,.16);color:var(--gold-deep);border:1px solid rgba(201,162,75,.4)}
+    .gauge-status.danger{background:rgba(196,70,70,.12);color:#b34141;border:1px solid rgba(196,70,70,.3)}
+    .gauge-dot{width:9px;height:9px;border-radius:50%;background:currentColor}
+    .buffer-readout{display:flex;justify-content:space-between;font-size:.78rem;color:var(--mid);margin-top:4px}
+    .buffer-readout b{color:var(--ink-2)}
+
+    /* ── STRESS TEST ── */
+    .stress{background:var(--ink);position:relative;overflow:hidden}
+    .stress::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1600&q=50&fit=crop') center/cover no-repeat;opacity:.06}
+    .stress .sec-tag{color:var(--gold-light)}
+    .stress .sec-title{color:#fff}
+    .stress .sec-lead{color:rgba(255,255,255,.7)}
+    .stress-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center;margin-top:50px;position:relative;z-index:1}
+    .scenario-btns{display:flex;flex-direction:column;gap:12px}
+    .scn{text-align:left;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px 22px;cursor:pointer;transition:all .25s;color:#fff;font-family:inherit}
+    .scn:hover{background:rgba(255,255,255,.09);border-color:rgba(201,162,75,.4)}
+    .scn.active{background:rgba(201,162,75,.14);border-color:var(--gold)}
+    .scn .scn-t{font-size:.92rem;font-weight:700;margin-bottom:3px;display:flex;justify-content:space-between;align-items:center}
+    .scn .scn-d{font-size:.76rem;color:rgba(255,255,255,.55);line-height:1.5}
+    .scn .scn-tag{font-size:.64rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:4px;background:rgba(201,162,75,.2);color:var(--gold-light)}
+    .cov-stage{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:38px;text-align:center}
+    .cov-num{font-family:'Playfair Display',serif;font-size:4.2rem;font-weight:700;color:var(--gold-light);line-height:1;transition:color .3s}
+    .cov-num.below{color:#e07d7d}
+    .cov-cap{font-size:.8rem;color:rgba(255,255,255,.6);margin-top:6px;letter-spacing:.04em}
+    .cov-bar-track{height:14px;border-radius:8px;background:rgba(255,255,255,.08);margin:30px 0 10px;position:relative;overflow:hidden}
+    .cov-bar-track::after{content:'';position:absolute;left:calc(50%);top:-6px;bottom:-6px;width:2px;background:rgba(255,255,255,.4)}
+    .cov-bar-fill{height:100%;border-radius:8px;background:linear-gradient(90deg,var(--gold-deep),var(--gold-light));width:0;transition:width 1s cubic-bezier(.4,0,.2,1)}
+    .cov-bar-lbls{display:flex;justify-content:space-between;font-size:.68rem;color:rgba(255,255,255,.45)}
+    .cov-detail{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+    .cov-d{background:rgba(255,255,255,.04);border-radius:10px;padding:14px}
+    .cov-d .l{font-size:.68rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+    .cov-d .v{font-family:'Playfair Display',serif;font-size:1.2rem;color:#fff}
+
+    /* ── CHARTS ── */
+    .charts-section{background:var(--paper)}
+    .charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:54px}
+    .chart-card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:32px;transition:box-shadow .3s}
+    .chart-card:hover{box-shadow:0 14px 44px rgba(10,17,36,.08)}
+    .chart-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--ink-2);margin-bottom:6px}
+    .chart-card p{font-size:.8rem;color:var(--light);margin-bottom:24px;line-height:1.5}
+    .bar-chart{display:flex;align-items:flex-end;gap:14px;height:170px;border-bottom:2px solid var(--border);padding-bottom:4px}
+    .bar-col{display:flex;flex-direction:column;align-items:center;flex:1;gap:6px}
+    .bar{width:100%;border-radius:6px 6px 0 0;transition:height 1.2s cubic-bezier(.4,0,.2,1);position:relative;cursor:default}
+    .bar:hover::after{content:attr(data-val);position:absolute;top:-28px;left:50%;transform:translateX(-50%);background:var(--ink-2);color:#fff;font-size:.68rem;font-weight:700;padding:3px 8px;border-radius:4px;white-space:nowrap}
+    .bar-year{font-size:.72rem;color:var(--light);margin-top:8px;font-weight:600}
+    .line-chart-svg{width:100%;overflow:visible}
+    .legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+    .leg-item{display:flex;align-items:center;gap:6px;font-size:.74rem;color:var(--mid)}
+    .leg-dot{width:10px;height:10px;border-radius:50%}
+
+    /* ── PROJECTIONS TABLE ── */
+    .proj-section{background:var(--white)}
+    .proj-table-wrap{margin-top:48px;overflow-x:auto;border-radius:16px;border:1px solid var(--border)}
+    table{width:100%;border-collapse:collapse;font-size:.84rem}
+    thead{background:var(--ink-2);color:#fff}
+    thead th{padding:16px 20px;text-align:left;font-weight:600;font-size:.78rem;letter-spacing:.04em}
+    thead th:not(:first-child){text-align:right}
+    tbody tr{border-bottom:1px solid var(--border);transition:background .2s}
+    tbody tr:hover{background:var(--cream)}
+    tbody tr.total{background:rgba(201,162,75,.08);font-weight:700}
+    td{padding:13px 20px;color:var(--text)}
+    td:not(:first-child){text-align:right;font-family:'Playfair Display',serif;font-size:.92rem}
+    .td-neg{color:#a05656}
+    .proj-note{font-size:.76rem;color:var(--light);margin-top:14px;line-height:1.6}
+
+    /* ── STRUCTURE / ADVANTAGES ── */
+    .solution{background:var(--off)}
+    .sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+    .sol-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:32px 26px;transition:all .3s;position:relative;overflow:hidden}
+    .sol-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold-deep),var(--gold-light));transform:scaleX(0);transition:transform .3s;transform-origin:left}
+    .sol-card:hover{box-shadow:0 14px 44px rgba(10,17,36,.08);transform:translateY(-4px)}
+    .sol-card:hover::before{transform:scaleX(1)}
+    .sol-icon{width:48px;height:48px;background:linear-gradient(135deg,var(--ink-2),var(--ink-3));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:20px}
+    .sol-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--ink-2);margin-bottom:9px}
+    .sol-card p{font-size:.86rem;color:var(--mid);line-height:1.7}
+
+    /* ── MARKET / CREDIT GAP ── */
+    .market{background:linear-gradient(155deg,var(--ink-2) 0%,var(--ink) 100%);position:relative;overflow:hidden}
+    .market::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1600&q=50&fit=crop') center/cover no-repeat;opacity:.07}
+    .market .sec-tag{color:var(--gold-light)}.market .sec-title{color:#fff}.market .sec-lead{color:rgba(255,255,255,.7)}
+    .gap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;position:relative;z-index:1}
+    .gc{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:26px 22px;transition:all .3s}
+    .gc:hover{background:rgba(255,255,255,.09);border-color:rgba(201,162,75,.4);transform:translateY(-3px)}
+    .gc-tag{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--gold-light);margin-bottom:8px;display:block}
+    .gc h4{font-size:.9rem;font-weight:600;color:#fff;margin-bottom:6px;line-height:1.4}
+    .gc p{font-size:.79rem;color:rgba(255,255,255,.55);line-height:1.6}
+
+    /* ── DONUT / GEOGRAPHY ── */
+    .donut-section{background:var(--paper)}
+    .donut-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:48px}
+    .donut-wrap{position:relative;width:260px;margin:0 auto}
+    .donut-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none}
+    .donut-center .big{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--ink-2);display:block}
+    .donut-center .small{font-size:.72rem;color:var(--light)}
+    .use-items{display:flex;flex-direction:column;gap:12px}
+    .use-row{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;background:var(--white);border:1px solid var(--border);border-radius:10px;padding:14px 16px;transition:all .2s;cursor:default}
+    .use-row:hover{background:var(--cream);transform:translateX(3px)}
+    .use-dot{width:14px;height:14px;border-radius:4px;flex-shrink:0}
+    .use-text h5{font-size:.88rem;font-weight:600;color:var(--ink-2);margin-bottom:2px}
+    .use-text p{font-size:.74rem;color:var(--light)}
+    .use-pct{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--gold-deep)}
+
+    /* ── RISK ── */
+    .risk{background:var(--white)}
+    .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px}
+    .rc{display:flex;gap:18px;align-items:flex-start;background:var(--off);border:1px solid var(--border);border-radius:14px;padding:24px;transition:all .3s}
+    .rc:hover{box-shadow:0 10px 30px rgba(10,17,36,.06);border-color:rgba(201,162,75,.4)}
+    .rc-icon{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--ink-2),var(--ink-3));display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+    .rc h4{font-weight:700;font-size:.92rem;color:var(--ink-2);margin-bottom:5px}
+    .rc p{font-size:.81rem;color:var(--mid);line-height:1.65}
+    .rc .mit{color:var(--gold-deep);font-weight:600}
+
+    /* ── PIPELINE ── */
+    .pipeline{background:var(--off)}
+    .pipe-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;position:relative}
+    .pipe-steps::before{content:'';position:absolute;top:30px;left:calc(12.5% + 30px);right:calc(12.5% + 30px);height:2px;background:linear-gradient(90deg,var(--gold-deep),var(--gold-light))}
+    .ps{text-align:center;padding:0 10px}
+    .ps-circle{width:60px;height:60px;border-radius:50%;background:var(--ink-2);color:var(--gold-light);font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;position:relative;z-index:1;border:3px solid var(--gold);transition:transform .3s}
+    .ps:hover .ps-circle{transform:scale(1.1)}
+    .ps h4{font-weight:600;font-size:.86rem;color:var(--ink-2);margin-bottom:6px}
+    .ps p{font-size:.77rem;color:var(--light);line-height:1.6}
+
+    /* ── TEAM ── */
+    .team{background:var(--white)}
+    .team-grid{display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start;margin-top:48px}
+    .team-card{background:linear-gradient(155deg,var(--ink-2),var(--ink));border-radius:20px;padding:40px 32px;text-align:center;color:#fff;position:relative;overflow:hidden}
+    .team-card::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(201,162,75,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(201,162,75,.06) 1px,transparent 1px);background-size:30px 30px}
+    .team-avatar{width:90px;height:90px;border-radius:50%;background:rgba(201,162,75,.16);border:3px solid var(--gold);margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--gold-light);position:relative;z-index:1}
+    .team-name{font-family:'Playfair Display',serif;font-size:1.2rem;position:relative;z-index:1}
+    .team-role{font-size:.78rem;color:rgba(255,255,255,.6);margin-bottom:18px;position:relative;z-index:1}
+    .cred{background:rgba(255,255,255,.07);border-radius:6px;padding:7px 11px;font-size:.74rem;color:rgba(255,255,255,.75);text-align:left;margin-bottom:7px;position:relative;z-index:1}
+    .team-others{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
+    .to-card{background:var(--off);border:1px solid var(--border);border-radius:14px;padding:24px}
+    .to-card .to-role{font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:8px}
+    .to-card h4{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--ink-2);margin-bottom:6px}
+    .to-card p{font-size:.8rem;color:var(--mid);line-height:1.6}
+    .team-bio{margin-bottom:6px}
+    .team-bio p{font-size:.95rem;color:var(--mid);line-height:1.8;margin-bottom:14px}
+
+    /* ── TERMS / CTA ── */
+    .invest-cta{background:linear-gradient(145deg,var(--ink-2),var(--ink));position:relative;overflow:hidden}
+    .invest-cta::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1600&q=50&fit=crop') center/cover no-repeat;opacity:.05}
+    .invest-cta .sec-tag{color:var(--gold-light)}.invest-cta .sec-title{color:#fff}.invest-cta .sec-lead{color:rgba(255,255,255,.72);max-width:100%}
+    .inv-layout{display:grid;grid-template-columns:1fr 1fr;gap:46px;margin-top:48px;position:relative;z-index:1}
+    .term-table{background:rgba(255,255,255,.04);border:1px solid rgba(201,162,75,.2);border-radius:14px;overflow:hidden}
+    .term-row{display:flex;justify-content:space-between;gap:16px;padding:15px 22px;border-bottom:1px solid rgba(255,255,255,.07)}
+    .term-row:last-child{border-bottom:none}
+    .term-row .tr-l{font-size:.8rem;color:rgba(255,255,255,.55)}
+    .term-row .tr-v{font-size:.84rem;font-weight:600;color:#fff;text-align:right}
+    .quote-card{background:rgba(255,255,255,.05);border:1px solid rgba(201,162,75,.22);border-radius:16px;padding:32px}
+    .quote-card .q{font-family:'Playfair Display',serif;font-size:1.05rem;color:rgba(255,255,255,.85);line-height:1.7;margin-bottom:22px;font-style:italic}
+    .qa{display:flex;align-items:center;gap:12px}
+    .qa-av{width:42px;height:42px;border-radius:50%;background:rgba(201,162,75,.22);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;color:var(--gold-light);flex-shrink:0}
+
+    /* ── CONTACT ── */
+    .contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+    .cf{background:var(--cream);border-radius:20px;padding:40px}
+    .cf h3{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--ink-2);margin-bottom:5px}
+    .cf-sub{font-size:.84rem;color:var(--light);margin-bottom:24px}
+    .fg{margin-bottom:16px}
+    .fg label{display:block;font-size:.78rem;font-weight:600;color:var(--text);margin-bottom:4px}
+    .fg input,.fg select,.fg textarea{width:100%;padding:10px 13px;border:1px solid var(--border);border-radius:8px;font-size:.87rem;font-family:inherit;color:var(--text);background:var(--white);transition:border-color .2s;outline:none}
+    .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}
+    .fg textarea{resize:vertical;min-height:85px}
+    .f-submit{width:100%;background:var(--ink-2);color:#fff;border:none;padding:14px;border-radius:8px;font-size:.92rem;font-weight:700;cursor:pointer;font-family:inherit;transition:background .2s;margin-top:4px}
+    .f-submit:hover{background:var(--ink-3)}
+    .cd{display:flex;gap:12px;margin-bottom:18px;align-items:flex-start}
+    .cd-icon{width:36px;height:36px;background:var(--cream);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+    .cd strong{display:block;font-size:.78rem;font-weight:700;color:var(--text);margin-bottom:1px}
+    .cd span{font-size:.84rem;color:var(--mid)}
+
+    /* ── FOOTER ── */
+    footer{background:var(--ink);padding:44px clamp(16px,5vw,80px);text-align:center;border-top:1px solid rgba(201,162,75,.18)}
+    footer .disc{font-size:.72rem;color:rgba(255,255,255,.38);margin-top:10px;max-width:880px;margin-left:auto;margin-right:auto;line-height:1.7}
+    footer .copy{font-size:.78rem;color:rgba(255,255,255,.55);margin-top:14px}
+
+    /* ── LANG ── */
+    [data-lang]{display:none}
+    .lang-en [data-lang="en"]{display:block}
+    .lang-it [data-lang="it"]{display:block}
+    .lang-en [data-lang="en"].i{display:inline}
+    .lang-it [data-lang="it"].i{display:inline}
+    .lang-en .hero-actions[data-lang="en"],.lang-it .hero-actions[data-lang="it"]{display:flex}
+
+    /* ── REVEAL ── */
+    .rv{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
+    .rv.vis{opacity:1;transform:none}
+    .rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:960px){
+      .hero-inner,.calc-grid,.stress-layout,.donut-layout,.team-grid,.inv-layout,.contact-inner{grid-template-columns:1fr;gap:40px}
+      .charts-grid,.risk-grid,.team-others{grid-template-columns:1fr}
+      .sol-grid,.gap-grid{grid-template-columns:1fr 1fr}
+      .ticker-inner{grid-template-columns:1fr 1fr}
+      .nav-links{display:none}
+    }
+    @media(max-width:580px){
+      .sol-grid,.gap-grid,.pipe-steps,.hero-stats,.ticker-inner,.calc-out{grid-template-columns:1fr}
+      .pipe-steps::before{display:none}
+      .sys-access{display:none}
+    }
+  </style>
+</head>
+<body class="lang-en">
+
+<!-- SYSTEM BAR + PRODUCT-TYPE MARKER -->
+<div class="sys-bar">
+  <div class="sys-left">
+    <span class="sys-access">Framont Access</span>
+    <span class="ptype" title="Actively Managed Certificate">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 2 3 7v10l9 5 9-5V7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 7v10M7 9.5v5M17 9.5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      AMC
+    </span>
+  </div>
+  <div class="lang-toggle">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('it')">IT</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <!-- ZALPHYX LOGO -->
+  <a href="#top" style="text-decoration:none;display:flex;align-items:center;gap:10px">
+    <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
+      <path d="M20 2 36 11v18L20 38 4 29V11z" stroke="#C9A24B" stroke-width="1.6" fill="rgba(201,162,75,.06)"/>
+      <path d="M13 14h14l-14 12h14" stroke="#E6C879" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <circle cx="20" cy="20" r="1.6" fill="#C9A24B"/>
+    </svg>
+    <span style="display:flex;flex-direction:column;line-height:1">
+      <span style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:#fff;letter-spacing:.04em">ZALPHYX</span>
+      <span style="font-size:.56rem;font-weight:600;letter-spacing:.32em;color:#C9A24B;text-transform:uppercase">Giant Capital</span>
+    </span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#calculator" data-lang="en" class="i">Calculator</a><a href="#calculator" data-lang="it" class="i">Calcolatore</a></li>
+    <li><a href="#stress" data-lang="en" class="i">Stress Test</a><a href="#stress" data-lang="it" class="i">Stress Test</a></li>
+    <li><a href="#projections" data-lang="en" class="i">Projections</a><a href="#projections" data-lang="it" class="i">Proiezioni</a></li>
+    <li><a href="#structure" data-lang="en" class="i">Structure</a><a href="#structure" data-lang="it" class="i">Struttura</a></li>
+    <li><a href="#team" data-lang="en" class="i">Team</a><a href="#team" data-lang="it" class="i">Team</a></li>
+    <li><a href="#terms" data-lang="en" class="i">Terms</a><a href="#terms" data-lang="it" class="i">Termini</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">
+    <span data-lang="en" class="i">Request Term Sheet</span>
+    <span data-lang="it" class="i">Richiedi Term Sheet</span>
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-orb o1"></div>
+  <div class="hero-orb o2"></div>
+  <div class="hero-inner">
+    <div>
+      <div data-lang="en">
+        <div class="hero-badge"><span></span>AMC · Credit Linked Note · For Qualified Investors Only</div>
+        <h1>Hard-currency private credit, secured by <em>first-rank Dominican mortgages</em></h1>
+        <p class="hero-sub">Zalphyx Giant Capital is an Actively Managed Certificate (CLN ISIN CH1518693374) on the GenTwo AG platform. Investor capital is on-lent as fixed-rate first-rank mortgage loans at a maximum 50% LTV, delivering a fixed 6.0% p.a. net yield in USD with a 2x real-estate collateral buffer on every loan.</p>
+        <div class="hero-actions"><a href="#calculator" class="btn-p">Model Your Yield</a><a href="#structure" class="btn-s">How the Structure Works</a></div>
+      </div>
+      <div data-lang="it">
+        <div class="hero-badge"><span></span>AMC · Credit Linked Note · Riservato a Investitori Qualificati</div>
+        <h1>Credito privato in valuta forte, garantito da <em>ipoteche di primo grado</em></h1>
+        <p class="hero-sub">Zalphyx Giant Capital è un Actively Managed Certificate (CLN ISIN CH1518693374) sulla piattaforma GenTwo AG. Il capitale degli investitori è erogato come mutui ipotecari di primo grado a tasso fisso con LTV massimo del 50%, generando un rendimento netto fisso del 6,0% p.a. in USD con un buffer di collaterale immobiliare 2x su ogni prestito.</p>
+        <div class="hero-actions"><a href="#calculator" class="btn-p">Calcola il Rendimento</a><a href="#structure" class="btn-s">Come Funziona la Struttura</a></div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="sc hl rv"><span class="sc-num" data-count="6.0" data-suffix="%">0</span><span class="sc-lbl" data-lang="en">Net investor yield p.a. — fixed CLN coupon in USD</span><span class="sc-lbl" data-lang="it">Rendimento netto p.a. — cedola fissa CLN in USD</span></div>
+      <div class="sc rv d1"><span class="sc-num" data-prefix="≤" data-count="50" data-suffix="%">0</span><span class="sc-lbl" data-lang="en">Maximum loan-to-value — a 2x hard-collateral buffer</span><span class="sc-lbl" data-lang="it">Loan-to-value massimo — buffer di collaterale 2x</span></div>
+      <div class="sc rv d2"><span class="sc-num" data-count="12.0" data-suffix="%">0</span><span class="sc-lbl" data-lang="en">Gross fixed loan rate to the borrower — 600 bps spread</span><span class="sc-lbl" data-lang="it">Tasso lordo fisso al mutuatario — spread 600 bps</span></div>
+      <div class="sc rv d3"><span class="sc-num" data-count="2.0" data-suffix="x">0</span><span class="sc-lbl" data-lang="en">Interest coverage in base case — above 1.0x even at 35% default</span><span class="sc-lbl" data-lang="it">Interest coverage base case — sopra 1,0x anche al 35% di default</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <div class="tk rv"><span class="tk-num" data-count="600" data-suffix=" bps">0</span><span class="tk-lbl" data-lang="en">Gross spread — 12% lending against a 6% CLN coupon</span><span class="tk-lbl" data-lang="it">Spread lordo — 12% di impiego contro cedola CLN al 6%</span></div>
+    <div class="tk rv d1"><span class="tk-num" data-prefix="&lt;" data-count="3" data-suffix="%">0</span><span class="tk-lbl" data-lang="en">Historical default rate p.a. — no forced sale to date</span><span class="tk-lbl" data-lang="it">Default storico p.a. — nessuna vendita forzata ad oggi</span></div>
+    <div class="tk rv d2"><span class="tk-num">USD</span><span class="tk-lbl" data-lang="en">Hard currency throughout — no FX exposure for USD investors</span><span class="tk-lbl" data-lang="it">Valuta forte — nessuna esposizione FX per investitori USD</span></div>
+    <div class="tk rv d3"><span class="tk-num">3–6m</span><span class="tk-lbl" data-lang="en">Foreclosure timeline — accelerated under Dominican Law 189-11</span><span class="tk-lbl" data-lang="it">Tempi di escussione — accelerati ex Legge dominicana 189-11</span></div>
+  </div>
+</div>
+
+<!-- INTERACTIVE CALCULATOR -->
+<section class="calc" id="calculator">
+  <div class="container">
+    <div class="rv">
+      <span class="sec-tag" data-lang="en">Interactive · Model Your Position</span>
+      <span class="sec-tag" data-lang="it">Interattivo · Simula la Tua Posizione</span>
+      <h2 class="sec-title" data-lang="en">Two levers. Move them and watch the numbers respond.</h2>
+      <h2 class="sec-title" data-lang="it">Due leve. Spostale e osserva i numeri reagire.</h2>
+      <p class="sec-lead" data-lang="en">On the left, size your investment and see the fixed 6.0% p.a. yield translate into cash. On the right, simulate a fall in Dominican property values and watch the 50% LTV buffer absorb it.</p>
+      <p class="sec-lead" data-lang="it">A sinistra dimensiona l'investimento e vedi il rendimento fisso del 6,0% p.a. tradursi in cassa. A destra simula un calo dei valori immobiliari dominicani e osserva il buffer del 50% LTV assorbirlo.</p>
+    </div>
+    <div class="calc-grid">
+
+      <!-- YIELD CALCULATOR -->
+      <div class="calc-panel rv d1">
+        <h3 data-lang="en">Yield Calculator</h3><h3 data-lang="it">Calcolatore di Rendimento</h3>
+        <p class="hint" data-lang="en">Fixed 6.0% p.a. net coupon · 3-year bullet · USD</p>
+        <p class="hint" data-lang="it">Cedola netta fissa 6,0% p.a. · bullet 3 anni · USD</p>
+        <div class="slider-row">
+          <label data-lang="en">Investment amount</label><label data-lang="it">Importo investito</label>
+          <span class="slider-val" id="invVal">USD 1,000,000</span>
+        </div>
+        <input type="range" id="invSlider" min="250000" max="5000000" step="50000" value="1000000" />
+        <div class="calc-out">
+          <div class="calc-box"><div class="cb-lbl" data-lang="en">Annual income</div><div class="cb-lbl" data-lang="it">Reddito annuo</div><div class="cb-val" id="annual">USD 60,000</div></div>
+          <div class="calc-box"><div class="cb-lbl" data-lang="en">Per quarter</div><div class="cb-lbl" data-lang="it">Per trimestre</div><div class="cb-val" id="quarter">USD 15,000</div></div>
+          <div class="calc-box span"><div class="cb-lbl" data-lang="en">Total coupons over 3-year term</div><div class="cb-lbl" data-lang="it">Cedole totali sul termine di 3 anni</div><div class="cb-val" id="total">USD 180,000</div><div class="cb-note" data-lang="en">Plus full principal redemption at the CLN bullet maturity</div><div class="cb-note" data-lang="it">Più rimborso integrale del capitale alla scadenza bullet del CLN</div></div>
+        </div>
+      </div>
+
+      <!-- COLLATERAL BUFFER SIMULATOR -->
+      <div class="calc-panel rv d2">
+        <h3 data-lang="en">Collateral Buffer Simulator</h3><h3 data-lang="it">Simulatore del Buffer di Collaterale</h3>
+        <p class="hint" data-lang="en">At 50% LTV, prices must more than halve before principal is touched</p>
+        <p class="hint" data-lang="it">Al 50% LTV i prezzi devono più che dimezzarsi prima di intaccare il capitale</p>
+        <div class="slider-row">
+          <label data-lang="en">Property value decline</label><label data-lang="it">Calo valore immobile</label>
+          <span class="slider-val" id="dropVal">−20%</span>
+        </div>
+        <input type="range" id="dropSlider" min="0" max="80" step="1" value="20" />
+        <div class="gauge-wrap">
+          <svg class="gauge-svg" viewBox="0 0 200 110">
+            <path d="M15 100 A85 85 0 0 1 185 100" fill="none" stroke="#e7e0d0" stroke-width="14" stroke-linecap="round"/>
+            <path id="gaugeArc" d="M15 100 A85 85 0 0 1 185 100" fill="none" stroke="#2f8a5b" stroke-width="14" stroke-linecap="round" stroke-dasharray="267" stroke-dashoffset="267" style="transition:stroke-dashoffset .4s,stroke .4s"/>
+            <line id="gaugeMark" x1="100" y1="100" x2="100" y2="28" stroke="#15203A" stroke-width="2.5" stroke-linecap="round" style="transform-origin:100px 100px;transition:transform .4s"/>
+            <circle cx="100" cy="100" r="6" fill="#15203A"/>
+          </svg>
+        </div>
+        <div class="buffer-readout"><span data-lang="en">Loan principal</span><span data-lang="it">Capitale prestato</span><b><span id="loanLeft">100</span>% protected</b></div>
+        <div style="text-align:center"><span class="gauge-status safe" id="bufStatus"><span class="gauge-dot"></span><span id="bufText">Principal fully protected</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRESS TEST -->
+<section class="stress" id="stress">
+  <div class="container">
+    <div class="rv">
+      <span class="sec-tag" data-lang="en">Interactive · Interest Coverage Stress Test</span>
+      <span class="sec-tag" data-lang="it">Interattivo · Stress Test sull'Interest Coverage</span>
+      <h2 class="sec-title" data-lang="en">Choose a scenario. See how the coupon stays covered.</h2>
+      <h2 class="sec-title" data-lang="it">Scegli uno scenario. Guarda come la cedola resta coperta.</h2>
+      <p class="sec-lead" data-lang="en">Gross interest income covers the CLN coupon at 2.0x in the base case — and the structure remains above 1.0x even under a severe 35% default scenario with zero recovery.</p>
+      <p class="sec-lead" data-lang="it">Il reddito lordo da interessi copre la cedola CLN a 2,0x nel caso base, e la struttura resta sopra 1,0x anche in uno scenario severo di default al 35% con recupero nullo.</p>
+    </div>
+    <div class="stress-layout">
+      <div class="scenario-btns rv d1">
+        <button class="scn active" data-cov="2.0" data-rev="600000" data-def="0" onclick="setScenario(this)">
+          <div class="scn-t"><span data-lang="en">Base case</span><span data-lang="it">Caso base</span><span class="scn-tag">2.0x</span></div>
+          <div class="scn-d" data-lang="en">Full deployment, performing portfolio</div>
+          <div class="scn-d" data-lang="it">Pieno impiego, portafoglio performante</div>
+        </button>
+        <button class="scn" data-cov="1.6" data-rev="480000" data-def="20" onclick="setScenario(this)">
+          <div class="scn-t"><span data-lang="en">Stress — 20% default</span><span data-lang="it">Stress — default 20%</span><span class="scn-tag">1.6x</span></div>
+          <div class="scn-d" data-lang="en">One in five loans defaults, zero recovery assumed</div>
+          <div class="scn-d" data-lang="it">Un prestito su cinque in default, recupero nullo</div>
+        </button>
+        <button class="scn" data-cov="1.3" data-rev="390000" data-def="35" onclick="setScenario(this)">
+          <div class="scn-t"><span data-lang="en">Severe — 35% default</span><span data-lang="it">Severo — default 35%</span><span class="scn-tag">1.3x</span></div>
+          <div class="scn-d" data-lang="en">More than a third defaults, zero recovery — still covered</div>
+          <div class="scn-d" data-lang="it">Oltre un terzo in default, recupero nullo — ancora coperto</div>
+        </button>
+      </div>
+      <div class="cov-stage rv d2">
+        <div class="cov-num" id="covNum">2.0x</div>
+        <div class="cov-cap" data-lang="en">Interest Coverage Ratio</div>
+        <div class="cov-cap" data-lang="it">Rapporto di Copertura Interessi</div>
+        <div class="cov-bar-track"><div class="cov-bar-fill" id="covBar"></div></div>
+        <div class="cov-bar-lbls"><span>0x</span><span style="color:rgba(255,255,255,.7)">1.0x — coupon covered</span><span>2.5x</span></div>
+        <div class="cov-detail">
+          <div class="cov-d"><div class="l" data-lang="en">Gross revenue</div><div class="l" data-lang="it">Ricavo lordo</div><div class="v" id="covRev">USD 600,000</div></div>
+          <div class="cov-d"><div class="l" data-lang="en">Default assumed</div><div class="l" data-lang="it">Default ipotizzato</div><div class="v" id="covDef">0%</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHARTS -->
+<section class="charts-section" id="charts">
+  <div class="container">
+    <div class="rv">
+      <span class="sec-tag" data-lang="en">Deployment & Cash</span>
+      <span class="sec-tag" data-lang="it">Deployment e Cassa</span>
+      <h2 class="sec-title" data-lang="en">Capital deploys fast, cash builds steadily</h2>
+      <h2 class="sec-title" data-lang="it">Il capitale si impiega rapidamente, la cassa cresce con costanza</h2>
+      <p class="sec-lead" data-lang="en">The portfolio reaches full USD 5.0M deployment within the first year, then generates operational cash that builds the buffer absorbing the CLN settlement gap at maturity.</p>
+      <p class="sec-lead" data-lang="it">Il portafoglio raggiunge il pieno impiego di USD 5,0M entro il primo anno, generando poi cassa operativa che costruisce il buffer per assorbire il settlement gap del CLN a scadenza.</p>
+    </div>
+    <div class="charts-grid">
+      <div class="chart-card rv d1">
+        <h3 data-lang="en">Cumulative AUM Deployment — 2025 (USD M)</h3>
+        <h3 data-lang="it">Deployment AUM Cumulato — 2025 (USD M)</h3>
+        <p data-lang="en">Phased deployment from Q1 to full portfolio in Q4</p>
+        <p data-lang="it">Impiego graduale dal Q1 al portafoglio pieno nel Q4</p>
+        <div class="bar-chart" id="barChart">
+          <div class="bar-col"><div class="bar" style="background:linear-gradient(180deg,var(--steel),var(--ink-3));height:0" data-target="60" data-val="USD 2.0M"></div><span class="bar-year">Q1</span></div>
+          <div class="bar-col"><div class="bar" style="background:linear-gradient(180deg,var(--steel),var(--ink-3));height:0" data-target="75" data-val="USD 2.5M"></div><span class="bar-year">Q2</span></div>
+          <div class="bar-col"><div class="bar" style="background:linear-gradient(180deg,var(--gold),var(--gold-deep));height:0" data-target="105" data-val="USD 3.5M"></div><span class="bar-year">Q3</span></div>
+          <div class="bar-col"><div class="bar" style="background:linear-gradient(180deg,var(--gold-light),var(--gold));height:0" data-target="150" data-val="USD 5.0M"></div><span class="bar-year">Q4</span></div>
+        </div>
+      </div>
+      <div class="chart-card rv d2">
+        <h3 data-lang="en">Cumulative Cash vs. CLN Settlement Gap (USD)</h3>
+        <h3 data-lang="it">Cassa Cumulata vs. Settlement Gap CLN (USD)</h3>
+        <p data-lang="en">By Year 3 the buffer covers the USD 300K gap 2.97x</p>
+        <p data-lang="it">Entro l'Anno 3 il buffer copre il gap di USD 300K per 2,97x</p>
+        <div class="chart-wrap">
+          <svg class="line-chart-svg" id="lineChart" viewBox="0 0 340 170" preserveAspectRatio="xMidYMid meet">
+            <line x1="44" y1="12" x2="44" y2="140" stroke="#e7e0d0" stroke-width="1"/>
+            <line x1="44" y1="140" x2="330" y2="140" stroke="#e7e0d0" stroke-width="1"/>
+            <line x1="44" y1="97" x2="330" y2="97" stroke="#eee7d8" stroke-width=".7" stroke-dasharray="4,3"/>
+            <line x1="44" y1="54" x2="330" y2="54" stroke="#eee7d8" stroke-width=".7" stroke-dasharray="4,3"/>
+            <text x="38" y="143" fill="#aab" font-size="8" text-anchor="end">0</text>
+            <text x="38" y="100" fill="#aab" font-size="8" text-anchor="end">300K</text>
+            <text x="38" y="57" fill="#aab" font-size="8" text-anchor="end">600K</text>
+            <text x="38" y="20" fill="#aab" font-size="8" text-anchor="end">900K</text>
+            <text x="44" y="155" fill="#aab" font-size="8" text-anchor="middle">Y1</text>
+            <text x="187" y="155" fill="#aab" font-size="8" text-anchor="middle">Y2</text>
+            <text x="330" y="155" fill="#aab" font-size="8" text-anchor="middle">Y3</text>
+            <!-- settlement gap line at 300K (y=97) -->
+            <line x1="44" y1="97" x2="330" y2="97" stroke="#b34141" stroke-width="1.6" stroke-dasharray="5,3"/>
+            <text x="326" y="92" fill="#b34141" font-size="7.5" text-anchor="end">CLN gap 300K</text>
+            <!-- cumulative cash: 392.8K → 633.6K → 889.4K  (y: 84 → 49 → 13) -->
+            <path id="cashLine" d="M44,84 L187,49 L330,13" fill="none" stroke="var(--gold)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="420" stroke-dashoffset="420"/>
+            <circle cx="44" cy="84" r="4" fill="var(--gold)"/>
+            <circle cx="187" cy="49" r="4" fill="var(--gold)"/>
+            <circle cx="330" cy="13" r="4.5" fill="var(--gold-light)" stroke="#fff" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="legend">
+          <div class="leg-item"><div class="leg-dot" style="background:var(--gold)"></div><span data-lang="en">Cumulative operational cash</span><span data-lang="it">Cassa operativa cumulata</span></div>
+          <div class="leg-item"><div class="leg-dot" style="background:#b34141"></div><span data-lang="en">CLN settlement gap (USD 300K)</span><span data-lang="it">Settlement gap CLN (USD 300K)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTIONS TABLE -->
+<section class="proj-section" id="projections">
+  <div class="container">
+    <div class="rv">
+      <span class="sec-tag" data-lang="en">Financial Projections 2025–2027</span>
+      <span class="sec-tag" data-lang="it">Proiezioni Finanziarie 2025–2027</span>
+      <h2 class="sec-title" data-lang="en">A lean interest-rate arbitrage at 600 bps</h2>
+      <h2 class="sec-title" data-lang="it">Un arbitraggio di tasso snello a 600 bps</h2>
+      <p class="sec-lead" data-lang="en">Base case, conservative: gross interest income against the 6.0% CLN coupon, with fixed costs capped near USD 39,200 p.a. Net margin expands from 27% in Year 1 to 43% in Year 3 as the portfolio reaches full deployment.</p>
+      <p class="sec-lead" data-lang="it">Caso base, conservativo: reddito lordo da interessi contro la cedola CLN al 6,0%, con costi fissi limitati a circa USD 39.200 p.a. Il margine netto sale dal 27% dell'Anno 1 al 43% dell'Anno 3 al raggiungimento del pieno impiego.</p>
+    </div>
+    <div class="proj-table-wrap rv d1">
+      <table>
+        <thead>
+          <tr>
+            <th data-lang="en">P&L Line</th><th data-lang="it">Voce di Conto Economico</th>
+            <th>Year 1 · 2025</th><th>Year 2 · 2026</th><th>Year 3 · 2027</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span data-lang="en">Gross Interest Income</span><span data-lang="it">Reddito Lordo da Interessi</span></td><td>USD 344,000</td><td>USD 600,000</td><td>USD 600,000</td></tr>
+          <tr><td><span data-lang="en">CLN Coupon (6.0%)</span><span data-lang="it">Cedola CLN (6,0%)</span></td><td class="td-neg">(172,000)</td><td class="td-neg">(300,000)</td><td class="td-neg">(300,000)</td></tr>
+          <tr><td><span data-lang="en">Directors' Remuneration</span><span data-lang="it">Compensi Amministratori</span></td><td class="td-neg">(19,200)</td><td class="td-neg">(19,200)</td><td class="td-neg">(19,200)</td></tr>
+          <tr><td><span data-lang="en">Legal Costs</span><span data-lang="it">Costi Legali</span></td><td class="td-neg">(40,000)</td><td class="td-neg">(20,000)</td><td class="td-neg">(5,000)</td></tr>
+          <tr><td><span data-lang="en">Admin & Overhead</span><span data-lang="it">Amministrazione e Overhead</span></td><td class="td-neg">(20,000)</td><td class="td-neg">(20,000)</td><td class="td-neg">(20,000)</td></tr>
+          <tr class="total"><td><b data-lang="en">Net Profit</b><b data-lang="it">Utile Netto</b></td><td><b>USD 92,800</b></td><td><b>USD 240,800</b></td><td><b>USD 255,800</b></td></tr>
+          <tr><td><span data-lang="en">Net Margin</span><span data-lang="it">Margine Netto</span></td><td>27.0%</td><td>40.1%</td><td>42.6%</td></tr>
+          <tr><td><span data-lang="en">Interest Coverage</span><span data-lang="it">Interest Coverage</span></td><td>2.0x</td><td>2.0x</td><td>2.0x</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="proj-note rv d2" data-lang="en">Base case excludes borrower origination fees (10%–12%), which in the upside scenario lift Year-1 net margin to ~69%. Cumulative 3-year operational cash: USD 889,400. Projections are forward-looking estimates, not guarantees.</p>
+    <p class="proj-note rv d2" data-lang="it">Il caso base esclude le commissioni di origination al mutuatario (10%–12%), che nello scenario upside portano il margine netto dell'Anno 1 a circa il 69%. Cassa operativa cumulata a 3 anni: USD 889.400. Le proiezioni sono stime previsionali, non garanzie.</p>
+  </div>
+</section>
+
+<!-- STRUCTURE / ADVANTAGES -->
+<section class="solution" id="structure">
+  <div class="container">
+    <div class="rv">
+      <span class="sec-tag" data-lang="en">Structural Strengths</span>
+      <span class="sec-tag" data-lang="it">Punti di Forza Strutturali</span>
+      <h2 class="sec-title" data-lang="en">Six structural features that de-risk the position</h2>
+      <h2 class="sec-title" data-lang="it">Sei caratteristiche strutturali che riducono il rischio</h2>
+    </div>
+    <div class="sol-grid">
+      <div class="sol-card rv"><div class="sol-icon">⚖️</div><h3 data-lang="en">Natural Asset-Liability Match</h3><h3 data-lang="it">Match Attivo-Passivo Naturale</h3><p data-lang="en">3-year bullet loans are co-terminus with the CLN, structurally eliminating refinancing risk at cycle end.</p><p data-lang="it">I prestiti bullet a 3 anni sono co-terminosi con il CLN, eliminando strutturalmente il rischio di rifinanziamento a fine ciclo.</p></div>
+      <div class="sol-card rv d1"><div class="sol-icon">🏛️</div><h3 data-lang="en">Hard Collateral Coverage</h3><h3 data-lang="it">Copertura con Collaterale Reale</h3><p data-lang="en">First-rank registered mortgage at a maximum 50% LTV provides a 2x real-estate collateral buffer on every single loan.</p><p data-lang="it">Ipoteca di primo grado registrata con LTV massimo del 50%, che offre un buffer di collaterale immobiliare 2x su ogni singolo prestito.</p></div>
+      <div class="sol-card rv d2"><div class="sol-icon">🛡️</div><h3 data-lang="en">Proven Interest Coverage</h3><h3 data-lang="it">Interest Coverage Comprovato</h3><p data-lang="en">Gross income covers the CLN coupon at 2.0x in the base case and remains above 1.0x even at a 35% default rate.</p><p data-lang="it">Il reddito lordo copre la cedola CLN a 2,0x nel caso base e resta sopra 1,0x anche con un tasso di default del 35%.</p></div>
+      <div class="sol-card rv"><div class="sol-icon">✂️</div><h3 data-lang="en">Lean Cost Structure</h3><h3 data-lang="it">Struttura di Costo Snella</h3><p data-lang="en">Fixed costs capped at approximately USD 39,200 per annum, leaving the bulk of the spread for investors.</p><p data-lang="it">Costi fissi limitati a circa USD 39.200 l'anno, lasciando la gran parte dello spread agli investitori.</p></div>
+      <div class="sol-card rv d1"><div class="sol-icon">⚡</div><h3 data-lang="en">Creditor-Friendly Enforcement</h3><h3 data-lang="it">Escussione Favorevole al Creditore</h3><p data-lang="en">Dominican registration and Law 189-11 permit practical possession within 3 to 6 months. The Torrens title freezes from embargo.</p><p data-lang="it">La registrazione dominicana e la Legge 189-11 consentono il possesso pratico in 3-6 mesi. Il titolo Torrens è congelato dall'embargo.</p></div>
+      <div class="sol-card rv d2"><div class="sol-icon">🏦</div><h3 data-lang="en">Institutional-Grade Governance</h3><h3 data-lang="it">Governance di Grado Istituzionale</h3><p data-lang="en">Managed by Framont & Partners Management Ltd (Malta), MFSA-regulated, on GenTwo AG's AMC-compatible documentation.</p><p data-lang="it">Gestito da Framont & Partners Management Ltd (Malta), regolata MFSA, su documentazione AMC-compatibile di GenTwo AG.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKET / CREDIT GAP -->
+<section class="market" id="market">
+  <div class="container" style="position:relative;z-index:1">
+    <div class="rv">
+      <span class="sec-tag" data-lang="en">Market Opportunity</span>
+      <span class="sec-tag" data-lang="it">Opportunità di Mercato</span>
+      <h2 class="sec-title" data-lang="en">Why the Dominican Republic. Why now.</h2>
+      <h2 class="sec-title" data-lang="it">Perché la Repubblica Dominicana. Perché ora.</h2>
+      <p class="sec-lead" data-lang="en">The largest economy in the Caribbean — GDP ~USD 128B, growing 5% in 2024, inflation anchored near 3.8%, over 10 million tourists a year. A structured credit gap creates a compelling private lending opportunity.</p>
+      <p class="sec-lead" data-lang="it">La maggiore economia caraibica — PIL ~USD 128B, in crescita del 5% nel 2024, inflazione ancorata vicino al 3,8%, oltre 10 milioni di turisti l'anno. Un gap di credito strutturale crea un'opportunità di prestito privato convincente.</p>
+    </div>
+    <div class="gap-grid">
+      <div class="gc rv"><span class="gc-tag">Zero bank access</span><h4 data-lang="en">Foreign Nationals & Non-Residents</h4><h4 data-lang="it">Stranieri e Non Residenti</h4><p data-lang="en">Owners of Dominican real estate without local tax history. Banks exclude them regardless of asset quality.</p><p data-lang="it">Proprietari di immobili dominicani senza storia fiscale locale. Le banche li escludono a prescindere dalla qualità dell'attivo.</p></div>
+      <div class="gc rv d1"><span class="gc-tag">60–90 days</span><h4 data-lang="en">Speed-Driven Buyers</h4><h4 data-lang="it">Acquirenti Sensibili al Tempo</h4><p data-lang="en">Acquisitions that cannot wait for bank approval. We close in days, not months — time is a product differentiator.</p><p data-lang="it">Acquisizioni che non possono attendere l'iter bancario. Chiudiamo in giorni, non mesi — il tempo è un elemento differenziante.</p></div>
+      <div class="gc rv d2"><span class="gc-tag">2× buffer</span><h4 data-lang="en">Torrens Title System</h4><h4 data-lang="it">Sistema di Titolo Torrens</h4><p data-lang="en">Registered ownership is legally secure and transparent. At 50% LTV, values must collapse by more than 50% before principal is at risk.</p><p data-lang="it">La proprietà registrata è giuridicamente sicura e trasparente. Al 50% LTV i valori devono crollare oltre il 50% prima che il capitale sia a rischio.</p></div>
+      <div class="gc rv"><span class="gc-tag">USD 128B</span><h4 data-lang="en">Macro Fundamentals</h4><h4 data-lang="it">Fondamentali Macro</h4><p data-lang="en">The IMF projects 4.5–5% growth in 2026. FDI fully finances the current account deficit. No restrictions on capital repatriation.</p><p data-lang="it">L'FMI prevede una crescita del 4,5-5% nel 2026. Gli IDE finanziano interamente il deficit di conto corrente. Nessuna restrizione al rimpatrio dei capitali.</p></div>
+      <div class="gc rv d1"><span class="gc-tag">10M+ / yr</span><h4 data-lang="en">Tourism & Real Estate Boom</h4><h4 data-lang="it">Boom Turistico e Immobiliare</h4><p data-lang="en">Record tourism in Santo Domingo, Cap Cana, Punta Cana and Las Terrenas. Foreigners own property with the same rights under Law 108-05.</p><p data-lang="it">Turismo record a Santo Domingo, Cap Cana, Punta Cana e Las Terrenas. Gli stranieri possiedono immobili con pari diritti ex Legge 108-05.</p></div>
+      <div class="gc rv d2"><span class="gc-tag">Ceiling reached</span><h4 data-lang="en">Over-Leveraged Borrowers</h4><h4 data-lang="it">Mutuatari Sovra-Indebitati</h4><p data-lang="en">Entrepreneurs at their institutional credit ceiling — strong assets, strong cash flow, zero incremental bank access.</p><p data-lang="it">Imprenditori al tetto del credito istituzionale — attivi solidi, cassa solida, zero accesso bancario incrementale.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DONUT / PORTFOLIO GEOGRAPHY -->
+<section class="donut-section" id="portfolio">
+  <div class="container">
+    <div class="rv">
+      <span class="sec-tag" data-lang="en">Portfolio Construction</span>
+      <span class="sec-tag" data-lang="it">Costruzione del Portafoglio</span>
+      <h2 class="sec-title" data-lang="en">Diversified across four prime corridors</h2>
+      <h2 class="sec-title" data-lang="it">Diversificato su quattro corridoi prime</h2>
+      <p class="sec-lead" data-lang="en">No single geographic zone may exceed 40% of total exposure and no single borrower may exceed ~10% of the portfolio. Illustrative target allocation across the four lending corridors.</p>
+      <p class="sec-lead" data-lang="it">Nessuna zona geografica può superare il 40% dell'esposizione totale e nessun mutuatario può superare circa il 10% del portafoglio. Allocazione obiettivo illustrativa sui quattro corridoi di prestito.</p>
+    </div>
+    <div class="donut-layout">
+      <div class="rv d1">
+        <div class="donut-wrap">
+          <svg viewBox="0 0 200 200" width="260" height="260" id="donutSvg">
+            <circle cx="100" cy="100" r="75" fill="none" stroke="#eee7d8" stroke-width="28"/>
+            <circle cx="100" cy="100" r="75" fill="none" stroke="var(--gold-deep)" stroke-width="28" stroke-dasharray="0 471" stroke-dashoffset="118" id="d1" style="transition:stroke-dasharray 1.4s ease"/>
+            <circle cx="100" cy="100" r="75" fill="none" stroke="var(--gold)" stroke-width="28" stroke-dasharray="0 471" stroke-dashoffset="118" id="d2" style="transition:stroke-dasharray 1.4s .15s ease"/>
+            <circle cx="100" cy="100" r="75" fill="none" stroke="var(--steel)" stroke-width="28" stroke-dasharray="0 471" stroke-dashoffset="118" id="d3" style="transition:stroke-dasharray 1.4s .3s ease"/>
+            <circle cx="100" cy="100" r="75" fill="none" stroke="var(--steel-light)" stroke-width="28" stroke-dasharray="0 471" stroke-dashoffset="118" id="d4" style="transition:stroke-dasharray 1.4s .45s ease"/>
+          </svg>
+          <div class="donut-center"><span class="big">4</span><span class="small" data-lang="en">prime corridors</span><span class="small" data-lang="it">corridoi prime</span></div>
+        </div>
+      </div>
+      <div class="use-items rv d2">
+        <div class="use-row"><div class="use-dot" style="background:var(--gold-deep)"></div><div class="use-text"><h5>Santo Domingo</h5><p data-lang="en">Capital — commercial & residential</p><p data-lang="it">Capitale — commerciale e residenziale</p></div><div class="use-pct">35%</div></div>
+        <div class="use-row"><div class="use-dot" style="background:var(--gold)"></div><div class="use-text"><h5>Cap Cana</h5><p data-lang="en">Premium resort real estate</p><p data-lang="it">Immobiliare resort premium</p></div><div class="use-pct">30%</div></div>
+        <div class="use-row"><div class="use-dot" style="background:var(--steel)"></div><div class="use-text"><h5>Punta Cana</h5><p data-lang="en">Tourism & rental assets</p><p data-lang="it">Turismo e immobili a reddito</p></div><div class="use-pct">20%</div></div>
+        <div class="use-row"><div class="use-dot" style="background:var(--steel-light)"></div><div class="use-text"><h5>Las Terrenas</h5><p data-lang="en">Coastal foreign-owner market</p><p data-lang="it">Mercato costiero a proprietà estera</p></div><div class="use-pct">15%</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RISK -->
+<section class="risk" id="risk">
+  <div class="container">
+    <div class="rv">
+      <span class="sec-tag" data-lang="en">Risk Factors & Mitigants</span>
+      <span class="sec-tag" data-lang="it">Fattori di Rischio e Mitiganti</span>
+      <h2 class="sec-title" data-lang="en">Principal risks — and how they are structurally mitigated</h2>
+      <h2 class="sec-title" data-lang="it">Rischi principali — e come sono strutturalmente mitigati</h2>
+      <p class="sec-lead" data-lang="en">Capital is at risk. Investors should conduct independent assessment. The following summarises the principal risk factors and the structural mitigants embedded in the strategy.</p>
+      <p class="sec-lead" data-lang="it">Il capitale è a rischio. Gli investitori devono condurre una valutazione indipendente. Di seguito una sintesi dei principali fattori di rischio e dei mitiganti strutturali della strategia.</p>
+    </div>
+    <div class="risk-grid">
+      <div class="rc rv"><div class="rc-icon">📉</div><div><h4 data-lang="en">Credit Risk</h4><h4 data-lang="it">Rischio di Credito</h4><p data-lang="en">Borrower default at maturity. <span class="mit">Mitigant:</span> first-rank mortgage at max 50% LTV, mandatory independent appraisal, creditor-friendly enforcement. Historical default below 3%.</p><p data-lang="it">Default del mutuatario a scadenza. <span class="mit">Mitigante:</span> ipoteca di primo grado a max 50% LTV, perizia indipendente obbligatoria, escussione favorevole al creditore. Default storico sotto il 3%.</p></div></div>
+      <div class="rc rv d1"><div class="rc-icon">🏚️</div><div><h4 data-lang="en">Real Estate Risk</h4><h4 data-lang="it">Rischio Immobiliare</h4><p data-lang="en">Dominican property values may decline. <span class="mit">Mitigant:</span> the 50% LTV cap provides a 2x buffer — a 50%+ collapse is required before any principal is at risk.</p><p data-lang="it">I valori immobiliari dominicani possono calare. <span class="mit">Mitigante:</span> il cap del 50% LTV offre un buffer 2x — serve un crollo oltre il 50% prima che il capitale sia a rischio.</p></div></div>
+      <div class="rc rv d2"><div class="rc-icon">🔒</div><div><h4 data-lang="en">Liquidity Risk</h4><h4 data-lang="it">Rischio di Liquidità</h4><p data-lang="en">Illiquid strategy — no secondary market for CLN positions. <span class="mit">Mitigant:</span> 3-year bullet loans co-terminus with the CLN; USD 300,000 prudential liquidity buffer.</p><p data-lang="it">Strategia illiquida — nessun mercato secondario per le posizioni CLN. <span class="mit">Mitigante:</span> prestiti bullet a 3 anni co-terminosi con il CLN; buffer di liquidità prudenziale di USD 300.000.</p></div></div>
+      <div class="rc rv"><div class="rc-icon">🌐</div><div><h4 data-lang="en">Concentration Risk</h4><h4 data-lang="it">Rischio di Concentrazione</h4><p data-lang="en">Single country, single asset class. <span class="mit">Mitigant:</span> per-borrower cap ~10%, per-zone cap &lt;40% across Santo Domingo, Cap Cana, Punta Cana, Las Terrenas.</p><p data-lang="it">Paese unico, singola asset class. <span class="mit">Mitigante:</span> cap per mutuatario ~10%, cap per zona &lt;40% su Santo Domingo, Cap Cana, Punta Cana, Las Terrenas.</p></div></div>
+      <div class="rc rv d1"><div class="rc-icon">💱</div><div><h4 data-lang="en">Currency / FX Risk</h4><h4 data-lang="it">Rischio Valutario / FX</h4><p data-lang="en">All loans are USD-denominated. <span class="mit">Mitigant:</span> no FX exposure for USD investors; EUR investors bear EUR/USD risk on flows.</p><p data-lang="it">Tutti i prestiti sono in USD. <span class="mit">Mitigante:</span> nessuna esposizione FX per investitori USD; gli investitori EUR sopportano il rischio EUR/USD sui flussi.</p></div></div>
+      <div class="rc rv d2"><div class="rc-icon">⚖️</div><div><h4 data-lang="en">Regulatory Risk</h4><h4 data-lang="it">Rischio Normativo</h4><p data-lang="en">Changes in Dominican law or AML rules. <span class="mit">Mitigant:</span> ongoing legal monitoring by ISLAW Abogados; Ley 155-17 / UAF compliant framework.</p><p data-lang="it">Modifiche al diritto dominicano o alle norme AML. <span class="mit">Mitigante:</span> monitoraggio legale continuo di ISLAW Abogados; quadro conforme a Ley 155-17 / UAF.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PIPELINE -->
+<section class="pipeline" id="roadmap">
+  <div class="container">
+    <div class="rv">
+      <span class="sec-tag" data-lang="en">Deployment Roadmap — Phase 1</span>
+      <span class="sec-tag" data-lang="it">Roadmap di Deployment — Fase 1</span>
+      <h2 class="sec-title" data-lang="en">From first close to a fully-deployed USD 5.0M portfolio</h2>
+      <h2 class="sec-title" data-lang="it">Dal primo closing al portafoglio pieno di USD 5,0M</h2>
+    </div>
+    <div class="pipe-steps">
+      <div class="ps rv"><div class="ps-circle">1</div><h4 data-lang="en">Q1 — USD 2.0M</h4><h4 data-lang="it">Q1 — USD 2,0M</h4><p data-lang="en">First loans originated against vetted first-rank collateral</p><p data-lang="it">Primi prestiti erogati su collaterale di primo grado verificato</p></div>
+      <div class="ps rv d1"><div class="ps-circle">2</div><h4 data-lang="en">Q2 — USD 2.5M</h4><h4 data-lang="it">Q2 — USD 2,5M</h4><p data-lang="en">Portfolio diversifies across the four prime corridors</p><p data-lang="it">Il portafoglio si diversifica sui quattro corridoi prime</p></div>
+      <div class="ps rv d2"><div class="ps-circle">3</div><h4 data-lang="en">Q3 — USD 3.5M</h4><h4 data-lang="it">Q3 — USD 3,5M</h4><p data-lang="en">Approximately 16 active loans, USD 300K average size</p><p data-lang="it">Circa 16 prestiti attivi, taglio medio USD 300K</p></div>
+      <div class="ps rv d3"><div class="ps-circle">4</div><h4 data-lang="en">Q4 — USD 5.0M</h4><h4 data-lang="it">Q4 — USD 5,0M</h4><p data-lang="en">Full deployment. Active pipeline of USD 20M supports Phase 2</p><p data-lang="it">Pieno impiego. Pipeline attiva di USD 20M a supporto della Fase 2</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team" id="team">
+  <div class="container">
+    <div class="rv">
+      <span class="sec-tag" data-lang="en">The Team</span>
+      <span class="sec-tag" data-lang="it">Il Team</span>
+      <h2 class="sec-title" data-lang="en">Principals & advisors — all co-invested</h2>
+      <h2 class="sec-title" data-lang="it">Principal e advisor — tutti co-investiti</h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card rv">
+        <div class="team-avatar">GM</div>
+        <div class="team-name">Gianluigi Montagner</div>
+        <div class="team-role" data-lang="en">Managing Partner / CEO</div>
+        <div class="team-role" data-lang="it">Managing Partner / CEO</div>
+        <div class="cred" data-lang="en">30+ years banking & finance</div>
+        <div class="cred" data-lang="it">30+ anni in banca e finanza</div>
+        <div class="cred" data-lang="en">Head of Investor Relations</div>
+        <div class="cred" data-lang="it">Responsabile Investor Relations</div>
+        <div class="cred">Product Manager · CLN CH1518693374</div>
+        <div class="cred" data-lang="en">Framont & Partners Mgmt Ltd (Malta)</div>
+        <div class="cred" data-lang="it">Framont & Partners Mgmt Ltd (Malta)</div>
+      </div>
+      <div class="rv d1">
+        <div class="team-bio">
+          <p data-lang="en">Zalphyx Giant Capital is operated by Framont & Partners Management Ltd (Malta, MFSA regulated), with all principals co-investing their own capital in every transaction. Origination, KYC/AML and enforcement are supported by an established network of Dominican legal and compliance specialists.</p>
+          <p data-lang="it">Zalphyx Giant Capital è gestita da Framont & Partners Management Ltd (Malta, regolata MFSA), con tutti i principal che co-investono il proprio capitale in ogni operazione. Origination, KYC/AML ed escussione sono supportate da una rete consolidata di specialisti legali e di compliance dominicani.</p>
+        </div>
+        <div class="team-others">
+          <div class="to-card"><div class="to-role" data-lang="en">Head of Origination</div><div class="to-role" data-lang="it">Responsabile Origination</div><h4 data-lang="en">Borrower Relations</h4><h4 data-lang="it">Relazioni con i Mutuatari</h4><p data-lang="en">Local DR real-estate network, borrower origination, KYC/AML screening. Supported by ISLAW Abogados, BBG Asesoría and Adv. Stanley Peña.</p><p data-lang="it">Rete immobiliare locale DR, origination mutuatari, screening KYC/AML. Supportato da ISLAW Abogados, BBG Asesoría e Avv. Stanley Peña.</p></div>
+          <div class="to-card"><div class="to-role" data-lang="en">Legal & Compliance</div><div class="to-role" data-lang="it">Legale e Compliance</div><h4>ISLAW Abogados</h4><p data-lang="en">Corporate, tax, real-estate and maritime law across Spain & the Dominican Republic. DR partner: William Matías Ramírez. Ley 155-17 / UAF compliant.</p><p data-lang="it">Diritto societario, fiscale, immobiliare e marittimo tra Spagna e Repubblica Dominicana. Partner DR: William Matías Ramírez. Conforme Ley 155-17 / UAF.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TERMS / CTA -->
+<section class="invest-cta" id="terms">
+  <div class="container" style="position:relative;z-index:1">
+    <div class="rv">
+      <span class="sec-tag" data-lang="en">Offering Terms</span>
+      <span class="sec-tag" data-lang="it">Termini dell'Offerta</span>
+      <h2 class="sec-title" data-lang="en">The structure at a glance</h2>
+      <h2 class="sec-title" data-lang="it">La struttura in sintesi</h2>
+      <p class="sec-lead" data-lang="en">A Credit Linked Note issued under Guernsey law on the GenTwo AG platform, distributed by an MFSA-regulated manager. Eligible for European institutional investors, family offices and qualified HNWIs.</p>
+      <p class="sec-lead" data-lang="it">Un Credit Linked Note emesso secondo il diritto di Guernsey sulla piattaforma GenTwo AG, distribuito da un manager regolato MFSA. Riservato a investitori istituzionali europei, family office e HNWI qualificati.</p>
+    </div>
+    <div class="inv-layout">
+      <div class="rv d1">
+        <div class="term-table">
+          <div class="term-row"><span class="tr-l" data-lang="en">Investment vehicle</span><span class="tr-l" data-lang="it">Veicolo d'investimento</span><span class="tr-v">Credit Linked Note (AMC)</span></div>
+          <div class="term-row"><span class="tr-l">ISIN</span><span class="tr-v">CH1518693374</span></div>
+          <div class="term-row"><span class="tr-l" data-lang="en">Issuer</span><span class="tr-l" data-lang="it">Emittente</span><span class="tr-v">Expand3 Issuer PCC Ltd (Guernsey)</span></div>
+          <div class="term-row"><span class="tr-l" data-lang="en">Platform agent</span><span class="tr-l" data-lang="it">Platform agent</span><span class="tr-v">GenTwo AG (Switzerland)</span></div>
+          <div class="term-row"><span class="tr-l" data-lang="en">Paying agent</span><span class="tr-l" data-lang="it">Paying agent</span><span class="tr-v">InCore Bank AG (Switzerland)</span></div>
+          <div class="term-row"><span class="tr-l" data-lang="en">Manager / Distributor</span><span class="tr-l" data-lang="it">Manager / Distributore</span><span class="tr-v">Framont & Partners Mgmt Ltd (Malta)</span></div>
+          <div class="term-row"><span class="tr-l" data-lang="en">Net yield</span><span class="tr-l" data-lang="it">Rendimento netto</span><span class="tr-v">6.0% p.a. fixed · USD</span></div>
+          <div class="term-row"><span class="tr-l" data-lang="en">Term / Lock-up</span><span class="tr-l" data-lang="it">Durata / Lock-up</span><span class="tr-v">36 months · bullet co-terminus</span></div>
+          <div class="term-row"><span class="tr-l" data-lang="en">Minimum investment</span><span class="tr-l" data-lang="it">Investimento minimo</span><span class="tr-v">USD 250,000</span></div>
+        </div>
+      </div>
+      <div class="rv d2" style="display:flex;flex-direction:column;justify-content:center;gap:20px">
+        <div class="quote-card">
+          <div class="q" data-lang="en">"This is a structured interest-rate arbitrage with hard collateral on every loan. The asset-liability match is exact, the coverage is proven, and all principals co-invest. We built it to be understood, not just sold."</div>
+          <div class="q" data-lang="it">"È un arbitraggio di tasso strutturato, con collaterale reale su ogni prestito. Il match attivo-passivo è esatto, la copertura è comprovata e tutti i principal co-investono. L'abbiamo costruito per essere capito, non solo venduto."</div>
+          <div class="qa">
+            <div class="qa-av">GM</div>
+            <div><div style="font-size:.85rem;font-weight:600;color:#fff">Gianluigi Montagner</div><div style="font-size:.74rem;color:rgba(255,255,255,.55)">CEO · Framont & Partners Management Ltd</div></div>
+          </div>
+        </div>
+        <a href="#contact" class="btn-p" style="text-align:center">
+          <span data-lang="en" class="i">Request the Term Sheet & Memorandum</span>
+          <span data-lang="it" class="i">Richiedi Term Sheet e Memorandum</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="cf rv">
+        <h3 data-lang="en">Request the Documentation</h3>
+        <h3 data-lang="it">Richiedi la Documentazione</h3>
+        <p class="cf-sub" data-lang="en">We respond to qualified investor enquiries within 48 hours.</p>
+        <p class="cf-sub" data-lang="it">Rispondiamo alle richieste di investitori qualificati entro 48 ore.</p>
+        <form onsubmit="handleSubmit(event)">
+          <div class="fg"><label data-lang="en">Full Name</label><label data-lang="it">Nome e Cognome</label><input type="text" required placeholder="Mario Rossi" /></div>
+          <div class="fg"><label data-lang="en">Organisation</label><label data-lang="it">Organizzazione</label><input type="text" required placeholder="Fund / Family Office" /></div>
+          <div class="fg"><label>Email</label><input type="email" required placeholder="investor@example.com" /></div>
+          <div class="fg">
+            <label data-lang="en">Investor Type</label><label data-lang="it">Tipo di Investitore</label>
+            <select>
+              <option data-lang="en">European Institutional</option><option data-lang="it">Istituzionale Europeo</option>
+              <option>Family Office</option>
+              <option data-lang="en">Qualified HNWI</option><option data-lang="it">HNWI Qualificato</option>
+              <option data-lang="en">Other</option><option data-lang="it">Altro</option>
+            </select>
+          </div>
+          <div class="fg"><label data-lang="en">Message (optional)</label><label data-lang="it">Messaggio (facoltativo)</label><textarea placeholder="..."></textarea></div>
+          <button type="submit" class="f-submit"><span data-lang="en" class="i">Send Request</span><span data-lang="it" class="i">Invia Richiesta</span></button>
+        </form>
+      </div>
+      <div class="rv d1">
+        <span class="sec-tag" data-lang="en">Direct Contact</span>
+        <span class="sec-tag" data-lang="it">Contatto Diretto</span>
+        <h2 class="sec-title" data-lang="en">Talk to the managing partner</h2>
+        <h2 class="sec-title" data-lang="it">Parla con il managing partner</h2>
+        <p class="sec-lead" data-lang="en">Gianluigi Montagner is personally available for qualified investor conversations. We value direct dialogue and make time for serious institutional partners.</p>
+        <p class="sec-lead" data-lang="it">Gianluigi Montagner è personalmente disponibile per colloqui con investitori qualificati. Valorizziamo il dialogo diretto e dedichiamo tempo ai partner istituzionali seri.</p>
+        <br>
+        <div class="cd"><div class="cd-icon">🏛️</div><div><strong data-lang="en">Manager</strong><strong data-lang="it">Manager</strong><span>Framont & Partners Management Ltd — Malta, MFSA Regulated</span></div></div>
+        <div class="cd"><div class="cd-icon">📄</div><div><strong>CLN / ISIN</strong><span>CH1518693374 · GenTwo AG Platform</span></div></div>
+        <div class="cd"><div class="cd-icon">🌐</div><div><strong>Web</strong><span>www.framontmanagement.com</span></div></div>
+        <div class="cd"><div class="cd-icon">📍</div><div><strong data-lang="en">Originator</strong><strong data-lang="it">Originator</strong><span>Zalphyx Giant Capital DR SRL — Santo Domingo, DR</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <svg width="34" height="34" viewBox="0 0 40 40" fill="none" style="margin:0 auto;display:block">
+    <path d="M20 2 36 11v18L20 38 4 29V11z" stroke="#C9A24B" stroke-width="1.6" fill="rgba(201,162,75,.06)"/>
+    <path d="M13 14h14l-14 12h14" stroke="#E6C879" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="20" cy="20" r="1.6" fill="#C9A24B"/>
+  </svg>
+  <p class="copy">Zalphyx Giant Capital DR SRL · Framont & Partners Management Ltd (Malta) · CLN ISIN CH1518693374</p>
+  <p class="disc" data-lang="en">Strictly confidential — for qualified investors only. This document is not an offer to sell or a solicitation of an offer to buy any security and does not constitute investment advice. The CLN is issued by Expand3 Issuer PCC Limited (Guernsey) on the GenTwo AG platform and distributed by Framont & Partners Management Ltd (Malta, MFSA regulated). No secondary market exists. Capital is at risk. Projections are forward-looking estimates; past performance is not indicative of future results. © 2026.</p>
+  <p class="disc" data-lang="it">Strettamente confidenziale — riservato a investitori qualificati. Il presente documento non costituisce un'offerta di vendita né una sollecitazione all'acquisto di alcuno strumento finanziario e non rappresenta consulenza in materia di investimenti. Il CLN è emesso da Expand3 Issuer PCC Limited (Guernsey) sulla piattaforma GenTwo AG e distribuito da Framont & Partners Management Ltd (Malta, regolata MFSA). Non esiste un mercato secondario. Il capitale è a rischio. Le proiezioni sono stime previsionali; le performance passate non sono indicative di risultati futuri. © 2026.</p>
+</footer>
+
+<script>
+// ── LANG
+function setLang(l){
+  document.body.className='lang-'+l;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent.toLowerCase()===l));
+}
+
+// ── REVEAL
+const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+
+// ── COUNTERS (supports decimals, prefix, suffix)
+function animateCounter(el){
+  const target=parseFloat(el.dataset.count);
+  const dec=(el.dataset.count.split('.')[1]||'').length;
+  const pre=el.dataset.prefix||'';const suf=el.dataset.suffix||'';
+  const dur=1500;const t0=performance.now();
+  function tick(now){
+    const p=Math.min((now-t0)/dur,1);
+    const eased=1-Math.pow(1-p,3);
+    const val=(target*eased).toFixed(dec);
+    el.innerHTML=pre+(dec?val:Math.round(target*eased).toLocaleString('en-US'))+suf;
+    if(p<1)requestAnimationFrame(tick);
+    else el.innerHTML=pre+(dec?target.toFixed(dec):Math.round(target).toLocaleString('en-US'))+suf;
+  }
+  requestAnimationFrame(tick);
+}
+const cro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&e.target.dataset.count){animateCounter(e.target);cro.unobserve(e.target);}})},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cro.observe(el));
+
+// ── YIELD CALCULATOR
+const invSlider=document.getElementById('invSlider');
+const fmt=n=>'USD '+Math.round(n).toLocaleString('en-US');
+function updateInv(){
+  const v=+invSlider.value;
+  const pct=(v-invSlider.min)/(invSlider.max-invSlider.min)*100;
+  invSlider.style.setProperty('--fill',pct+'%');
+  document.getElementById('invVal').textContent=fmt(v);
+  document.getElementById('annual').textContent=fmt(v*0.06);
+  document.getElementById('quarter').textContent=fmt(v*0.06/4);
+  document.getElementById('total').textContent=fmt(v*0.06*3);
+}
+invSlider.addEventListener('input',updateInv);updateInv();
+
+// ── COLLATERAL BUFFER SIMULATOR
+const dropSlider=document.getElementById('dropSlider');
+const C_GAUGE=267; // arc length
+function updateDrop(){
+  const d=+dropSlider.value;            // property value decline %
+  const pct=d/80*100;
+  dropSlider.style.setProperty('--fill',pct+'%');
+  document.getElementById('dropVal').textContent='−'+d+'%';
+  // collateral starts at 2x loan (50% LTV). Remaining value as % of original = 100-d.
+  // principal (=50% of original) is protected while remaining value >= 50%.
+  const remaining=100-d;
+  const principalProtected=Math.max(0,Math.min(100,(remaining-50)/50*100)); // 0% drop->100, 50% drop->0
+  // loan recovery: if remaining>=50 -> 100% recovered; else remaining/50*100
+  const loanCovered=remaining>=50?100:Math.max(0,Math.round(remaining/50*100));
+  document.getElementById('loanLeft').textContent=loanCovered;
+  // gauge shows the remaining collateral buffer (full at 0% drop, empty at 50% drop)
+  const consumed=Math.min(1,d/50);
+  const remBuf=Math.max(0,1-consumed);
+  const arc=document.getElementById('gaugeArc');
+  arc.style.strokeDashoffset=C_GAUGE*(1-remBuf);
+  // needle 0..80% over 180deg
+  document.getElementById('gaugeMark').style.transform='rotate('+(d/80*180-90)+'deg)';
+  const st=document.getElementById('bufStatus');const tx=document.getElementById('bufText');
+  const isEn=document.body.classList.contains('lang-en');
+  if(d<40){arc.style.stroke='#2f8a5b';st.className='gauge-status safe';tx.textContent=isEn?'Principal fully protected':'Capitale pienamente protetto';}
+  else if(d<50){arc.style.stroke='#C9A24B';st.className='gauge-status warn';tx.textContent=isEn?'Buffer nearly exhausted':'Buffer quasi esaurito';}
+  else{arc.style.stroke='#b34141';st.className='gauge-status danger';tx.textContent=isEn?'Principal begins to be at risk':'Il capitale inizia a essere a rischio';}
+}
+dropSlider.addEventListener('input',updateDrop);updateDrop();
+
+// ── STRESS TEST
+function setScenario(btn){
+  document.querySelectorAll('.scn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const cov=parseFloat(btn.dataset.cov);
+  const num=document.getElementById('covNum');
+  num.textContent=cov.toFixed(1)+'x';
+  num.classList.toggle('below',cov<1);
+  document.getElementById('covBar').style.width=Math.min(100,cov/2.5*100)+'%';
+  document.getElementById('covRev').textContent=fmt(+btn.dataset.rev);
+  document.getElementById('covDef').textContent=btn.dataset.def+'%';
+}
+const sro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){document.getElementById('covBar').style.width=(2.0/2.5*100)+'%';sro.disconnect();}})},{threshold:.4});
+sro.observe(document.querySelector('.cov-stage'));
+
+// ── BAR CHART
+const bro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('#barChart .bar').forEach((b,i)=>{setTimeout(()=>{b.style.height=b.dataset.target+'px';},i*120);});bro.disconnect();}})},{threshold:.3});
+const bc=document.getElementById('barChart');if(bc)bro.observe(bc);
+
+// ── LINE CHART
+const lro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const p=document.getElementById('cashLine');p.style.transition='stroke-dashoffset 1.6s ease';p.style.strokeDashoffset='0';lro.disconnect();}})},{threshold:.3});
+const lc=document.getElementById('lineChart');if(lc)lro.observe(lc);
+
+// ── DONUT
+const C=471.2;
+const donutData=[{id:'d1',pct:.35,offset:0},{id:'d2',pct:.30,offset:.35},{id:'d3',pct:.20,offset:.65},{id:'d4',pct:.15,offset:.85}];
+const dro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){donutData.forEach(d=>{const el=document.getElementById(d.id);if(!el)return;const arc=d.pct*C;el.style.strokeDashoffset=-(d.offset*C)+118;setTimeout(()=>{el.style.strokeDasharray=arc+' '+(C-arc);},50);});dro.disconnect();}})},{threshold:.3});
+const ds=document.getElementById('donutSvg');if(ds)dro.observe(ds);
+
+// ── FORM
+function handleSubmit(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('.f-submit');
+  const isEn=document.body.classList.contains('lang-en');
+  btn.textContent=isEn?'Sent — we will be in touch shortly.':'Inviato — vi contatteremo a breve.';
+  btn.style.background='var(--gold-deep)';btn.disabled=true;
+}
+</script>
+</body>
+</html>
